@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLDashboard",
+    "displayName": "TedsTest",
+    "description": "TedsTest"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "674aa71c-da93-8723-4d72-946f0cdcca61"
+  }
+}

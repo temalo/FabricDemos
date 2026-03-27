@@ -1,0 +1,134 @@
+table mart_product_velocity
+	lineageTag: 467ca3ca-c40f-4016-83aa-280bdb8b2016
+	sourceLineageTag: [dbo].[mart_product_velocity]
+
+	column velocity_key
+		dataType: string
+		lineageTag: 659db1f7-6bc6-48a7-b35b-82e538f8532f
+		sourceLineageTag: velocity_key
+		summarizeBy: none
+		sourceColumn: velocity_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f5b95a4-5f43-45af-b8db-bc43ae47d508
+		sourceLineageTag: product_key
+		summarizeBy: sum
+		sourceColumn: product_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 37ab2097-7f47-4ca9-80cd-ba203cfaa838
+		sourceLineageTag: location_key
+		summarizeBy: sum
+		sourceColumn: location_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column period_month_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 183d2c2a-e430-4a08-ac52-d36789936256
+		sourceLineageTag: period_month_key
+		summarizeBy: sum
+		sourceColumn: period_month_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column units_sold
+		dataType: int64
+		formatString: 0
+		lineageTag: c329286b-c4af-4bc9-8079-fd94ea9749d8
+		sourceLineageTag: units_sold
+		summarizeBy: sum
+		sourceColumn: units_sold
+
+		annotation SummarizationSetBy = Automatic
+
+	column orders_containing
+		dataType: int64
+		formatString: 0
+		lineageTag: b3b72e56-0b42-40b5-b915-02e4fcaa57fa
+		sourceLineageTag: orders_containing
+		summarizeBy: sum
+		sourceColumn: orders_containing
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_sell_price
+		dataType: double
+		lineageTag: a0a76a86-adfd-4a51-b30e-f91312fe1b4f
+		sourceLineageTag: avg_sell_price
+		summarizeBy: sum
+		sourceColumn: avg_sell_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column net_revenue
+		dataType: double
+		lineageTag: d263e153-70f7-46db-8552-8558ea4db116
+		sourceLineageTag: net_revenue
+		summarizeBy: sum
+		sourceColumn: net_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fill_rate_pct
+		dataType: double
+		lineageTag: 68c41cc7-7be0-4b58-9de2-f97b000a66de
+		sourceLineageTag: fill_rate_pct
+		summarizeBy: sum
+		sourceColumn: fill_rate_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column return_rate_pct
+		dataType: double
+		lineageTag: 73c4077d-022d-4137-b44e-9fe21f0eac6f
+		sourceLineageTag: return_rate_pct
+		summarizeBy: sum
+		sourceColumn: return_rate_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_days_of_supply
+		dataType: double
+		lineageTag: 7294631c-afbe-44b1-8daa-3276fa72a0e3
+		sourceLineageTag: avg_days_of_supply
+		summarizeBy: sum
+		sourceColumn: avg_days_of_supply
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column velocity_class
+		dataType: string
+		lineageTag: 480ad20d-2742-4271-b7d4-858b09163a16
+		sourceLineageTag: velocity_class
+		summarizeBy: none
+		sourceColumn: velocity_class
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mart_product_velocity = entity
+		mode: directLake
+		source
+			entityName: mart_product_velocity
+			schemaName: dbo
+			expressionSource: 'DirectLake - IndustrialSupply'
+

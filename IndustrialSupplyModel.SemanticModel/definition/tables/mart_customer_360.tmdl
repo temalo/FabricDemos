@@ -1,0 +1,166 @@
+table mart_customer_360
+	lineageTag: 2c71426b-9cf6-460b-9b0a-27ba148974f3
+	sourceLineageTag: [dbo].[mart_customer_360]
+
+	column customer_key
+		dataType: int64
+		formatString: 0
+		lineageTag: c2498636-1510-4698-952c-8a9e2f2bad35
+		sourceLineageTag: customer_key
+		summarizeBy: sum
+		sourceColumn: customer_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column snapshot_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: b66514bd-f450-46a1-9cf6-beb71e3d98e3
+		sourceLineageTag: snapshot_date_key
+		summarizeBy: sum
+		sourceColumn: snapshot_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column ytd_revenue
+		dataType: double
+		lineageTag: b60fb467-727e-4c3e-a8bf-b1da039cd306
+		sourceLineageTag: ytd_revenue
+		summarizeBy: sum
+		sourceColumn: ytd_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ytd_orders
+		dataType: int64
+		formatString: 0
+		lineageTag: c5f915e6-2d0b-47b6-856a-76994cd79215
+		sourceLineageTag: ytd_orders
+		summarizeBy: sum
+		sourceColumn: ytd_orders
+
+		annotation SummarizationSetBy = Automatic
+
+	column ytd_lines
+		dataType: int64
+		formatString: 0
+		lineageTag: 42575f53-34be-4e67-bbf2-5e28a0ee478d
+		sourceLineageTag: ytd_lines
+		summarizeBy: sum
+		sourceColumn: ytd_lines
+
+		annotation SummarizationSetBy = Automatic
+
+	column ytd_return_rate_pct
+		dataType: double
+		lineageTag: ab938e26-993c-4827-8c0e-4a74904fcfcf
+		sourceLineageTag: ytd_return_rate_pct
+		summarizeBy: sum
+		sourceColumn: ytd_return_rate_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column l12m_revenue
+		dataType: double
+		lineageTag: 2c8fd0c3-951a-423a-be1b-f7f84bfa8813
+		sourceLineageTag: l12m_revenue
+		summarizeBy: sum
+		sourceColumn: l12m_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column l12m_orders
+		dataType: int64
+		formatString: 0
+		lineageTag: fb9731d7-cb4c-4f51-9de0-f1c7f34eb643
+		sourceLineageTag: l12m_orders
+		summarizeBy: sum
+		sourceColumn: l12m_orders
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_order_value
+		dataType: double
+		lineageTag: 2f60cce1-9943-4e16-9941-4e877e7775b6
+		sourceLineageTag: avg_order_value
+		summarizeBy: sum
+		sourceColumn: avg_order_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_gross_margin_pct
+		dataType: double
+		lineageTag: 6f53cac2-172d-4dde-9a85-a9a078c3f4f9
+		sourceLineageTag: avg_gross_margin_pct
+		summarizeBy: sum
+		sourceColumn: avg_gross_margin_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column days_since_last_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 6deb69f8-a4db-4e7a-98ec-b8ad0c201800
+		sourceLineageTag: days_since_last_order
+		summarizeBy: sum
+		sourceColumn: days_since_last_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column preferred_channel
+		dataType: string
+		lineageTag: 242157ba-3a0b-4c3f-a247-2cf5896bfaeb
+		sourceLineageTag: preferred_channel
+		summarizeBy: none
+		sourceColumn: preferred_channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column top_category
+		dataType: string
+		lineageTag: 7ee7c213-a1d7-4504-b8e7-df360bc24ed5
+		sourceLineageTag: top_category
+		summarizeBy: none
+		sourceColumn: top_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column churn_risk_score
+		dataType: double
+		lineageTag: 968b855b-7609-4213-9178-b9a352673993
+		sourceLineageTag: churn_risk_score
+		summarizeBy: sum
+		sourceColumn: churn_risk_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column customer_lifetime_value
+		dataType: double
+		lineageTag: 930ee3d9-c815-4b86-92cd-1bf2883c2be0
+		sourceLineageTag: customer_lifetime_value
+		summarizeBy: sum
+		sourceColumn: customer_lifetime_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition mart_customer_360 = entity
+		mode: directLake
+		source
+			entityName: mart_customer_360
+			schemaName: dbo
+			expressionSource: 'DirectLake - IndustrialSupply'
+
