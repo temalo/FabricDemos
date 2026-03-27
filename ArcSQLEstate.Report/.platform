@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "ArcSQLEstate"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b5bc168a-d300-8e88-4676-6c325a91f775"
+  }
+}

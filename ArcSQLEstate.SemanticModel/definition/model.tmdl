@@ -1,0 +1,42 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["ArcAgents","ProductLifecycle1","SQLAll","SQLAllDatabases"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.143.7657.7 (Main)+be8585b37c10e69f44bb60748e20297aeca9ce9f
+
+annotation PBI_ProTooling = ["WebModelingEdit"]
+
+ref table ArcAgents
+ref table DateTableTemplate_17bc7b44-af60-449d-940d-ce40f4ff61c2
+ref table ProductLifecycle1
+ref table LocalDateTable_c1db5021-26bb-4e35-8359-eb98ea072128
+ref table LocalDateTable_e7198b07-d551-4d48-8ec9-44e3821ade8d
+ref table LocalDateTable_b19ad774-b293-41f0-8286-03db35aa1412
+ref table LocalDateTable_8b1e3ba6-50ed-4ca7-8354-f4a55a017dbc
+ref table LocalDateTable_725ba857-fb89-41a2-a31e-5d0de50e3529
+ref table LocalDateTable_88606c15-9728-4b4d-8182-e71950342a32
+ref table SQLAll
+ref table LocalDateTable_69e8cd93-aca5-42ee-9f5d-bae457b3724d
+ref table LocalDateTable_2fcb0f32-9f76-4fb3-abb7-be0aeef5905e
+ref table LocalDateTable_befa1385-d9d0-462a-a678-63531f511fe0
+ref table SQLAllDatabases
+ref table LocalDateTable_9341708f-27f9-409c-ae0a-02b454a435a6
+ref table LocalDateTable_c4d00251-62ac-4d00-bed8-e15c5b975a00
+ref table LocalDateTable_9a135d65-1e1c-45a7-968e-39fae5d4a022
+ref table LocalDateTable_1b5a607d-eb0a-4efb-b733-11ee53f21adc
+ref table LocalDateTable_50c9c12e-b8cc-400d-ad55-e0d2b0fde470
+ref table LocalDateTable_121a4cbf-cce5-4b04-b121-f5c3206426ff
+ref table LocalDateTable_44c0d1d4-c158-44b3-bcc6-fc91d2f8bb3a
+ref table LocalDateTable_cfd416eb-402a-481f-9096-ce8afca7c124
+ref table LocalDateTable_9bc99f5c-19e6-4838-aa0f-1dc06232015c
+
+ref cultureInfo en-US
+

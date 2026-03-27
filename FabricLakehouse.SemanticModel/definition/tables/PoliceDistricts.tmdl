@@ -1,0 +1,43 @@
+table PoliceDistricts
+	lineageTag: 95067362-aa81-4473-85cf-e0e39bbb67a3
+	sourceLineageTag: [dbo].[PoliceDistricts]
+
+	column the_geom
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 66db1cb4-2e8e-4c4b-80aa-543ed3d3a95b
+		sourceLineageTag: the_geom
+		summarizeBy: none
+		sourceColumn: the_geom
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIST_LABEL
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a03313d2-1afb-44b0-8e24-d48eaf4dd5d7
+		sourceLineageTag: DIST_LABEL
+		summarizeBy: none
+		sourceColumn: DIST_LABEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIST_NUM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8cf74485-6f6c-4558-b30e-9b41d75a8907
+		sourceLineageTag: DIST_NUM
+		summarizeBy: none
+		sourceColumn: DIST_NUM
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PoliceDistricts-2dd20e19-32e4-41e1-b61e-27f23a971c7f = entity
+		mode: directLake
+		source
+			entityName: PoliceDistricts
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

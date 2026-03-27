@@ -1,0 +1,910 @@
+table ArcAgents
+	lineageTag: 63569628-f988-453d-a642-8501e1a39544
+
+	column name
+		dataType: string
+		lineageTag: 772f3575-1b57-4aa0-9572-6b3432fc8a58
+		summarizeBy: none
+		sourceColumn: name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column operatingSystem
+		dataType: string
+		lineageTag: a5090f07-cad7-4aca-8541-f826492c9e95
+		summarizeBy: none
+		sourceColumn: operatingSystem
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column isVirtual
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d7b5e72b-3e3f-4f91-be40-9c965d463af4
+		summarizeBy: none
+		sourceColumn: isVirtual
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column model
+		dataType: string
+		lineageTag: 954316ea-76a6-4243-ae3e-9e34283cd1ff
+		summarizeBy: none
+		sourceColumn: model
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column manufacturer
+		dataType: string
+		lineageTag: 52a818b0-d6a4-4605-ac74-58d02f347184
+		summarizeBy: none
+		sourceColumn: manufacturer
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.provisioningState'
+		dataType: string
+		lineageTag: 1e951de9-5096-4a5f-8053-2739640700b7
+		summarizeBy: none
+		sourceColumn: properties.provisioningState
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.displayName'
+		dataType: string
+		lineageTag: 793b2096-42de-4eff-a347-02f86a00e54e
+		summarizeBy: none
+		sourceColumn: properties.displayName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.status'
+		dataType: string
+		lineageTag: 87550e16-233e-434b-bbb3-df859fbc4453
+		summarizeBy: none
+		sourceColumn: properties.status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.networkProfile'
+		dataType: string
+		lineageTag: 75043a52-07f2-4b29-820d-1fe4cbf50f69
+		summarizeBy: none
+		sourceColumn: properties.networkProfile
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.agentConfiguration'
+		dataType: string
+		lineageTag: 101d5fda-e62d-4fbf-8825-1d56a82bafb0
+		summarizeBy: none
+		sourceColumn: properties.agentConfiguration
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.lastStatusChange'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5449c5fe-38bb-4431-be1d-844e5c17daf5
+		summarizeBy: none
+		sourceColumn: properties.lastStatusChange
+
+		variation Variation
+			isDefault
+			relationship: 6e8a3fe4-f133-4c40-93eb-34ab1f4b2ecf
+			defaultHierarchy: LocalDateTable_88606c15-9728-4b4d-8182-e71950342a32.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.mssqlDiscovered'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d937e0a4-02c3-438e-88e9-b33dab7120dc
+		summarizeBy: none
+		sourceColumn: properties.mssqlDiscovered
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.licenseProfile.esuProfile'
+		dataType: string
+		lineageTag: 6656cb3a-1195-45aa-ab40-ad414323953e
+		summarizeBy: none
+		sourceColumn: properties.licenseProfile.esuProfile
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.osType'
+		dataType: string
+		lineageTag: dd6765ad-93b7-4d8b-a5bb-534ed50a2ad3
+		summarizeBy: none
+		sourceColumn: properties.osType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.agentVersion'
+		dataType: string
+		lineageTag: e6eec335-e057-4bb5-a0e6-89fb8d598495
+		summarizeBy: none
+		sourceColumn: properties.agentVersion
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.errorDetails'
+		dataType: string
+		lineageTag: 4fa6caeb-a687-4ef9-a44e-53e42e2b49fa
+		summarizeBy: none
+		sourceColumn: properties.errorDetails
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.agentUpgrade'
+		dataType: string
+		lineageTag: 1720479f-692d-46f6-824a-bbbf1b4ef37c
+		summarizeBy: none
+		sourceColumn: properties.agentUpgrade
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.osProfile'
+		dataType: string
+		lineageTag: 18c110eb-850b-4d3e-9eb5-ae2764fe70ba
+		summarizeBy: none
+		sourceColumn: properties.osProfile
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.machineFqdn'
+		dataType: string
+		lineageTag: d6efebee-a95a-4bdb-b65d-5e5d3f8a1dc4
+		summarizeBy: none
+		sourceColumn: properties.machineFqdn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.osVersion'
+		dataType: string
+		lineageTag: 1bab0996-b88e-4d4d-b195-bd6aee186575
+		summarizeBy: none
+		sourceColumn: properties.osVersion
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.domainName'
+		dataType: string
+		lineageTag: c71a973a-285f-4669-a1f5-c241b7698b7a
+		summarizeBy: none
+		sourceColumn: properties.domainName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.osName'
+		dataType: string
+		lineageTag: e600bf96-1e82-4672-b4d9-1e12a3457d25
+		summarizeBy: none
+		sourceColumn: properties.osName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.dnsFqdn'
+		dataType: string
+		lineageTag: fe5a17c4-8388-4123-b5ce-1553cc578033
+		summarizeBy: none
+		sourceColumn: properties.dnsFqdn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.adFqdn'
+		dataType: string
+		lineageTag: 443daf8a-dfcb-476e-ac23-fcc726ee1c19
+		summarizeBy: none
+		sourceColumn: properties.adFqdn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.osSku'
+		dataType: string
+		lineageTag: 8eb9fcb6-8fae-4885-8f1c-fbc8daa2c585
+		summarizeBy: none
+		sourceColumn: properties.osSku
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column id
+		dataType: string
+		lineageTag: 97f97efd-5e36-493f-9110-5e05cd7ec5a9
+		summarizeBy: none
+		sourceColumn: id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column wsEsuCostPerYear =
+			
+			VAR isWs = CONTAINSSTRING([operatingSystem],"Windows Server")
+			var isWsPhysicalDc = isWs && not([isVirtual])
+			VAR minVcoresToLicense = if(isWs,if([isWsPhysicalDc],MAX(16,[cpuTotalCores]),max(8,[cpuTotalCores])),0)
+			return if(ArcAgents[cloud] <> "Azure",12*minVcoresToLicense*RELATED(ProductLifecycle1[ExtendedSupportCostPerCorePerMonth]),0)
+		lineageTag: 0295d1f2-43ad-4cb1-85ce-99b460ce1548
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cpuTotalCores
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e07dff6-ab4d-42f0-bff6-e353a42f797f
+		summarizeBy: sum
+		sourceColumn: cpuTotalCores
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column azureResourceGroup
+		dataType: string
+		lineageTag: 964bc41d-2bef-4584-9ec7-1bd5bebffb92
+		summarizeBy: none
+		sourceColumn: azureResourceGroup
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column arcWsEsuStatus
+		dataType: string
+		lineageTag: cb4d4ac9-3a9c-4c14-b250-ae1cce8977f3
+		summarizeBy: none
+		sourceColumn: arcWsEsuStatus
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cloud
+		dataType: string
+		lineageTag: 5f54d38f-a377-40f6-960f-3d5b5b227e3e
+		summarizeBy: none
+		sourceColumn: cloud
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.timeCreated'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ba41e79e-ca3e-4cb7-a880-45f0017daf13
+		summarizeBy: none
+		sourceColumn: properties.timeCreated
+
+		variation Variation
+			isDefault
+			relationship: d4105e15-3749-4353-80c9-3107f58a3b56
+			defaultHierarchy: LocalDateTable_8b1e3ba6-50ed-4ca7-8354-f4a55a017dbc.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.hardwareProfile'
+		dataType: string
+		lineageTag: 58401e2a-adee-412b-8880-9d920af95315
+		summarizeBy: none
+		sourceColumn: properties.hardwareProfile
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.storageProfile'
+		dataType: string
+		lineageTag: b887a6db-59d7-4035-b58b-9bd525c42dec
+		summarizeBy: none
+		sourceColumn: properties.storageProfile
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.diagnosticsProfile'
+		dataType: string
+		lineageTag: 8479b23c-d250-4920-875a-0547d9268c26
+		summarizeBy: none
+		sourceColumn: properties.diagnosticsProfile
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.extended'
+		dataType: string
+		lineageTag: 413b44a7-10ca-4675-a78c-d9fd4704ac8e
+		summarizeBy: none
+		sourceColumn: properties.extended
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.licenseType'
+		dataType: string
+		lineageTag: 602ff49d-ffd5-4e6e-94bb-8f4a83fc8015
+		summarizeBy: none
+		sourceColumn: properties.licenseType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.availabilitySet'
+		dataType: string
+		lineageTag: c13811f6-f497-48ae-8ce2-9c6c2131673d
+		summarizeBy: none
+		sourceColumn: properties.availabilitySet
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.securityProfile'
+		dataType: string
+		lineageTag: 2cd9ffff-06b1-4976-b97a-ea9d9f834131
+		summarizeBy: none
+		sourceColumn: properties.securityProfile
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.additionalCapabilities'
+		dataType: string
+		lineageTag: bd550ff5-5a6b-4aa2-8b05-621acd333738
+		summarizeBy: none
+		sourceColumn: properties.additionalCapabilities
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.logicalCoreCount'
+		dataType: int64
+		formatString: 0
+		lineageTag: 984470b2-1bf7-494c-9865-0fbc97a208d2
+		summarizeBy: sum
+		sourceColumn: arc_properties.detectedProperties.logicalCoreCount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.mssqldiscovered'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 978ec696-e8a9-499f-99cc-7603ea7e889d
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.mssqldiscovered
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.cloudprovider'
+		dataType: string
+		lineageTag: d081d5e4-981e-4f74-9bdb-71972b0cea77
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.cloudprovider
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.manufacturer'
+		dataType: string
+		lineageTag: eb4fa6dd-6d86-42ee-8bf4-6e836f062283
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.manufacturer
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.model'
+		dataType: string
+		lineageTag: 5a8a27cc-61c1-4170-9542-de8ca994d13e
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.model
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.GCP-serviceAccounts'
+		dataType: string
+		lineageTag: 8440bd2c-8792-4f6d-b0ba-df4d938aab2b
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.GCP-serviceAccounts
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.GCP-projectNumber'
+		dataType: string
+		lineageTag: 9584894f-5736-44aa-a2f1-17247da49985
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.GCP-projectNumber
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.GCP-machineType'
+		dataType: string
+		lineageTag: cf3a932a-be5d-4d81-9492-b67138a5f413
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.GCP-machineType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.GCP-instanceId'
+		dataType: string
+		lineageTag: ff6ad13f-596c-4622-ba3a-705a2457cd43
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.GCP-instanceId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.GCP-projectId'
+		dataType: string
+		lineageTag: 31636458-26db-46d8-a8e2-d081e79bf3a5
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.GCP-projectId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.GCP-image'
+		dataType: string
+		lineageTag: 4b8926c7-3460-4fb0-8f13-966de9e9f1af
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.GCP-image
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.GCP-zone'
+		dataType: string
+		lineageTag: 6470da59-497c-4e70-8469-d8195bd60aea
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.GCP-zone
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.GCP-os'
+		dataType: string
+		lineageTag: 76fb1600-2877-4eba-9e52-91ccf6ab0dc3
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.GCP-os
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.totalPhysicalMemoryInBytes'
+		dataType: int64
+		formatString: 0
+		lineageTag: 01b2b1a8-10cf-4e2c-95ec-e54c7f177d31
+		summarizeBy: sum
+		sourceColumn: arc_properties.detectedProperties.totalPhysicalMemoryInBytes
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.totalPhysicalMemoryInGigabytes'
+		dataType: int64
+		formatString: 0
+		lineageTag: 28bab1ee-ddbb-4f48-8d10-b935a59fb1f0
+		summarizeBy: sum
+		sourceColumn: arc_properties.detectedProperties.totalPhysicalMemoryInGigabytes
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.serialNumber'
+		dataType: string
+		lineageTag: d537ddf3-ac51-412a-85c9-23e83a543fdd
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.serialNumber
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.processorCount'
+		dataType: int64
+		formatString: 0
+		lineageTag: bbb363fe-0c82-4d15-a7fe-a892f6e926b2
+		summarizeBy: sum
+		sourceColumn: arc_properties.detectedProperties.processorCount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.processorNames'
+		dataType: string
+		lineageTag: bebc703d-3c48-49dd-90c1-6cff88092a2a
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.processorNames
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.productType'
+		dataType: string
+		lineageTag: 9cfb681b-b9fc-48fc-be7a-f348cc4b3caa
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.productType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.coreCount'
+		dataType: int64
+		formatString: 0
+		lineageTag: 57927f95-b95e-496a-bbb5-842d50cd23da
+		summarizeBy: sum
+		sourceColumn: arc_properties.detectedProperties.coreCount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.AWS-instanceId'
+		dataType: string
+		lineageTag: 8a445779-3ed7-4d60-88d2-5173862a8b6a
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.AWS-instanceId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.AWS-accountId'
+		dataType: string
+		lineageTag: ba80137b-43cc-4373-84aa-57bee4dbf873
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.AWS-accountId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.AWS-region'
+		dataType: string
+		lineageTag: 2898c2ae-afb1-4652-8262-d20fbe838053
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.AWS-region
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.smbiosAssetTag'
+		dataType: string
+		lineageTag: 74d90e70-2acc-42c3-814b-a849da9439c3
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.smbiosAssetTag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.vmuuidEsu2012'
+		dataType: string
+		lineageTag: 78d1f519-e2bb-4837-84c2-fc1a3d396737
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.vmuuidEsu2012
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.licenseProfile.licenseStatus'
+		dataType: string
+		lineageTag: 631729ef-70ed-4a59-8758-5c0cacd9db1e
+		summarizeBy: none
+		sourceColumn: properties.licenseProfile.licenseStatus
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.licenseProfile.licenseChannel'
+		dataType: string
+		lineageTag: a1b73fef-28d0-43fd-bf28-44f01c2f72d4
+		summarizeBy: none
+		sourceColumn: properties.licenseProfile.licenseChannel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.cloudMetadata.provider'
+		dataType: string
+		lineageTag: a70f77ee-940e-4fcd-b2a6-58a3c4ae4aea
+		summarizeBy: none
+		sourceColumn: arc_properties.cloudMetadata.provider
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.osEdition'
+		dataType: string
+		lineageTag: 6b534a60-edd7-4b29-957b-0cfdd23aedc6
+		summarizeBy: none
+		sourceColumn: properties.osEdition
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.priority'
+		dataType: string
+		lineageTag: 5a623282-007a-48fb-a583-4becc17aff1e
+		summarizeBy: none
+		sourceColumn: properties.priority
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.evictionPolicy'
+		dataType: string
+		lineageTag: b453aecd-0788-40a0-a237-26e182a48d5a
+		summarizeBy: none
+		sourceColumn: properties.evictionPolicy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.billingProfile'
+		dataType: string
+		lineageTag: 4b37e284-8e68-475f-b794-c0d76e9ebdf0
+		summarizeBy: none
+		sourceColumn: properties.billingProfile
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.capacityReservation'
+		dataType: string
+		lineageTag: 269b55fc-b95f-4ce9-b7a0-f202ac36d18a
+		summarizeBy: none
+		sourceColumn: properties.capacityReservation
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.osInstallDate'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7a54c810-03f7-42bd-aa47-a6aa603771b0
+		summarizeBy: none
+		sourceColumn: properties.osInstallDate
+
+		variation Variation
+			isDefault
+			relationship: bc057c05-bf95-4be9-9d4b-c1963cc32b77
+			defaultHierarchy: LocalDateTable_725ba857-fb89-41a2-a31e-5d0de50e3529.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.firmwareProfile'
+		dataType: string
+		lineageTag: b1d0c0d5-ed4b-4ede-b7ed-c632f18e3ced
+		summarizeBy: none
+		sourceColumn: properties.firmwareProfile
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column isWindowsServer
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1f94ab3a-0575-4741-b7cb-2687d742aec4
+		summarizeBy: none
+		sourceColumn: isWindowsServer
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column isWsPhysicalDc
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 54b16e70-43ca-41fb-bde3-736c523b51ae
+		summarizeBy: none
+		sourceColumn: isWsPhysicalDc
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column tags
+		dataType: string
+		lineageTag: a3b97b18-c13f-44cc-b5af-fbfb5e973fad
+		summarizeBy: none
+		sourceColumn: tags
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column productExtendedSupportCostPerYear = [wsEsuCostPerYear]+[extSupportCoreBasedPerYear]
+		lineageTag: 810aab14-4c29-4b9d-959d-8301e6791a85
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column extSupportCoreBasedPerYear = 12*[cpuTotalCores]*RELATED(ProductLifecycle1[ExtendedSupportCostPerCorePerMonth])
+		lineageTag: 3af4ba72-1c72-4a92-84dd-ab8f8fbfae43
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column hostingPlatform = SWITCH([isVirtual], TRUE, "Virtual", FALSE, "Physical")
+		lineageTag: afaa33dd-7616-4d2d-8254-84f7f9e49b35
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column serverHostingLocation =
+			
+			VAR cloudProvider = SWITCH([cloud],
+			"Azure",CONCATENATE("Azure:",[location]),
+			"AWS",CONCATENATE("AWS:",[arc_properties.detectedProperties.AWS-region]),
+			"GCP",CONCATENATE("GCP:",[arc_properties.detectedProperties.GCP-zone]),
+			"Unknown")
+			
+			return cloudProvider
+		lineageTag: 7fd2a74d-5c3c-4ae2-a27d-f59f49546dfb
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column location
+		dataType: string
+		lineageTag: a10b6a86-5889-40e7-abe9-c607ba847145
+		summarizeBy: none
+		sourceColumn: location
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column subscriptionId
+		dataType: string
+		lineageTag: 415b28fc-51c4-4730-ab0d-0a68812dcb34
+		summarizeBy: none
+		sourceColumn: subscriptionId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arc_properties.detectedProperties.architecture'
+		dataType: string
+		lineageTag: 8bea851a-65c3-4dbb-8d8c-f4a0495187fa
+		summarizeBy: none
+		sourceColumn: arc_properties.detectedProperties.architecture
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ArcAgents = m
+		mode: import
+		source =
+				let
+				    Source = AzureResourceGraph.Query("resources#(lf)| where type == 'microsoft.hybridcompute/machines' or type == 'microsoft.compute/virtualmachines'#(lf)| extend arcAgentVersion = tostring(properties.agentVersion)#(lf)| extend arcWsEsuStatus = properties.licenseProfile.esuProfile.licenseAssignmentState #(lf)| extend cloud = iif(type == 'microsoft.compute/virtualmachines',""Azure"",iif(tostring(properties.cloudMetadata.provider) == ""N/A"" or tostring(properties.cloudMetadata.provider) == """", ""On-premises"", tostring(properties.cloudMetadata.provider)))#(lf)| extend isVirtual = iff(properties.detectedProperties.model == ""Virtual Machine"" or properties.detectedProperties.manufacturer == ""VMware, Inc."" or properties.detectedProperties.manufacturer == ""Nutanix"" or properties.cloudMetadata.provider == ""AWS"" or properties.cloudMetadata.provider == ""GCP"" or type == 'microsoft.compute/virtualmachines', true, false)#(lf)| extend model = iif(cloud == ""Azure"",""Virtual Machine"",tostring(properties.detectedProperties.model))#(lf)| extend manufacturer = iif(cloud == ""Azure"",""Microsoft Corporation"",tostring(properties.detectedProperties.manufacturer))#(lf)| extend cpuTotalCores = iif(type == 'microsoft.compute/virtualmachines', toint(extract(@""(\d+)"",0,extract(@""_(\D+)(\d+)_*"",0,tostring(properties.hardwareProfile.vmSize)))),toint(properties.detectedProperties.logicalCoreCount))#(lf)| extend operatingSystem = iif(type == 'microsoft.compute/virtualmachines', strcat(properties.storageProfile.osDisk.osType,"" "",iif(isnotempty(properties.storageProfile.imageReference.sku),strcat(properties.storageProfile.imageReference.publisher,"" "",iif(properties.storageProfile.imageReference.publisher == 'MicrosoftWindowsServer',extract(@""^(\d+)"",0,tostring(properties.storageProfile.imageReference.exactVersion)),extract(@""^(\d+).(\d+)"",0,tostring(properties.storageProfile.imageReference.exactVersion))),"" "",properties.storageProfile.imageReference.offer),properties.storageProfile.imageReference.sku)),tostring(properties.osSku))#(lf)| extend operatingSystem = iff(type == 'microsoft.compute/virtualmachines' and properties.licenseType == 'Windows_Client',properties.extended.instanceView.osName,operatingSystem)#(lf)| extend operatingSystem = iif(isempty(operatingSystem),""Unknown"",operatingSystem)#(lf)| extend isWindowsServer = iff(tolower(operatingSystem) has ""windows server"" or tolower(operatingSystem) has ""windowsserver"",true,false)#(lf)| extend isWsPhysicalDc = iff(properties.osSku has ""Server 2012"" and properties.osSku has ""Datacenter"" and isVirtual == ""Physical"",bool(true),bool(false))#(lf)| project name,cpuTotalCores,isVirtual,azureResourceGroup=resourceGroup,arcWsEsuStatus,operatingSystem,model,manufacturer,cloud,properties,isWindowsServer,isWsPhysicalDc,tags,id,location,subscriptionId", null, null, null, [resultTruncated=false]),
+				    #"Expanded properties" = Table.ExpandRecordColumn(Source, "properties", {"provisioningState", "timeCreated", "networkProfile", "storageProfile", "hardwareProfile", "osProfile", "securityProfile", "diagnosticsProfile", "extended", "licenseType", "capacityReservation", "availabilitySet", "additionalCapabilities", "status", "agentConfiguration", "detectedProperties", "displayName", "lastStatusChange", "mssqlDiscovered", "licenseProfile", "osType", "cloudMetadata", "agentUpgrade", "agentVersion", "errorDetails", "osVersion", "machineFqdn", "domainName", "osInstallDate", "firmwareProfile", "osEdition", "osName", "dnsFqdn", "adFqdn", "osSku", "priority", "evictionPolicy", "billingProfile"}, {"properties.provisioningState", "properties.timeCreated", "properties.networkProfile", "properties.storageProfile", "properties.hardwareProfile", "properties.osProfile", "properties.securityProfile", "properties.diagnosticsProfile", "properties.extended", "properties.licenseType", "properties.capacityReservation", "properties.availabilitySet", "properties.additionalCapabilities", "properties.status", "properties.agentConfiguration", "properties.detectedProperties", "properties.displayName", "properties.lastStatusChange", "properties.mssqlDiscovered", "properties.licenseProfile", "properties.osType", "properties.cloudMetadata", "properties.agentUpgrade", "properties.agentVersion", "properties.errorDetails", "properties.osVersion", "properties.machineFqdn", "properties.domainName", "properties.osInstallDate", "properties.firmwareProfile", "properties.osEdition", "properties.osName", "properties.dnsFqdn", "properties.adFqdn", "properties.osSku", "properties.priority", "properties.evictionPolicy", "properties.billingProfile"}),
+				    #"Expanded properties.detectedProperties" = Table.ExpandRecordColumn(#"Expanded properties", "properties.detectedProperties", {"totalPhysicalMemoryInBytes", "totalPhysicalMemoryInGigabytes", "serialNumber", "logicalCoreCount", "mssqldiscovered", "processorCount", "processorNames", "cloudprovider", "manufacturer", "smbiosAssetTag", "productType", "vmuuidEsu2012", "architecture", "coreCount", "model", "GCP-serviceAccounts", "GCP-projectNumber", "GCP-machineType", "GCP-instanceId", "GCP-projectId", "GCP-image", "GCP-zone", "GCP-os", "AWS-instanceId", "AWS-accountId", "AWS-region"}, {"arc_properties.detectedProperties.totalPhysicalMemoryInBytes", "arc_properties.detectedProperties.totalPhysicalMemoryInGigabytes", "arc_properties.detectedProperties.serialNumber", "arc_properties.detectedProperties.logicalCoreCount", "arc_properties.detectedProperties.mssqldiscovered", "arc_properties.detectedProperties.processorCount", "arc_properties.detectedProperties.processorNames", "arc_properties.detectedProperties.cloudprovider", "arc_properties.detectedProperties.manufacturer", "arc_properties.detectedProperties.smbiosAssetTag", "arc_properties.detectedProperties.productType", "arc_properties.detectedProperties.vmuuidEsu2012", "arc_properties.detectedProperties.architecture", "arc_properties.detectedProperties.coreCount", "arc_properties.detectedProperties.model", "arc_properties.detectedProperties.GCP-serviceAccounts", "arc_properties.detectedProperties.GCP-projectNumber", "arc_properties.detectedProperties.GCP-machineType", "arc_properties.detectedProperties.GCP-instanceId", "arc_properties.detectedProperties.GCP-projectId", "arc_properties.detectedProperties.GCP-image", "arc_properties.detectedProperties.GCP-zone", "arc_properties.detectedProperties.GCP-os", "arc_properties.detectedProperties.AWS-instanceId", "arc_properties.detectedProperties.AWS-accountId", "arc_properties.detectedProperties.AWS-region"}),
+				    #"Expanded properties.licenseProfile" = Table.ExpandRecordColumn(#"Expanded properties.detectedProperties", "properties.licenseProfile", {"esuProfile", "licenseStatus", "licenseChannel"}, {"properties.licenseProfile.esuProfile", "properties.licenseProfile.licenseStatus", "properties.licenseProfile.licenseChannel"}),
+				    #"Expanded properties.cloudMetadata" = Table.ExpandRecordColumn(#"Expanded properties.licenseProfile", "properties.cloudMetadata", {"provider"}, {"arc_properties.cloudMetadata.provider"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded properties.cloudMetadata",{{"isVirtual", type logical}, {"cpuTotalCores", Int64.Type}, {"properties.timeCreated", type datetime}, {"arc_properties.detectedProperties.logicalCoreCount", Int64.Type}, {"arc_properties.detectedProperties.processorCount", Int64.Type}, {"arc_properties.detectedProperties.coreCount", Int64.Type}, {"properties.lastStatusChange", type datetime}, {"properties.mssqlDiscovered", type logical}, {"arc_properties.detectedProperties.totalPhysicalMemoryInGigabytes", Int64.Type}, {"arc_properties.detectedProperties.totalPhysicalMemoryInBytes", Int64.Type}, {"isWindowsServer", type logical}, {"isWsPhysicalDc", type logical}, {"properties.osInstallDate", type datetime}, {"arc_properties.detectedProperties.mssqldiscovered", type logical}})
+				in
+				    #"Changed Type"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

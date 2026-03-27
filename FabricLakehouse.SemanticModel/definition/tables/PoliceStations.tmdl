@@ -1,0 +1,139 @@
+table PoliceStations
+	lineageTag: dfb34aad-9e55-49f6-8153-0659c87fa23f
+	sourceLineageTag: [dbo].[PoliceStations]
+
+	column District
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c224735b-a04b-4892-b071-5bfa1ba386ca
+		sourceLineageTag: District
+		summarizeBy: none
+		sourceColumn: District
+
+		annotation SummarizationSetBy = Automatic
+
+	column DistrictName
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c1073005-6395-4a86-8b7c-602f64d1ad00
+		sourceLineageTag: DistrictName
+		summarizeBy: none
+		sourceColumn: DistrictName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 06f38375-bd8d-415d-8875-1953e814fc36
+		sourceLineageTag: Address
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 319f2559-9f9a-433c-8b52-f8c07ecdeb36
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 94b53b7f-0f6a-481c-886b-ecec56956b00
+		sourceLineageTag: State
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZipCode
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 63aa8075-375d-4d30-94a8-7ac83eec045c
+		sourceLineageTag: ZipCode
+		summarizeBy: sum
+		sourceColumn: ZipCode
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WebUrl
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1a414290-19c0-488d-8db2-a037fe38862f
+		sourceLineageTag: WebUrl
+		summarizeBy: none
+		sourceColumn: WebUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: dacb0d80-c12c-4dbc-8d35-6c8fbfcce24e
+		sourceLineageTag: Phone
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fax
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 713ebba3-53fd-426c-8cec-996b400e809f
+		sourceLineageTag: Fax
+		summarizeBy: none
+		sourceColumn: Fax
+
+		annotation SummarizationSetBy = Automatic
+
+	column Teletype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8c43a1c1-a565-4663-8c7a-fbbc0735c187
+		sourceLineageTag: Teletype
+		summarizeBy: none
+		sourceColumn: Teletype
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 9d956a89-dd90-4ff8-85d7-3483f954d9a9
+		sourceLineageTag: Latitude
+		summarizeBy: sum
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 76cda4dd-bf50-40e8-ad69-4c60a7c2e3cb
+		sourceLineageTag: Longitude
+		summarizeBy: sum
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition PoliceStations-330479d8-d877-4ad3-a933-e2f8baed209b = entity
+		mode: directLake
+		source
+			entityName: PoliceStations
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

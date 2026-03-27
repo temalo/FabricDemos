@@ -1,0 +1,63 @@
+table iUCRCodes
+	lineageTag: d578948f-69e3-4485-9514-4e880a953a61
+	sourceLineageTag: [dbo].[iUCRCodes]
+
+	column IUCR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c130cd59-8fff-4572-9bde-4f1d8bcba4f2
+		sourceLineageTag: IUCR
+		summarizeBy: none
+		sourceColumn: IUCR
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrimaryDescription
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2c5c769c-a379-4792-a3d3-97fd39cf49ed
+		sourceLineageTag: PrimaryDescription
+		summarizeBy: none
+		sourceColumn: PrimaryDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column SecondaryDescription
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0d612631-a3da-4512-9efd-54121b359b30
+		sourceLineageTag: SecondaryDescription
+		summarizeBy: none
+		sourceColumn: SecondaryDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column IndexCode
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6abc9c5e-fbb7-496e-9226-6aab79be4a3f
+		sourceLineageTag: IndexCode
+		summarizeBy: none
+		sourceColumn: IndexCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Active
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6ed8d3f3-00eb-4ed4-935b-bd7f41fbb00f
+		sourceLineageTag: Active
+		summarizeBy: none
+		sourceColumn: Active
+
+		annotation SummarizationSetBy = Automatic
+
+	partition iUCRCodes-c45a4418-4dce-4504-a06d-4706176bf25e = entity
+		mode: directLake
+		source
+			entityName: iUCRCodes
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

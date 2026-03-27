@@ -1,0 +1,679 @@
+table SQLAllDatabases
+	lineageTag: 0b3d2d6e-c6e2-4e98-b49f-ca13342b641e
+
+	column id
+		dataType: string
+		lineageTag: 313be19c-22db-48c5-ac3a-4b2d87bf393f
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: d389f12c-7aae-4eb7-ac11-74fc506d4a9c
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column type
+		dataType: string
+		lineageTag: 7d8e4784-243f-426c-8974-042c13658046
+		summarizeBy: none
+		sourceColumn: type
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenantId
+		dataType: string
+		lineageTag: 254bcf45-7ffd-40bc-9d1c-f047fb62603b
+		summarizeBy: none
+		sourceColumn: tenantId
+
+		annotation SummarizationSetBy = Automatic
+
+	column kind
+		dataType: string
+		lineageTag: 517d9515-6e6f-4e8a-9e98-d86490d18c3f
+		summarizeBy: none
+		sourceColumn: kind
+
+		annotation SummarizationSetBy = Automatic
+
+	column location
+		dataType: string
+		lineageTag: b3c57498-7e0d-42cf-8820-62a0494b0f26
+		summarizeBy: none
+		sourceColumn: location
+
+		annotation SummarizationSetBy = Automatic
+
+	column resourceGroup
+		dataType: string
+		lineageTag: 559d288d-56f6-4e7d-beef-484c3c7c6a7c
+		summarizeBy: none
+		sourceColumn: resourceGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column subscriptionId
+		dataType: string
+		lineageTag: 089e6658-2d74-435b-b43f-145dce7bda17
+		summarizeBy: none
+		sourceColumn: subscriptionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column managedBy
+		dataType: string
+		lineageTag: 73c69e6c-ba0d-4955-800b-c0d86cd0cea5
+		summarizeBy: none
+		sourceColumn: managedBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'sku.name'
+		dataType: string
+		lineageTag: 9fdc696f-0797-4c3c-bb09-da2b2f426628
+		summarizeBy: none
+		sourceColumn: sku.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'sku.tier'
+		dataType: string
+		lineageTag: 93b2b114-3ad4-479b-93ef-0db29b0ecb33
+		summarizeBy: none
+		sourceColumn: sku.tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'sku.capacity'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4255f3ef-2263-4f77-9f81-d6067a7196b1
+		summarizeBy: sum
+		sourceColumn: sku.capacity
+
+		annotation SummarizationSetBy = Automatic
+
+	column plan
+		dataType: string
+		lineageTag: e26b5bf4-e63b-4d2d-9738-a2671bbfc3f3
+		summarizeBy: none
+		sourceColumn: plan
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.requestedBackupStorageRedundancy'
+		dataType: string
+		lineageTag: 7aaff61e-c8fe-40eb-83b4-40033b2fc5b1
+		summarizeBy: none
+		sourceColumn: properties.requestedBackupStorageRedundancy
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.currentBackupStorageRedundancy'
+		dataType: string
+		lineageTag: 3a04e114-2101-49b4-b090-ee2372aba447
+		summarizeBy: none
+		sourceColumn: properties.currentBackupStorageRedundancy
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.status'
+		dataType: string
+		lineageTag: 2a4a1c65-43f5-455f-a6dc-521d4778515c
+		summarizeBy: none
+		sourceColumn: properties.status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.requestedServiceObjectiveName'
+		dataType: string
+		lineageTag: 238b4515-9a47-4db6-872e-cf3720f87374
+		summarizeBy: none
+		sourceColumn: properties.requestedServiceObjectiveName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.currentServiceObjectiveName'
+		dataType: string
+		lineageTag: f1987f94-e327-4a11-9dab-b9f08820eac0
+		summarizeBy: none
+		sourceColumn: properties.currentServiceObjectiveName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.maintenanceConfigurationId'
+		dataType: string
+		lineageTag: b0c7a611-a9a1-478e-bb5d-a4ad78c8933f
+		summarizeBy: none
+		sourceColumn: properties.maintenanceConfigurationId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.defaultSecondaryLocation'
+		dataType: string
+		lineageTag: 9e1fad79-52a3-4023-bd09-aa419cb8c08e
+		summarizeBy: none
+		sourceColumn: properties.defaultSecondaryLocation
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.isInfraEncryptionEnabled'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a0a7e2e5-c397-4fab-97f4-83e8f091b537
+		summarizeBy: none
+		sourceColumn: properties.isInfraEncryptionEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.availabilityZone'
+		dataType: string
+		lineageTag: 49b4ebe4-c4a1-4376-afcd-68acce4803e3
+		summarizeBy: none
+		sourceColumn: properties.availabilityZone
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.catalogCollation'
+		dataType: string
+		lineageTag: 617634cc-6ecc-46f0-aa02-b4ee06d776a8
+		summarizeBy: none
+		sourceColumn: properties.catalogCollation
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.zoneRedundant'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 250be6bf-408f-43d8-9ee7-60e3d6b8df62
+		summarizeBy: none
+		sourceColumn: properties.zoneRedundant
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.creationDate'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 75388aba-29ba-4a07-969c-7cf0c191a84b
+		summarizeBy: none
+		sourceColumn: properties.creationDate
+
+		variation Variation
+			isDefault
+			relationship: f84e73ec-60c1-45eb-a9a7-6c90b941c3bf
+			defaultHierarchy: LocalDateTable_9341708f-27f9-409c-ae0a-02b454a435a6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.maxSizeBytes'
+		dataType: int64
+		formatString: 0
+		lineageTag: e08dbb85-fc4a-49ba-b51b-f3709f02ea03
+		summarizeBy: sum
+		sourceColumn: properties.maxSizeBytes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.collation'
+		dataType: string
+		lineageTag: 685ba655-dd11-49e9-87a3-7e5827ba5ebb
+		summarizeBy: none
+		sourceColumn: properties.collation
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.isLedgerOn'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a90aca70-996b-4631-9c19-6b2ddc588a5a
+		summarizeBy: none
+		sourceColumn: properties.isLedgerOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.databaseId'
+		dataType: string
+		lineageTag: eeb54d4b-d121-4783-b7ea-b7005673d080
+		summarizeBy: none
+		sourceColumn: properties.databaseId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.currentSku.name'
+		dataType: string
+		lineageTag: 98e4fbf0-573b-42cf-aa02-5ac50feec068
+		summarizeBy: none
+		sourceColumn: properties.currentSku.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.currentSku.capacity'
+		dataType: int64
+		formatString: 0
+		lineageTag: eac7172d-f25d-4024-9e0d-15b5d79c5bac
+		summarizeBy: sum
+		sourceColumn: properties.currentSku.capacity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.currentSku.tier'
+		dataType: string
+		lineageTag: 538f33e0-66cf-46b6-bb76-a917fbae1bca
+		summarizeBy: none
+		sourceColumn: properties.currentSku.tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.readScale'
+		dataType: string
+		lineageTag: ea4b5f61-2c24-46a6-81bb-023439224281
+		summarizeBy: none
+		sourceColumn: properties.readScale
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.earliestRestoreDate'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0cd93e8e-a19b-444d-9f5e-6cf6f98f5f1b
+		summarizeBy: none
+		sourceColumn: properties.earliestRestoreDate
+
+		variation Variation
+			isDefault
+			relationship: 9f40e2ab-df28-4d55-a7b7-2dcdf20e7bb2
+			defaultHierarchy: LocalDateTable_c4d00251-62ac-4d00-bed8-e15c5b975a00.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.earliestRestorePoint'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 889de483-1235-4b72-8e2f-c71d4ae6643c
+		summarizeBy: none
+		sourceColumn: properties.earliestRestorePoint
+
+		variation Variation
+			isDefault
+			relationship: c4f43d86-ceb3-407f-922c-3b46e9124b65
+			defaultHierarchy: LocalDateTable_9a135d65-1e1c-45a7-968e-39fae5d4a022.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.licenseType'
+		dataType: string
+		lineageTag: 5b65cdaf-0e66-4162-9d24-1a210703ea76
+		summarizeBy: none
+		sourceColumn: properties.licenseType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.maxLogSizeBytes'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f8c8c11-5f1c-4438-becf-cb0c4949acfb
+		summarizeBy: sum
+		sourceColumn: properties.maxLogSizeBytes
+
+		annotation SummarizationSetBy = Automatic
+
+	column tags
+		dataType: string
+		lineageTag: 551136ae-46cb-4018-8c5f-4de688dc8dc3
+		summarizeBy: none
+		sourceColumn: tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column identity
+		dataType: string
+		lineageTag: 4d744c94-0319-4b6f-8384-80a84800267e
+		summarizeBy: none
+		sourceColumn: identity
+
+		annotation SummarizationSetBy = Automatic
+
+	column zones
+		dataType: string
+		lineageTag: 483401d4-b520-492e-bca3-8c982edddf74
+		summarizeBy: none
+		sourceColumn: zones
+
+		annotation SummarizationSetBy = Automatic
+
+	column extendedLocation
+		dataType: string
+		lineageTag: 3314c287-a9a9-4c4e-bdec-3668aaa6c2b3
+		summarizeBy: none
+		sourceColumn: extendedLocation
+
+		annotation SummarizationSetBy = Automatic
+
+	column sqlInstanceName
+		dataType: string
+		lineageTag: 60f682a5-af8b-4233-806c-424de1c552bd
+		summarizeBy: none
+		sourceColumn: sqlInstanceName
+
+		annotation SummarizationSetBy = Automatic
+
+	column sqlInstanceId
+		dataType: string
+		lineageTag: f23cb87e-af9f-47be-844a-a8a8c57207e5
+		summarizeBy: none
+		sourceColumn: sqlInstanceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column parentSqlResourceId
+		dataType: string
+		lineageTag: 1c602a3f-3ab2-4a84-8463-071117e5b48e
+		summarizeBy: none
+		sourceColumn: parentSqlResourceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column parentSqlResourceName
+		dataType: string
+		lineageTag: e1bcb17c-9321-4d44-b0af-3151b48b4ec2
+		summarizeBy: none
+		sourceColumn: parentSqlResourceName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.provisioningState'
+		dataType: string
+		lineageTag: b094f893-1938-4e4b-9188-caecf2e2206f
+		summarizeBy: none
+		sourceColumn: properties.provisioningState
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.state'
+		dataType: string
+		lineageTag: 32e7af1c-e634-4e3a-b068-a18c5c208da6
+		summarizeBy: none
+		sourceColumn: properties.state
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.lastDatabaseUploadTime'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c7304cdb-dd31-4ab4-a419-0dc533d4da10
+		summarizeBy: none
+		sourceColumn: properties.lastDatabaseUploadTime
+
+		variation Variation
+			isDefault
+			relationship: 89e00661-c1cf-4900-a2c7-791cafb015fd
+			defaultHierarchy: LocalDateTable_1b5a607d-eb0a-4efb-b733-11ee53f21adc.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.databaseCreationDate'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e1898483-6cbe-4755-85f4-170690430dd3
+		summarizeBy: none
+		sourceColumn: properties.databaseCreationDate
+
+		variation Variation
+			isDefault
+			relationship: 884d32ad-66f3-46b6-bc8f-fe88488e0a90
+			defaultHierarchy: LocalDateTable_50c9c12e-b8cc-400d-ad55-e0d2b0fde470.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.compatibilityLevel'
+		dataType: string
+		lineageTag: f63b4049-a2ab-4138-bbf8-9303ba0b2738
+		summarizeBy: none
+		sourceColumn: properties.compatibilityLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.backupInformation.lastFullBackup'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 23849876-d105-4295-ad10-407390aed732
+		summarizeBy: none
+		sourceColumn: properties.backupInformation.lastFullBackup
+
+		variation Variation
+			isDefault
+			relationship: 3faac2a7-2162-4455-99c6-d0262483c909
+			defaultHierarchy: LocalDateTable_121a4cbf-cce5-4b04-b121-f5c3206426ff.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.backupInformation.lastLogBackup'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b2966ccf-0c12-455e-9aa0-945eb1050bcc
+		summarizeBy: none
+		sourceColumn: properties.backupInformation.lastLogBackup
+
+		variation Variation
+			isDefault
+			relationship: 25697814-40cc-474a-8d5d-bb3ea2476cf1
+			defaultHierarchy: LocalDateTable_44c0d1d4-c158-44b3-bcc6-fc91d2f8bb3a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.databaseOptions.isAutoUpdateStatsOn'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0ec46326-8c7a-47ba-8ca6-91769174926e
+		summarizeBy: none
+		sourceColumn: properties.databaseOptions.isAutoUpdateStatsOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.databaseOptions.isAutoCreateStatsOn'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a31e33f5-1568-4fd7-a225-d84293afc125
+		summarizeBy: none
+		sourceColumn: properties.databaseOptions.isAutoCreateStatsOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.databaseOptions.isTrustworthyOn'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8db24224-69e1-40dd-91b8-a771fe0ddc5b
+		summarizeBy: none
+		sourceColumn: properties.databaseOptions.isTrustworthyOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.databaseOptions.isAutoShrinkOn'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 59ddbd26-b4f1-4a90-af63-c81505af10e0
+		summarizeBy: none
+		sourceColumn: properties.databaseOptions.isAutoShrinkOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.databaseOptions.isAutoCloseOn'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b92febe5-5284-4218-8b68-019c8f20d81a
+		summarizeBy: none
+		sourceColumn: properties.databaseOptions.isAutoCloseOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.databaseOptions.isEncrypted'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b1840fd7-84be-4f02-a5a0-6f0069ef04e7
+		summarizeBy: none
+		sourceColumn: properties.databaseOptions.isEncrypted
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.databaseOptions.isMemoryOptimizationEnabled'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b143a6a3-c3a4-4d26-8217-2427afc75c97
+		summarizeBy: none
+		sourceColumn: properties.databaseOptions.isMemoryOptimizationEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.databaseOptions.isRemoteDataArchiveEnabled'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: dcbb9278-e372-4bef-8615-c735defab705
+		summarizeBy: none
+		sourceColumn: properties.databaseOptions.isRemoteDataArchiveEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.backupPolicy'
+		dataType: string
+		lineageTag: b0ef88c0-e948-47a7-9292-200fc833b5e6
+		summarizeBy: none
+		sourceColumn: properties.backupPolicy
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.collationName'
+		dataType: string
+		lineageTag: 263664fb-9016-4f67-847e-5ab819661332
+		summarizeBy: none
+		sourceColumn: properties.collationName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.spaceAvailableMB'
+		dataType: double
+		lineageTag: 7d825859-1af4-499d-9d2d-cf51c0794915
+		summarizeBy: sum
+		sourceColumn: properties.spaceAvailableMB
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'properties.recoveryMode'
+		dataType: string
+		lineageTag: fce295a8-ed63-4801-8acb-d10ade7d6851
+		summarizeBy: none
+		sourceColumn: properties.recoveryMode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.isReadOnly'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: eb39ced1-6fee-4d08-b435-5319b3902f66
+		summarizeBy: none
+		sourceColumn: properties.isReadOnly
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.sizeMB'
+		dataType: double
+		lineageTag: a9423ef6-88b1-4974-9db6-ef0d5489cba5
+		summarizeBy: sum
+		sourceColumn: properties.sizeMB
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'properties.restorePointInTime'
+		dataType: string
+		lineageTag: acc50a1c-91d3-46f9-bdd6-f1ad4f852cab
+		summarizeBy: none
+		sourceColumn: properties.restorePointInTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.sourceDatabaseId'
+		dataType: string
+		lineageTag: 6148a8f9-782e-4671-9bda-da5608cff523
+		summarizeBy: none
+		sourceColumn: properties.sourceDatabaseId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.createMode'
+		dataType: string
+		lineageTag: d9fe6668-eec1-40f1-ba3f-ff44a9758fbb
+		summarizeBy: none
+		sourceColumn: properties.createMode
+
+		annotation SummarizationSetBy = Automatic
+
+	column dbCollation =
+			SWITCH([type],
+			"microsoft.azurearcdata/sqlserverinstances/databases", [properties.collationName],
+			[properties.collation]
+			)
+		lineageTag: 439a6b5e-f831-44b1-88b9-2f91f30a1608
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column dbStatus =
+			SWITCH([type],
+			"microsoft.azurearcdata/sqlserverinstances/databases", [properties.state],
+			[properties.status]
+			)
+		lineageTag: 06d3a0ee-fca8-4daa-ba50-ed4836b73aaf
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column dbCreationDate =
+			SWITCH([type],
+			"microsoft.azurearcdata/sqlserverinstances/databases", [properties.databaseCreationDate],
+			[properties.creationDate]
+			)
+		formatString: General Date
+		lineageTag: 729661b9-9448-4c53-9dc2-77d5b5a760d3
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: ee501714-184b-4142-8815-d2f63b703e96
+			defaultHierarchy: LocalDateTable_cfd416eb-402a-481f-9096-ce8afca7c124.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column arcMachineName
+		dataType: string
+		lineageTag: f38d48b9-6d54-46a6-aa77-cc758bdca09c
+		summarizeBy: none
+		sourceColumn: arcMachineName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SQLAllDatabases = m
+		mode: import
+		source =
+				let
+				    Source = AzureResourceGraph.Query("resources#(lf)| where  type =~ ""microsoft.azurearcdata/sqlserverinstances/databases"" or type =~ ""microsoft.sql/managedInstances/databases"" or type =~ ""microsoft.sql/servers/databases""#(lf)| extend sqlInstanceName = tostring(split(tostring(id),""/"")[8]), sqlInstanceId = substring(id,0,indexof(tolower(id),""/databases""))#(lf)| extend parentSqlResourceId = substring(id,0,indexof(tolower(id),""/databases""))#(lf)| extend reverseParentSqlResId = reverse(parentSqlResourceId)#(lf)| extend parentSqlResourceName = reverse(substring(reverseParentSqlResId,0,indexof(reverseParentSqlResId,""/"")))#(lf)| extend arcMachineName = iff(type =~ ""microsoft.azurearcdata/sqlserverinstances/databases"" or type == 'Microsoft.SqlVirtualMachine/sqlVirtualMachines',iff(indexof(sqlInstanceName,""_"") <= 0,sqlInstanceName,substring(sqlInstanceName,0,indexof(sqlInstanceName,""_""))),""Not applicable"")#(lf)| project-away reverseParentSqlResId", null, null, null, [resultTruncated=false]),
+				    #"Expanded properties" = Table.ExpandRecordColumn(Source, "properties", {"requestedBackupStorageRedundancy", "currentBackupStorageRedundancy", "requestedServiceObjectiveName", "currentServiceObjectiveName", "maintenanceConfigurationId", "defaultSecondaryLocation", "isInfraEncryptionEnabled", "status", "availabilityZone", "catalogCollation", "zoneRedundant", "creationDate", "maxSizeBytes", "collation", "isLedgerOn", "databaseId", "currentSku", "readScale", "earliestRestoreDate", "earliestRestorePoint", "provisioningState", "state", "lastDatabaseUploadTime", "databaseCreationDate", "compatibilityLevel", "backupInformation", "databaseOptions", "backupPolicy", "collationName", "spaceAvailableMB", "recoveryMode", "isReadOnly", "sizeMB", "restorePointInTime", "sourceDatabaseId", "createMode", "licenseType", "maxLogSizeBytes"}, {"properties.requestedBackupStorageRedundancy", "properties.currentBackupStorageRedundancy", "properties.requestedServiceObjectiveName", "properties.currentServiceObjectiveName", "properties.maintenanceConfigurationId", "properties.defaultSecondaryLocation", "properties.isInfraEncryptionEnabled", "properties.status", "properties.availabilityZone", "properties.catalogCollation", "properties.zoneRedundant", "properties.creationDate", "properties.maxSizeBytes", "properties.collation", "properties.isLedgerOn", "properties.databaseId", "properties.currentSku", "properties.readScale", "properties.earliestRestoreDate", "properties.earliestRestorePoint", "properties.provisioningState", "properties.state", "properties.lastDatabaseUploadTime", "properties.databaseCreationDate", "properties.compatibilityLevel", "properties.backupInformation", "properties.databaseOptions", "properties.backupPolicy", "properties.collationName", "properties.spaceAvailableMB", "properties.recoveryMode", "properties.isReadOnly", "properties.sizeMB", "properties.restorePointInTime", "properties.sourceDatabaseId", "properties.createMode", "properties.licenseType", "properties.maxLogSizeBytes"}),
+				    #"Expanded properties.currentSku" = Table.ExpandRecordColumn(#"Expanded properties", "properties.currentSku", {"name", "capacity", "tier"}, {"properties.currentSku.name", "properties.currentSku.capacity", "properties.currentSku.tier"}),
+				    #"Expanded sku" = Table.ExpandRecordColumn(#"Expanded properties.currentSku", "sku", {"name", "tier", "capacity"}, {"sku.name", "sku.tier", "sku.capacity"}),
+				    #"Expanded properties.databaseOptions" = Table.ExpandRecordColumn(#"Expanded sku", "properties.databaseOptions", {"isAutoUpdateStatsOn", "isAutoCreateStatsOn", "isTrustworthyOn", "isAutoShrinkOn", "isAutoCloseOn", "isEncrypted", "isMemoryOptimizationEnabled", "isRemoteDataArchiveEnabled"}, {"properties.databaseOptions.isAutoUpdateStatsOn", "properties.databaseOptions.isAutoCreateStatsOn", "properties.databaseOptions.isTrustworthyOn", "properties.databaseOptions.isAutoShrinkOn", "properties.databaseOptions.isAutoCloseOn", "properties.databaseOptions.isEncrypted", "properties.databaseOptions.isMemoryOptimizationEnabled", "properties.databaseOptions.isRemoteDataArchiveEnabled"}),
+				    #"Expanded properties.backupInformation" = Table.ExpandRecordColumn(#"Expanded properties.databaseOptions", "properties.backupInformation", {"lastFullBackup", "lastLogBackup"}, {"properties.backupInformation.lastFullBackup", "properties.backupInformation.lastLogBackup"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded properties.backupInformation",{{"properties.isInfraEncryptionEnabled", type logical}, {"properties.zoneRedundant", type logical}, {"properties.isLedgerOn", type logical}, {"properties.creationDate", type datetime}, {"properties.earliestRestoreDate", type datetime}, {"properties.earliestRestorePoint", type datetime}, {"properties.maxLogSizeBytes", Int64.Type}, {"properties.currentSku.capacity", Int64.Type}, {"properties.maxSizeBytes", Int64.Type}, {"sku.capacity", Int64.Type}, {"properties.lastDatabaseUploadTime", type datetime}, {"properties.databaseCreationDate", type datetime}, {"properties.backupInformation.lastFullBackup", type datetime}, {"properties.backupInformation.lastLogBackup", type datetime}, {"properties.databaseOptions.isAutoUpdateStatsOn", type logical}, {"properties.databaseOptions.isAutoCreateStatsOn", type logical}, {"properties.databaseOptions.isTrustworthyOn", type logical}, {"properties.databaseOptions.isAutoShrinkOn", type logical}, {"properties.databaseOptions.isAutoCloseOn", type logical}, {"properties.databaseOptions.isEncrypted", type logical}, {"properties.databaseOptions.isMemoryOptimizationEnabled", type logical}, {"properties.databaseOptions.isRemoteDataArchiveEnabled", type logical}, {"properties.spaceAvailableMB", type number}, {"properties.isReadOnly", type logical}, {"properties.sizeMB", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
