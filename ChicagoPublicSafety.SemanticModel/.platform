@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "ChicagoPublicSafety"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "cd435211-4630-bea8-4ac1-c5eff9061888"
+  }
+}

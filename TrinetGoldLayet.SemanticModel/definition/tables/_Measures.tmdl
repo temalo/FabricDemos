@@ -1,0 +1,178 @@
+table _Measures
+	lineageTag: a1b2c3d4-0001-4000-8000-000000000001
+
+	measure 'Active Employees' = SUM(mart_workforce_attrition_monthly[avg_headcount])
+		formatString: #,0
+		displayFolder: Workforce
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000002
+
+	measure 'Net Headcount Change' =
+			SUM(mart_workforce_attrition_monthly[hires])
+				- SUM(mart_workforce_attrition_monthly[terminations])
+		formatString: #,0
+		displayFolder: Workforce
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000003
+
+	measure 'Headcount Growth %' =
+			DIVIDE(
+				[Net Headcount Change],
+				SUM(mart_workforce_attrition_monthly[avg_headcount]) - [Net Headcount Change]
+			)
+		formatString: 0.00%
+		displayFolder: Workforce
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000004
+
+	measure 'Remote Employee %' =
+			DIVIDE(
+				COUNTROWS(FILTER(dim_employee_master, dim_employee_master[remote_flag] = TRUE())),
+				COUNTROWS(dim_employee_master)
+			)
+		formatString: 0.00%
+		displayFolder: Workforce
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000005
+
+	measure 'Voluntary Attrition Rate' = AVERAGE(mart_workforce_attrition_monthly[voluntary_attrition_pct])
+		formatString: 0.00%
+		displayFolder: Attrition
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000006
+
+	measure 'Total Terminations' = SUM(mart_workforce_attrition_monthly[terminations])
+		formatString: #,0
+		displayFolder: Attrition
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000007
+
+	measure 'Total Hires' = SUM(mart_workforce_attrition_monthly[hires])
+		formatString: #,0
+		displayFolder: Attrition
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000008
+
+	measure 'Internal Mobility Rate' = AVERAGE(mart_workforce_attrition_monthly[internal_mobility_pct])
+		formatString: 0.00%
+		displayFolder: Attrition
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000009
+
+	measure 'Avg Performance Rating' = AVERAGE(mart_workforce_attrition_monthly[avg_performance_rating])
+		formatString: 0.0
+		displayFolder: Attrition
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000010
+
+	measure 'Avg Engagement Score' = AVERAGE(mart_workforce_attrition_monthly[engagement_score])
+		formatString: 0.0
+		displayFolder: Attrition
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000011
+
+	measure 'Total Gross Pay' = SUM(mart_payroll_benchmark_monthly[total_gross_pay])
+		formatString: $#,0
+		displayFolder: Payroll
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000012
+
+	measure 'Avg Gross Pay per Employee' =
+			DIVIDE(
+				[Total Gross Pay],
+				SUM(mart_payroll_benchmark_monthly[active_employees])
+			)
+		formatString: $#,0
+		displayFolder: Payroll
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000013
+
+	measure 'Overtime Rate' = AVERAGE(mart_payroll_benchmark_monthly[overtime_pct])
+		formatString: 0.00%
+		displayFolder: Payroll
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000014
+
+	measure 'Payroll Accuracy Rate' = AVERAGE(mart_payroll_benchmark_monthly[payroll_accuracy_pct])
+		formatString: 0.00%
+		displayFolder: Payroll
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000015
+
+	measure 'Total Tax Liability' = SUM(mart_payroll_benchmark_monthly[tax_liability])
+		formatString: $#,0
+		displayFolder: Payroll
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000016
+
+	measure 'Pay Equity Index' = AVERAGE(mart_payroll_benchmark_monthly[pay_equity_index])
+		formatString: 0.00
+		displayFolder: Payroll
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000017
+
+	measure 'Compliance Filing Rate' =
+			DIVIDE(
+				SUM(mart_policy_compliance_monthly[cases_filed]),
+				SUM(mart_policy_compliance_monthly[cases_due])
+			)
+		formatString: 0.00%
+		displayFolder: Policy Compliance
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000018
+
+	measure 'On-Time Filing Rate' = AVERAGE(mart_policy_compliance_monthly[on_time_rate_pct])
+		formatString: 0.00%
+		displayFolder: Policy Compliance
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000019
+
+	measure 'Total Penalties' = SUM(mart_policy_compliance_monthly[total_penalty_amount])
+		formatString: $#,0
+		displayFolder: Policy Compliance
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000020
+
+	measure 'Severe Issue Rate' =
+			DIVIDE(
+				SUM(mart_policy_compliance_monthly[severe_issue_count]),
+				SUM(mart_policy_compliance_monthly[cases_filed])
+			)
+		formatString: 0.00%
+		displayFolder: Policy Compliance
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000021
+
+	measure 'Late Case Count' = SUM(mart_policy_compliance_monthly[late_case_count])
+		formatString: #,0
+		displayFolder: Policy Compliance
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000022
+
+	measure 'Avg NPS Score' = AVERAGE(mart_client_service_360[nps_score])
+		formatString: 0.0
+		displayFolder: Client Health
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000023
+
+	measure 'Avg Compliance Risk Score' = AVERAGE(mart_client_service_360[compliance_risk_score])
+		formatString: 0.0
+		displayFolder: Client Health
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000024
+
+	measure 'Avg Attrition Risk Score' = AVERAGE(mart_client_service_360[attrition_risk_score])
+		formatString: 0.0
+		displayFolder: Client Health
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000025
+
+	measure 'Benefits Utilization %' = AVERAGE(mart_client_service_360[benefits_utilization_pct])
+		formatString: 0.00%
+		displayFolder: Client Health
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000026
+
+	measure 'Portal Adoption Rate' =
+			DIVIDE(
+				SUM(mart_client_service_360[portal_monthly_active_users]),
+				SUM(mart_client_service_360[active_employee_count])
+			)
+		formatString: 0.00%
+		displayFolder: Client Health
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000027
+
+	measure 'Total Annual Contract Value' = SUM(dim_client_company[annual_contract_value])
+		formatString: $#,0
+		displayFolder: Client Health
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000028
+
+	measure 'Active Client Count' = COUNTROWS(FILTER(dim_client_company, dim_client_company[is_active] = TRUE()))
+		formatString: #,0
+		displayFolder: Client Health
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000029
+
+	column Value
+		lineageTag: 61ae03ce-9ce8-4b8f-a82d-2f20ab794b06
+		isNameInferred
+		sourceColumn: [Value]
+
+	partition _Measures = calculated
+		mode: import
+		source = {0}
+

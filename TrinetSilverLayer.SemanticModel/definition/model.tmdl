@@ -1,0 +1,27 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DirectLake - TrinetDemo"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","WebModelingEdit","DaxQueryView_Desktop","DaxCopilot_Change_Accepted_In_Desktop"]
+
+ref table fact_benefit_enrollment
+ref table dim_hr_policy
+ref table dim_benefit_plan
+ref table fact_application_event
+ref table fact_employment_lifecycle
+ref table fact_service_interaction
+ref table fact_time_attendance
+ref table dim_client_company
+ref table fact_compliance_case
+ref table dim_date
+ref table dim_employee_master
+ref table fact_payroll_result
+

@@ -1,0 +1,26 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DirectLake - TrinetDemo"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","DevMode","RemoteModeling"]
+
+ref table mart_policy_compliance_monthly
+ref table dim_benefit_plan
+ref table mart_workforce_attrition_monthly
+ref table dim_calendar_month
+ref table dim_hr_policy
+ref table dim_date
+ref table mart_client_service_360
+ref table mart_payroll_benchmark_monthly
+ref table dim_employee_master
+ref table dim_client_company
+ref table _Measures
+

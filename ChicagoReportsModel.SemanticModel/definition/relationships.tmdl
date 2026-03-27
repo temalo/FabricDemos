@@ -1,0 +1,25 @@
+relationship 89e7d30a-91c7-6b25-6c5b-e7260bdab250
+	crossFilteringBehavior: bothDirections
+	fromColumn: ChicagoReports.District
+	toColumn: dbo_PoliceStations.District
+
+relationship 74afe0e3-7472-e863-4eff-97795cad3b46
+	crossFilteringBehavior: bothDirections
+	fromColumn: ChicagoReports.IUCR
+	toColumn: dbo_iUCRCodes.IUCR
+
+relationship 8aedb720-4cae-ecbc-6dd2-5bb28bdf5aae
+	crossFilteringBehavior: bothDirections
+	fromColumn: ChicagoReports.CommunityArea
+	toColumn: dbo_CommunityArea.CommunityId
+
+relationship e1a8e9c3-3f5e-6814-e4f2-f95174ccd34a
+	crossFilteringBehavior: bothDirections
+	fromColumn: ChicagoReports.District
+	toColumn: dbo_PoliceDistricts.DIST_NUM
+
+relationship 271c0c2a-a947-846a-eb06-9ba7e65fc006
+	crossFilteringBehavior: bothDirections
+	fromColumn: ChicagoReports.DateOnly
+	toColumn: dbo_DateDimension.Date
+

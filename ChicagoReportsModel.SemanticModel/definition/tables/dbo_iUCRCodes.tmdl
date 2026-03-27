@@ -1,0 +1,63 @@
+table dbo_iUCRCodes
+	lineageTag: 5368be0d-7341-43ce-bd19-e22bec056ce4
+	sourceLineageTag: [dbo].[dbo_iUCRCodes]
+
+	column IUCR
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f739ef9a-33ed-49b3-8eaf-c9ba5740ef15
+		sourceLineageTag: IUCR
+		summarizeBy: none
+		sourceColumn: IUCR
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrimaryDescription
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0b67c5e4-6795-4a38-8f12-42754f928bc6
+		sourceLineageTag: PrimaryDescription
+		summarizeBy: none
+		sourceColumn: PrimaryDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column SecondaryDescription
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9e90ae0f-e2bf-4e44-87ba-506451e8b019
+		sourceLineageTag: SecondaryDescription
+		summarizeBy: none
+		sourceColumn: SecondaryDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column IndexCode
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 30cf6a2f-deba-4f2f-a5c9-9286b0ec9526
+		sourceLineageTag: IndexCode
+		summarizeBy: none
+		sourceColumn: IndexCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Active
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: dc0e9e1b-5ca3-4d4d-8257-8069d09eb8c1
+		sourceLineageTag: Active
+		summarizeBy: none
+		sourceColumn: Active
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dbo_iUCRCodes = entity
+		mode: directLake
+		source
+			entityName: dbo_iUCRCodes
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

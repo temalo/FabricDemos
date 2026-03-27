@@ -1,0 +1,398 @@
+[
+  {
+    "name": "fact_time_attendance",
+    "path": "/Tables/silver",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/silver/fact_time_attendance"
+      }
+    }
+  },
+  {
+    "name": "fact_service_interaction",
+    "path": "/Tables/silver",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/silver/fact_service_interaction"
+      }
+    }
+  },
+  {
+    "name": "fact_payroll_result",
+    "path": "/Tables/silver",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/silver/fact_payroll_result"
+      }
+    }
+  },
+  {
+    "name": "fact_employment_lifecycle",
+    "path": "/Tables/silver",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/silver/fact_employment_lifecycle"
+      }
+    }
+  },
+  {
+    "name": "fact_compliance_case",
+    "path": "/Tables/silver",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/silver/fact_compliance_case"
+      }
+    }
+  },
+  {
+    "name": "fact_benefit_enrollment",
+    "path": "/Tables/silver",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/silver/fact_benefit_enrollment"
+      }
+    }
+  },
+  {
+    "name": "fact_application_event",
+    "path": "/Tables/silver",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/silver/fact_application_event"
+      }
+    }
+  },
+  {
+    "name": "dim_hr_policy",
+    "path": "/Tables/silver",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/silver/dim_hr_policy"
+      }
+    }
+  },
+  {
+    "name": "dim_employee_master",
+    "path": "/Tables/silver",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/silver/dim_employee_master"
+      }
+    }
+  },
+  {
+    "name": "dim_date",
+    "path": "/Tables/silver",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/silver/dim_date"
+      }
+    }
+  },
+  {
+    "name": "dim_client_company",
+    "path": "/Tables/silver",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/silver/dim_client_company"
+      }
+    }
+  },
+  {
+    "name": "dim_benefit_plan",
+    "path": "/Tables/silver",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/silver/dim_benefit_plan"
+      }
+    }
+  },
+  {
+    "name": "mart_workforce_attrition_monthly",
+    "path": "/Tables/gold",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/gold/mart_workforce_attrition_monthly"
+      }
+    }
+  },
+  {
+    "name": "mart_policy_compliance_monthly",
+    "path": "/Tables/gold",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/gold/mart_policy_compliance_monthly"
+      }
+    }
+  },
+  {
+    "name": "mart_payroll_benchmark_monthly",
+    "path": "/Tables/gold",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/gold/mart_payroll_benchmark_monthly"
+      }
+    }
+  },
+  {
+    "name": "mart_client_service_360",
+    "path": "/Tables/gold",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/gold/mart_client_service_360"
+      }
+    }
+  },
+  {
+    "name": "dim_hr_policy",
+    "path": "/Tables/gold",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/gold/dim_hr_policy"
+      }
+    }
+  },
+  {
+    "name": "dim_employee_master",
+    "path": "/Tables/gold",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/gold/dim_employee_master"
+      }
+    }
+  },
+  {
+    "name": "dim_date",
+    "path": "/Tables/gold",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/gold/dim_date"
+      }
+    }
+  },
+  {
+    "name": "dim_client_company",
+    "path": "/Tables/gold",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/gold/dim_client_company"
+      }
+    }
+  },
+  {
+    "name": "dim_calendar_month",
+    "path": "/Tables/gold",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/gold/dim_calendar_month"
+      }
+    }
+  },
+  {
+    "name": "dim_benefit_plan",
+    "path": "/Tables/gold",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/gold/dim_benefit_plan"
+      }
+    }
+  },
+  {
+    "name": "bronze_timekeeping_event_raw",
+    "path": "/Tables/bronze",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/bronze/bronze_timekeeping_event_raw"
+      }
+    }
+  },
+  {
+    "name": "bronze_service_case_raw",
+    "path": "/Tables/bronze",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/bronze/bronze_service_case_raw"
+      }
+    }
+  },
+  {
+    "name": "bronze_payroll_register_raw",
+    "path": "/Tables/bronze",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/bronze/bronze_payroll_register_raw"
+      }
+    }
+  },
+  {
+    "name": "bronze_hr_policy_raw",
+    "path": "/Tables/bronze",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/bronze/bronze_hr_policy_raw"
+      }
+    }
+  },
+  {
+    "name": "bronze_employment_event_raw",
+    "path": "/Tables/bronze",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/bronze/bronze_employment_event_raw"
+      }
+    }
+  },
+  {
+    "name": "bronze_employee_roster_raw",
+    "path": "/Tables/bronze",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/bronze/bronze_employee_roster_raw"
+      }
+    }
+  },
+  {
+    "name": "bronze_compliance_record_raw",
+    "path": "/Tables/bronze",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/bronze/bronze_compliance_record_raw"
+      }
+    }
+  },
+  {
+    "name": "bronze_client_company_raw",
+    "path": "/Tables/bronze",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/bronze/bronze_client_company_raw"
+      }
+    }
+  },
+  {
+    "name": "bronze_benefit_plan_raw",
+    "path": "/Tables/bronze",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/bronze/bronze_benefit_plan_raw"
+      }
+    }
+  },
+  {
+    "name": "bronze_benefit_election_raw",
+    "path": "/Tables/bronze",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/bronze/bronze_benefit_election_raw"
+      }
+    }
+  },
+  {
+    "name": "bronze_application_audit_raw",
+    "path": "/Tables/bronze",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/trinet/bronze/bronze_application_audit_raw"
+      }
+    }
+  }
+]

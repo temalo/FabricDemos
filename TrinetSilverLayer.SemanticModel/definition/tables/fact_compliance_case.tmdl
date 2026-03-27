@@ -1,0 +1,171 @@
+table fact_compliance_case
+	lineageTag: df6a30e5-cffe-45f8-a2aa-3477c9397e82
+	sourceLineageTag: [silver].[fact_compliance_case]
+
+	measure 'Total Compliance Cases' = ```
+			
+			        COUNTROWS('fact_compliance_case')
+			```
+		formatString: 0
+		lineageTag: eb689491-e61a-459a-94f2-4defea868ab4
+
+	measure 'Total Penalties' = ```
+			
+			        SUM('fact_compliance_case'[penalty_amount])
+			```
+		lineageTag: 2754276f-5b46-4912-befc-0af87068b74f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Penalty per Case' = ```
+			
+			        DIVIDE(
+			            [Total Penalties],
+			            [Total Compliance Cases]
+			        )
+			```
+		lineageTag: b47dbab6-1841-48b2-9f9d-dc2f038726e9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column compliance_case_key
+		dataType: string
+		lineageTag: e43048cf-045e-4866-8dea-b1abd71d295f
+		sourceLineageTag: compliance_case_key
+		summarizeBy: none
+		sourceColumn: compliance_case_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 5279e682-6522-4e1a-bfe6-70aaeba7d8d1
+		sourceLineageTag: client_key
+		summarizeBy: none
+		sourceColumn: client_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 8f3e89b7-20d8-4c29-808f-ee09055a575f
+		sourceLineageTag: employee_key
+		summarizeBy: none
+		sourceColumn: employee_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column policy_key
+		dataType: int64
+		formatString: 0
+		lineageTag: a5f5d635-57fe-4672-82e5-c0635575d8ae
+		sourceLineageTag: policy_key
+		summarizeBy: none
+		sourceColumn: policy_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column filing_type
+		dataType: string
+		lineageTag: 8c348662-f27b-4325-ac78-ffda9dcbac7c
+		sourceLineageTag: filing_type
+		summarizeBy: none
+		sourceColumn: filing_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column jurisdiction_code
+		dataType: string
+		lineageTag: c5d930a7-3d18-4492-85f9-500680161d08
+		sourceLineageTag: jurisdiction_code
+		summarizeBy: none
+		sourceColumn: jurisdiction_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column due_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 5aa81b76-1643-4f7f-a1a2-ed58119034c6
+		sourceLineageTag: due_date_key
+		summarizeBy: none
+		sourceColumn: due_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column filed_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ba5e880-42d1-443f-8bca-adc5c88f5cc6
+		sourceLineageTag: filed_date_key
+		summarizeBy: sum
+		sourceColumn: filed_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column compliance_status
+		dataType: string
+		lineageTag: 5d115d77-07fc-478e-9bca-77cf91a222d0
+		sourceLineageTag: compliance_status
+		summarizeBy: none
+		sourceColumn: compliance_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column issue_severity
+		dataType: string
+		lineageTag: f7c8c934-9826-482b-8d29-fe8d415d6b8a
+		sourceLineageTag: issue_severity
+		summarizeBy: none
+		sourceColumn: issue_severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column penalty_amount
+		dataType: double
+		lineageTag: e036c86f-a92f-4d1c-8943-54b138fc12a3
+		sourceLineageTag: penalty_amount
+		summarizeBy: sum
+		sourceColumn: penalty_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column audit_flag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e1d69bb5-972f-4947-b576-4aee247fa6f5
+		sourceLineageTag: audit_flag
+		summarizeBy: none
+		sourceColumn: audit_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_hash
+		dataType: string
+		lineageTag: 0e59ae67-f6fd-45a6-8d70-b4e9f28a48a4
+		sourceLineageTag: record_hash
+		summarizeBy: none
+		sourceColumn: record_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column partition_col_MONTH_event_ts
+		dataType: string
+		lineageTag: 4842e0c0-fa37-4c6e-83ef-1c227e5c5c79
+		sourceLineageTag: partition_col_MONTH_event_ts
+		summarizeBy: none
+		sourceColumn: partition_col_MONTH_event_ts
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_compliance_case = entity
+		mode: directLake
+		source
+			entityName: fact_compliance_case
+			schemaName: silver
+			expressionSource: 'DirectLake - TrinetDemo'
+

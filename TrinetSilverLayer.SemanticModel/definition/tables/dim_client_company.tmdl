@@ -1,0 +1,143 @@
+table dim_client_company
+	lineageTag: 63edea3c-d426-4567-8941-9ad8bd9dcb04
+	sourceLineageTag: [silver].[dim_client_company]
+
+	column client_key
+		dataType: int64
+		formatString: 0
+		lineageTag: fff747c3-7193-4198-a8c6-f3b46ebc4d01
+		sourceLineageTag: client_key
+		summarizeBy: none
+		sourceColumn: client_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_id
+		dataType: string
+		lineageTag: 068115fb-46d2-46db-b712-3170340f3b93
+		sourceLineageTag: company_id
+		summarizeBy: none
+		sourceColumn: company_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_name
+		dataType: string
+		lineageTag: 8e4a14a0-9ebc-4ee0-9302-d0f9736ab7e1
+		sourceLineageTag: company_name
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column industry
+		dataType: string
+		lineageTag: 45efb6e4-2d34-4796-913d-c19aaf16d309
+		sourceLineageTag: industry
+		summarizeBy: none
+		sourceColumn: industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column segment
+		dataType: string
+		lineageTag: 64d1c64c-1784-4b19-a56b-f0e1146fe007
+		sourceLineageTag: segment
+		summarizeBy: none
+		sourceColumn: segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column covered_lives
+		dataType: int64
+		formatString: 0
+		lineageTag: 45ef2475-3749-41e0-aa52-4ffbf01aa88e
+		sourceLineageTag: covered_lives
+		summarizeBy: sum
+		sourceColumn: covered_lives
+
+		annotation SummarizationSetBy = Automatic
+
+	column hr_service_tier
+		dataType: string
+		lineageTag: d114522e-fb5a-4bb3-83f8-d25cca202427
+		sourceLineageTag: hr_service_tier
+		summarizeBy: none
+		sourceColumn: hr_service_tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column contract_status
+		dataType: string
+		lineageTag: d2ecf97c-20f9-4745-83e3-009ffb4356c2
+		sourceLineageTag: contract_status
+		summarizeBy: none
+		sourceColumn: contract_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column peo_start_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 16f25386-5851-418a-88fe-fc1cbd0c5350
+		sourceLineageTag: peo_start_date
+		summarizeBy: none
+		sourceColumn: peo_start_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column headquarter_state
+		dataType: string
+		lineageTag: c7dc39b8-2df3-4aaa-b250-e1995700c237
+		sourceLineageTag: headquarter_state
+		summarizeBy: none
+		sourceColumn: headquarter_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column headquarter_city
+		dataType: string
+		lineageTag: 37c52b2b-d7cc-4fe6-9940-ff5f2088ac1f
+		sourceLineageTag: headquarter_city
+		summarizeBy: none
+		sourceColumn: headquarter_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column compliance_complexity
+		dataType: string
+		lineageTag: 0fdaee1c-c00a-4c99-8696-f6b64ade3d94
+		sourceLineageTag: compliance_complexity
+		summarizeBy: none
+		sourceColumn: compliance_complexity
+
+		annotation SummarizationSetBy = Automatic
+
+	column annual_contract_value
+		dataType: double
+		lineageTag: da6b3a31-7efd-49e5-88b4-bbd772257693
+		sourceLineageTag: annual_contract_value
+		summarizeBy: sum
+		sourceColumn: annual_contract_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 08e39c8a-9d89-4fa7-bfbb-ca9d6909f324
+		sourceLineageTag: is_active
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_client_company = entity
+		mode: directLake
+		source
+			entityName: dim_client_company
+			schemaName: silver
+			expressionSource: 'DirectLake - TrinetDemo'
+

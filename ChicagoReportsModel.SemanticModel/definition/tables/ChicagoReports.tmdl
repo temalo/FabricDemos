@@ -1,0 +1,292 @@
+table ChicagoReports
+	lineageTag: f8d89fd7-7182-4e26-9b45-ab2884328160
+	sourceLineageTag: [dbo].[ChicagoReports]
+
+	measure TotalReports = COUNT(ChicagoReports[CaseNumber])
+		formatString: 0
+		lineageTag: 9e7cdf9e-d4fe-4aee-9e0b-d3811cb89bbb
+
+		changedProperty = Name
+
+	measure TotalArrests = CALCULATE(COUNT(ChicagoReports[CaseNumber]),ChicagoReports[Arrest]="true")
+		formatString: 0
+		lineageTag: f573cdf0-3b14-41f7-a912-48c02b41689d
+
+		changedProperty = Name
+
+	measure AverageDailyReports = AVERAGEX(VALUES(ChicagoReports[DateOnly]),[TotalReports])
+		lineageTag: 2867830c-1c47-455e-b655-d01d509a73cd
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AverageDailyArrests = AVERAGEX(VALUES(ChicagoReports[DateOnly]),[TotalArrests])
+		lineageTag: 7a3c2abe-33b0-4e12-8a46-4b2ceb675c67
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure ArrestPct = DIVIDE([TotalArrests],[TotalReports])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ce0f4f23-ce23-4b64-b44e-5e7869ecef85
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure TotalNoArrests = CALCULATE(COUNT(ChicagoReports[CaseNumber]),ChicagoReports[Arrest]="false")
+		formatString: 0
+		lineageTag: 4c5484b0-e473-49e0-9e8f-3ff2d438511e
+
+		changedProperty = Name
+
+	measure 'ArrestPct YoY Change' =
+			
+			VAR __PREV_YEAR = CALCULATE([ArrestPct], DATEADD('dbo_DateDimension'[Date], -1, YEAR))
+			RETURN
+				DIVIDE([ArrestPct] - __PREV_YEAR, __PREV_YEAR)
+		lineageTag: 7f0ad0a3-e85f-4190-b5e9-5d27e4f7dcc9
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: ef581900-e418-42cb-bf2d-49127a094b1a
+		sourceLineageTag: id
+		summarizeBy: none
+		sourceColumn: id
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column CaseNumber
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a68da84c-c135-419d-aed6-909db0c7b29d
+		sourceLineageTag: CaseNumber
+		summarizeBy: none
+		sourceColumn: CaseNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: a9f1798f-24f2-4bad-947e-d797b112076a
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Block
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5569f2c9-e2f2-4f0f-9fcc-ebf7a3a4ceed
+		sourceLineageTag: Block
+		summarizeBy: none
+		sourceColumn: Block
+
+		annotation SummarizationSetBy = Automatic
+
+	column IUCR
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 57d30e20-fdc8-4b0f-8290-7b856eb2ce27
+		sourceLineageTag: IUCR
+		summarizeBy: none
+		sourceColumn: IUCR
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrimaryType
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 11407dae-5a71-45a4-add9-ed1c6c67316f
+		sourceLineageTag: PrimaryType
+		summarizeBy: none
+		sourceColumn: PrimaryType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b22e7ec6-c313-447c-aac6-fcfa0aa8a83a
+		sourceLineageTag: Description
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column LocationDescription
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e3b0d97f-5553-4a45-bbfd-70baa53cf9b3
+		sourceLineageTag: LocationDescription
+		summarizeBy: none
+		sourceColumn: LocationDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column Arrest
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a1ae4986-24a2-4243-8c3e-68d3dd4eacb6
+		sourceLineageTag: Arrest
+		summarizeBy: none
+		sourceColumn: Arrest
+
+		annotation SummarizationSetBy = Automatic
+
+	column Domestic
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: cec04ee2-0c48-47de-8f23-5d1c0c05003e
+		sourceLineageTag: Domestic
+		summarizeBy: none
+		sourceColumn: Domestic
+
+		annotation SummarizationSetBy = Automatic
+
+	column Beat
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7978dfec-a9b5-47d3-b5a2-9d8dc3941f03
+		sourceLineageTag: Beat
+		summarizeBy: none
+		sourceColumn: Beat
+
+		annotation SummarizationSetBy = Automatic
+
+	column District
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1fc959fb-cbcd-45f6-80b5-c04b7a59060f
+		sourceLineageTag: District
+		summarizeBy: none
+		sourceColumn: District
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ward
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6dbf82b2-8063-4c9e-98bb-89dfaee3cad1
+		sourceLineageTag: Ward
+		summarizeBy: none
+		sourceColumn: Ward
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommunityArea
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: fb79d352-4b51-4718-b671-54487df91e9e
+		sourceLineageTag: CommunityArea
+		summarizeBy: none
+		sourceColumn: CommunityArea
+
+		annotation SummarizationSetBy = Automatic
+
+	column FBICode
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b06faf68-5d3e-45a3-a31a-e9d98f9c8837
+		sourceLineageTag: FBICode
+		summarizeBy: none
+		sourceColumn: FBICode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: abac6b56-fd8b-4b2c-8236-6250092523dc
+		sourceLineageTag: Year
+		summarizeBy: none
+		sourceColumn: Year
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column LastUpdated
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 6439acf9-b446-4e55-afca-c92764d2c178
+		sourceLineageTag: LastUpdated
+		summarizeBy: none
+		sourceColumn: LastUpdated
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: ed3f4e98-72a9-45f7-85dd-9911ca95d916
+		sourceLineageTag: Latitude
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 5c91ee80-cda4-49ec-a025-65911913e702
+		sourceLineageTag: Longitude
+		summarizeBy: none
+		sourceColumn: Longitude
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Location
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 840d80f4-9b97-4677-8416-40ad1f0d85b9
+		sourceLineageTag: Location
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateOnly
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 367cccfe-facd-48c1-be90-492dc0a73051
+		sourceLineageTag: DateOnly
+		summarizeBy: none
+		sourceColumn: DateOnly
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ChicagoReports = entity
+		mode: directLake
+		source
+			entityName: ChicagoReports
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

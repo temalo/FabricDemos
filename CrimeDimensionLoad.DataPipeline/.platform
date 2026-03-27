@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "CrimeDimensionLoad"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "04564d19-de68-a059-4b94-63688c1fab41"
+  }
+}

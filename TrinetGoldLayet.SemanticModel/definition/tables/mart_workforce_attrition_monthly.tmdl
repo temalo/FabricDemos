@@ -1,0 +1,133 @@
+table mart_workforce_attrition_monthly
+	lineageTag: 5038e262-714e-43a1-b8ed-4ee7535fc7f0
+	sourceLineageTag: [gold].[mart_workforce_attrition_monthly]
+
+	column attrition_key
+		dataType: string
+		lineageTag: 02c0957d-5b40-4535-89a1-74e577764673
+		sourceLineageTag: attrition_key
+		summarizeBy: none
+		sourceColumn: attrition_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 14328ad8-e2ac-4fdf-bfe0-1080519946c1
+		sourceLineageTag: client_key
+		summarizeBy: sum
+		sourceColumn: client_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column period_month_key
+		dataType: int64
+		formatString: 0
+		lineageTag: f59817de-1517-4c1d-94d4-fe718aa94ac9
+		sourceLineageTag: period_month_key
+		summarizeBy: sum
+		sourceColumn: period_month_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_headcount
+		dataType: int64
+		formatString: 0
+		lineageTag: 31c92d1f-328a-4f91-b8e9-0622eaa46cc2
+		sourceLineageTag: avg_headcount
+		summarizeBy: sum
+		sourceColumn: avg_headcount
+
+		annotation SummarizationSetBy = Automatic
+
+	column hires
+		dataType: int64
+		formatString: 0
+		lineageTag: 4faf4a33-ffa6-4e96-bff9-2e3c1211c414
+		sourceLineageTag: hires
+		summarizeBy: sum
+		sourceColumn: hires
+
+		annotation SummarizationSetBy = Automatic
+
+	column terminations
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f8ba2bd-c0e8-4c87-900b-0ed3c86564ee
+		sourceLineageTag: terminations
+		summarizeBy: sum
+		sourceColumn: terminations
+
+		annotation SummarizationSetBy = Automatic
+
+	column voluntary_attrition_pct
+		dataType: double
+		lineageTag: 6bf2ca4f-303b-497a-80a4-6421bbce0012
+		sourceLineageTag: voluntary_attrition_pct
+		summarizeBy: sum
+		sourceColumn: voluntary_attrition_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column internal_mobility_pct
+		dataType: double
+		lineageTag: 06a45899-f2fa-448d-896b-d65ff275025f
+		sourceLineageTag: internal_mobility_pct
+		summarizeBy: sum
+		sourceColumn: internal_mobility_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_performance_rating
+		dataType: double
+		lineageTag: 91542e47-a54f-4219-b919-6a683bfd0eaa
+		sourceLineageTag: avg_performance_rating
+		summarizeBy: sum
+		sourceColumn: avg_performance_rating
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column engagement_score
+		dataType: double
+		lineageTag: 5c4fac6f-8e7c-4951-a796-79f4c4ca44a2
+		sourceLineageTag: engagement_score
+		summarizeBy: sum
+		sourceColumn: engagement_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column recruiting_pipeline_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 951b483c-4a73-4067-805d-693deb214ffd
+		sourceLineageTag: recruiting_pipeline_count
+		summarizeBy: sum
+		sourceColumn: recruiting_pipeline_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column partition_col_MONTH_dw_insert_ts
+		dataType: string
+		lineageTag: aaff1205-7390-4889-a827-388771f51ee1
+		sourceLineageTag: partition_col_MONTH_dw_insert_ts
+		summarizeBy: none
+		sourceColumn: partition_col_MONTH_dw_insert_ts
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mart_workforce_attrition_monthly = entity
+		mode: directLake
+		source
+			entityName: mart_workforce_attrition_monthly
+			schemaName: gold
+			expressionSource: 'DirectLake - TrinetDemo'
+

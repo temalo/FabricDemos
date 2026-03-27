@@ -1,0 +1,40 @@
+relationship dim_client_company_dim_employee_master
+	fromColumn: dim_employee_master.client_key
+	toColumn: dim_client_company.client_key
+
+relationship dim_client_company_mart_client_service_360
+	fromColumn: mart_client_service_360.client_key
+	toColumn: dim_client_company.client_key
+
+relationship dim_client_company_mart_payroll_benchmark_monthly
+	fromColumn: mart_payroll_benchmark_monthly.client_key
+	toColumn: dim_client_company.client_key
+
+relationship dim_client_company_mart_workforce_attrition_monthly
+	fromColumn: mart_workforce_attrition_monthly.client_key
+	toColumn: dim_client_company.client_key
+
+relationship dim_client_company_mart_policy_compliance_monthly
+	fromColumn: mart_policy_compliance_monthly.client_key
+	toColumn: dim_client_company.client_key
+
+relationship dim_calendar_month_mart_payroll_benchmark_monthly
+	fromColumn: mart_payroll_benchmark_monthly.period_month_key
+	toColumn: dim_calendar_month.month_key
+
+relationship dim_calendar_month_mart_workforce_attrition_monthly
+	fromColumn: mart_workforce_attrition_monthly.period_month_key
+	toColumn: dim_calendar_month.month_key
+
+relationship dim_calendar_month_mart_policy_compliance_monthly
+	fromColumn: mart_policy_compliance_monthly.period_month_key
+	toColumn: dim_calendar_month.month_key
+
+relationship dim_date_mart_client_service_360
+	fromColumn: mart_client_service_360.snapshot_date_key
+	toColumn: dim_date.date_key
+
+relationship dim_hr_policy_mart_policy_compliance_monthly
+	fromColumn: mart_policy_compliance_monthly.policy_key
+	toColumn: dim_hr_policy.policy_key
+

@@ -1,0 +1,1877 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "710f5091-8024-8d39-404d-d49198ce8f0c",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "TrinetSilverLayer",
+  "type": "semantic_model",
+  "userDescription": null,
+  "metadata": {
+    "csdl_relationships": "[{\"FromTable\":\"fact_benefit_enrollment\",\"FromColumn\":\"coverage_start_date_key\",\"ToTable\":\"dim_date\",\"ToColumn\":\"date_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_benefit_enrollment\",\"FromColumn\":\"client_key\",\"ToTable\":\"dim_client_company\",\"ToColumn\":\"client_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_benefit_enrollment\",\"FromColumn\":\"employee_key\",\"ToTable\":\"dim_employee_master\",\"ToColumn\":\"employee_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_benefit_enrollment\",\"FromColumn\":\"plan_key\",\"ToTable\":\"dim_benefit_plan\",\"ToColumn\":\"plan_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_application_event\",\"FromColumn\":\"client_key\",\"ToTable\":\"dim_client_company\",\"ToColumn\":\"client_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_application_event\",\"FromColumn\":\"employee_key\",\"ToTable\":\"dim_employee_master\",\"ToColumn\":\"employee_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_application_event\",\"FromColumn\":\"event_date_key\",\"ToTable\":\"dim_date\",\"ToColumn\":\"date_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_employment_lifecycle\",\"FromColumn\":\"client_key\",\"ToTable\":\"dim_client_company\",\"ToColumn\":\"client_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_employment_lifecycle\",\"FromColumn\":\"event_date_key\",\"ToTable\":\"dim_date\",\"ToColumn\":\"date_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_employment_lifecycle\",\"FromColumn\":\"employee_key\",\"ToTable\":\"dim_employee_master\",\"ToColumn\":\"employee_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_service_interaction\",\"FromColumn\":\"client_key\",\"ToTable\":\"dim_client_company\",\"ToColumn\":\"client_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_service_interaction\",\"FromColumn\":\"closed_date_key\",\"ToTable\":\"dim_date\",\"ToColumn\":\"date_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_time_attendance\",\"FromColumn\":\"client_key\",\"ToTable\":\"dim_client_company\",\"ToColumn\":\"client_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_time_attendance\",\"FromColumn\":\"employee_key\",\"ToTable\":\"dim_employee_master\",\"ToColumn\":\"employee_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_time_attendance\",\"FromColumn\":\"work_date_key\",\"ToTable\":\"dim_date\",\"ToColumn\":\"date_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_compliance_case\",\"FromColumn\":\"client_key\",\"ToTable\":\"dim_client_company\",\"ToColumn\":\"client_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_compliance_case\",\"FromColumn\":\"due_date_key\",\"ToTable\":\"dim_date\",\"ToColumn\":\"date_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_compliance_case\",\"FromColumn\":\"employee_key\",\"ToTable\":\"dim_employee_master\",\"ToColumn\":\"employee_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_compliance_case\",\"FromColumn\":\"policy_key\",\"ToTable\":\"dim_hr_policy\",\"ToColumn\":\"policy_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_payroll_result\",\"FromColumn\":\"client_key\",\"ToTable\":\"dim_client_company\",\"ToColumn\":\"client_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_payroll_result\",\"FromColumn\":\"employee_key\",\"ToTable\":\"dim_employee_master\",\"ToColumn\":\"employee_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"fact_payroll_result\",\"FromColumn\":\"pay_date_key\",\"ToTable\":\"dim_date\",\"ToColumn\":\"date_key\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"}]"
+  },
+  "elements": [
+    {
+      "id": "d8c5a791-c60e-455b-8441-b2503aad9af7",
+      "is_selected": true,
+      "display_name": "dim_benefit_plan",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "bd2293f9-128c-458f-9819-c0e385f951f1",
+          "is_selected": true,
+          "display_name": "carrier_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1e3146ee-df47-4293-a653-576dc2ad0cea",
+          "is_selected": true,
+          "display_name": "coverage_tier",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "88a9e6a1-95b1-4bec-9ed0-427b42aee8e9",
+          "is_selected": true,
+          "display_name": "effective_end_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1e99b96a-0f05-4309-ad95-6e0f2a3d29a6",
+          "is_selected": true,
+          "display_name": "effective_start_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9726ba12-cd13-46b9-b953-14dc274c8c0c",
+          "is_selected": true,
+          "display_name": "employee_monthly_premium",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d4630597-f4e9-4d17-b8c9-91ce6730e501",
+          "is_selected": true,
+          "display_name": "employer_monthly_premium",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3fc99b8c-c061-44ff-a613-d77f3cab296d",
+          "is_selected": true,
+          "display_name": "hsa_eligible",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1504c103-6d07-45bb-9086-91a9c744e69a",
+          "is_selected": true,
+          "display_name": "network_type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3d2ad97f-c01a-4e35-961b-19f792bae69c",
+          "is_selected": true,
+          "display_name": "plan_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "454ea5ce-e68e-4ee2-8aaa-6c5c5dff801a",
+          "is_selected": true,
+          "display_name": "plan_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bc62bb09-87f4-4d0e-95a3-85c1eb94fe6b",
+          "is_selected": true,
+          "display_name": "plan_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0a86f0e1-82e0-4492-bfd5-70c4a5cf93a9",
+          "is_selected": true,
+          "display_name": "plan_type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "63edea3c-d426-4567-8941-9ad8bd9dcb04",
+      "is_selected": true,
+      "display_name": "dim_client_company",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "da6b3a31-7efd-49e5-88b4-bbd772257693",
+          "is_selected": true,
+          "display_name": "annual_contract_value",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fff747c3-7193-4198-a8c6-f3b46ebc4d01",
+          "is_selected": true,
+          "display_name": "client_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "068115fb-46d2-46db-b712-3170340f3b93",
+          "is_selected": true,
+          "display_name": "company_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8e4a14a0-9ebc-4ee0-9302-d0f9736ab7e1",
+          "is_selected": true,
+          "display_name": "company_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0fdaee1c-c00a-4c99-8696-f6b64ade3d94",
+          "is_selected": true,
+          "display_name": "compliance_complexity",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d2ecf97c-20f9-4745-83e3-009ffb4356c2",
+          "is_selected": true,
+          "display_name": "contract_status",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "45ef2475-3749-41e0-aa52-4ffbf01aa88e",
+          "is_selected": true,
+          "display_name": "covered_lives",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "37c52b2b-d7cc-4fe6-9940-ff5f2088ac1f",
+          "is_selected": true,
+          "display_name": "headquarter_city",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c7dc39b8-2df3-4aaa-b250-e1995700c237",
+          "is_selected": true,
+          "display_name": "headquarter_state",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d114522e-fb5a-4bb3-83f8-d25cca202427",
+          "is_selected": true,
+          "display_name": "hr_service_tier",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "45efb6e4-2d34-4796-913d-c19aaf16d309",
+          "is_selected": true,
+          "display_name": "industry",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "08e39c8a-9d89-4fa7-bfbb-ca9d6909f324",
+          "is_selected": true,
+          "display_name": "is_active",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "16f25386-5851-418a-88fe-fc1cbd0c5350",
+          "is_selected": true,
+          "display_name": "peo_start_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "64d1c64c-1784-4b19-a56b-f0e1146fe007",
+          "is_selected": true,
+          "display_name": "segment",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "1ac7f830-5b69-45a8-96c6-ad61f48d7bf3",
+      "is_selected": true,
+      "display_name": "dim_date",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "bf218489-a192-48fa-bef7-c18af8ff06e9",
+          "is_selected": true,
+          "display_name": "date_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "66546c96-8e82-4d8c-abf9-124c8778c62f",
+          "is_selected": true,
+          "display_name": "day_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "52813f37-b838-404c-8ee0-49c7f5a4a8bb",
+          "is_selected": true,
+          "display_name": "day_of_week",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3b07b4d3-6758-4f93-860f-321bf90bf6b6",
+          "is_selected": true,
+          "display_name": "fiscal_quarter",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "27c7c22e-3cae-4db6-8b31-78daacf7645c",
+          "is_selected": true,
+          "display_name": "fiscal_year",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "783a4d30-3a75-478f-8305-f3d74d43ac6a",
+          "is_selected": true,
+          "display_name": "full_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d4446787-463c-4fc2-b1f9-798cf9e732f5",
+          "is_selected": true,
+          "display_name": "is_holiday",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cfe3a507-abba-462a-8318-a6a44ae37b00",
+          "is_selected": true,
+          "display_name": "is_weekend",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "330c2ca5-d6e5-40bf-944d-fa26df450c3a",
+          "is_selected": true,
+          "display_name": "month",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "387ecaf4-98de-4820-8703-0a9bd9cdfc06",
+          "is_selected": true,
+          "display_name": "month_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2219026b-988f-49be-9785-1a58c136d927",
+          "is_selected": true,
+          "display_name": "quarter",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "53c790d0-410a-42e1-852b-177bcec6bb77",
+          "is_selected": true,
+          "display_name": "week_of_year",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "37f6668d-39d2-44e4-b820-6f63574e0d50",
+          "is_selected": true,
+          "display_name": "year",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "e6d230bb-134c-4fbf-be08-0bfcf36f51db",
+      "is_selected": true,
+      "display_name": "dim_employee_master",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "b42e0add-5722-45c3-9219-18ede6534b40",
+          "is_selected": true,
+          "display_name": "annual_salary",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cc68c88d-0486-42f3-8389-61c0714452f0",
+          "is_selected": true,
+          "display_name": "client_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d1fcc4d7-e64c-4c0f-be51-70ea025fb09d",
+          "is_selected": true,
+          "display_name": "department",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d7010ef4-ef25-4647-8e39-94ef7904ddb2",
+          "is_selected": true,
+          "display_name": "employee_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a3e8fdab-27fd-4bd9-aead-2e9bcfb4a89a",
+          "is_selected": true,
+          "display_name": "employee_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e91d69a5-1266-475e-ab1c-61c56a1fa51a",
+          "is_selected": true,
+          "display_name": "employment_status",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fef9e58b-58e8-4e1a-a5af-628a354c6345",
+          "is_selected": true,
+          "display_name": "hire_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8f54054a-9649-415c-a11c-b053d3c060c5",
+          "is_selected": true,
+          "display_name": "hourly_rate",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "51cde86e-d854-4708-bcbe-7af63c98a792",
+          "is_selected": true,
+          "display_name": "job_level",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bce618ab-5c08-4a65-89a4-1014daffce16",
+          "is_selected": true,
+          "display_name": "job_title",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9877bab7-e7bf-4abd-8f53-688565641633",
+          "is_selected": true,
+          "display_name": "manager_employee_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c331c49d-4b46-483e-873c-6582c2398392",
+          "is_selected": true,
+          "display_name": "pay_type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "76ec2694-6f9c-4472-828c-eb225fa22841",
+          "is_selected": true,
+          "display_name": "person_number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7d3b7c22-60c6-41c4-86de-c3dd78bd1fe3",
+          "is_selected": true,
+          "display_name": "remote_flag",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f7c7badd-776d-4f82-9a8a-f933be037971",
+          "is_selected": true,
+          "display_name": "termination_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6d954b51-8c4c-4d53-9971-5d66ae3b4bde",
+          "is_selected": true,
+          "display_name": "work_state",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5dda55a8-3c93-441c-869e-5668b6a0b8b3",
+          "is_selected": true,
+          "display_name": "worker_type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "6fb3b30d-b04f-4788-9c93-e31c2b89338a",
+      "is_selected": true,
+      "display_name": "dim_hr_policy",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "452bff0c-9d56-4514-ad1d-3e9901673756",
+          "is_selected": true,
+          "display_name": "document_classification",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7bd355b7-92fb-4039-b04e-79ed3591a7ed",
+          "is_selected": true,
+          "display_name": "effective_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8789d993-8017-43da-b21a-876cad987bdc",
+          "is_selected": true,
+          "display_name": "immutable_retention_required",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "97055111-d477-4f7e-82b3-57a0d6cb14c1",
+          "is_selected": true,
+          "display_name": "jurisdiction_code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "db6e0b64-08aa-433c-a401-0dbf01899050",
+          "is_selected": true,
+          "display_name": "jurisdiction_level",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a1daab04-6bb8-4d9b-b23b-0b75b922a07b",
+          "is_selected": true,
+          "display_name": "next_review_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6b412f0c-05e2-4990-adc7-4dbb4c8e962b",
+          "is_selected": true,
+          "display_name": "policy_category",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2d71650a-3221-4b67-9511-035ef47c041b",
+          "is_selected": true,
+          "display_name": "policy_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "95f0c678-08ce-464f-b288-af4f5bfbf704",
+          "is_selected": true,
+          "display_name": "policy_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "12fbb75c-616d-4178-8e75-a4b3d71a599d",
+          "is_selected": true,
+          "display_name": "policy_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bec8f0b0-3020-40dd-b9dc-399fcdae41fd",
+          "is_selected": true,
+          "display_name": "policy_owner",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "5acdfbbe-f387-4183-976b-780bc3ee72a4",
+      "is_selected": true,
+      "display_name": "fact_application_event",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "4c7fd113-df04-49eb-bd6c-43d1aa7fe068",
+          "is_selected": true,
+          "display_name": "api_endpoint",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d00c34db-d653-4030-8525-76b17b0f75cc",
+          "is_selected": true,
+          "display_name": "app_event_key",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "28d077cf-38d1-4ae3-b47b-ca26d4c3963c",
+          "is_selected": true,
+          "display_name": "application_area",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d8525b78-fda4-4169-a7f1-d308cad6bd94",
+          "is_selected": true,
+          "display_name": "audit_action",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "35b7df0b-21b2-4694-b6a0-5ca2d0e1280e",
+          "is_selected": true,
+          "display_name": "auth_method",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "75385b4d-a132-4706-bbd6-5149c6a50115",
+          "is_selected": true,
+          "display_name": "Avg Response Time (ms)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2518755c-c7bb-4309-bf70-f31858adb709",
+          "is_selected": true,
+          "display_name": "channel",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b31fb4e1-08c9-480b-af4c-6472a8f8ea52",
+          "is_selected": true,
+          "display_name": "client_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "236f29cf-20fe-4fe2-9f7f-50c0fbde9d76",
+          "is_selected": true,
+          "display_name": "employee_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1d469621-b13a-4052-ab0a-f94bee243bea",
+          "is_selected": true,
+          "display_name": "event_date_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2f79ef57-6814-4437-b660-c469dcf5d864",
+          "is_selected": true,
+          "display_name": "event_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c8e41b5a-cdf9-463a-b871-54ad579697df",
+          "is_selected": true,
+          "display_name": "partition_col_MONTH_event_ts",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "31d18839-1fc5-46dd-ac5c-e211aaaea323",
+          "is_selected": true,
+          "display_name": "response_time_ms",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1cdbebbc-2d15-4db5-b507-bcb3860853c1",
+          "is_selected": true,
+          "display_name": "session_duration_seconds",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0005525d-06a2-43fb-911b-e6438b8ac3ff",
+          "is_selected": true,
+          "display_name": "Success Count",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "14541261-1697-4d78-9d52-9eb8e629320a",
+          "is_selected": true,
+          "display_name": "Success Rate",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "58b651ea-36ce-4ba4-8c52-aae8b29702ce",
+          "is_selected": true,
+          "display_name": "success_flag",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f910723f-938d-46a3-ae57-d0b7017b1a83",
+          "is_selected": true,
+          "display_name": "Total Application Events",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "8e3fc8ba-004c-403a-9b27-9fe9cfcb61e5",
+      "is_selected": true,
+      "display_name": "fact_benefit_enrollment",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "0d73c027-65f5-44e1-a7e4-f9d17ea6f1f1",
+          "is_selected": true,
+          "display_name": "Avg Employer Benefit per Employee",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b990f5f7-be12-407c-8a48-6b09bb53d985",
+          "is_selected": true,
+          "display_name": "client_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b2d17320-10dc-4c06-bc0d-be31c4c4a6bf",
+          "is_selected": true,
+          "display_name": "coverage_end_date_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cee454fa-454d-4643-9f09-8b272f914e30",
+          "is_selected": true,
+          "display_name": "coverage_start_date_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d2f65d90-8836-45e7-a34b-d4cd2ead530f",
+          "is_selected": true,
+          "display_name": "dependent_count",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "010f8a36-eaff-41fc-a801-4474c6660224",
+          "is_selected": true,
+          "display_name": "election_status",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "41776234-976f-4e09-bbcf-eeec4d4d2373",
+          "is_selected": true,
+          "display_name": "election_type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3d346d9b-7d1b-4edc-aecd-8c9330c981f6",
+          "is_selected": true,
+          "display_name": "Employee Benefit Contribution",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fa3ddff9-cd79-4982-a440-f4a722fef6b4",
+          "is_selected": true,
+          "display_name": "employee_contribution",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b98786df-3b08-4021-9451-ed3e1740236d",
+          "is_selected": true,
+          "display_name": "employee_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e8e4b047-1040-4b44-9b95-85a12277b3ab",
+          "is_selected": true,
+          "display_name": "Employer Benefit Contribution",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "11d16549-74af-485e-8988-3bf64b028438",
+          "is_selected": true,
+          "display_name": "employer_contribution",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bf9d9e4d-d3ee-401f-bdb9-0c334d3ac752",
+          "is_selected": true,
+          "display_name": "enrollment_key",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c6b04804-dafe-45d1-9507-4ba90c201fed",
+          "is_selected": true,
+          "display_name": "fsa_balance",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5e6c66cf-a8cf-423a-bc80-113c807858fb",
+          "is_selected": true,
+          "display_name": "hsa_balance",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0298b985-e1a9-4a8b-924b-45362bbccfc2",
+          "is_selected": true,
+          "display_name": "open_enrollment_year",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a8f17cca-bd34-4b6c-97d7-10baddcf43cb",
+          "is_selected": true,
+          "display_name": "partition_col_MONTH_enrollment_ts",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a19fb283-15a7-48d5-b12d-a830c46ee986",
+          "is_selected": true,
+          "display_name": "plan_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1f12c065-e16c-4e4a-804b-ad236bba3f33",
+          "is_selected": true,
+          "display_name": "Total Benefit Cost",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "df6a30e5-cffe-45f8-a2aa-3477c9397e82",
+      "is_selected": true,
+      "display_name": "fact_compliance_case",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "e1d69bb5-972f-4947-b576-4aee247fa6f5",
+          "is_selected": true,
+          "display_name": "audit_flag",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b47dbab6-1841-48b2-9f9d-dc2f038726e9",
+          "is_selected": true,
+          "display_name": "Avg Penalty per Case",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5279e682-6522-4e1a-bfe6-70aaeba7d8d1",
+          "is_selected": true,
+          "display_name": "client_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e43048cf-045e-4866-8dea-b1abd71d295f",
+          "is_selected": true,
+          "display_name": "compliance_case_key",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5d115d77-07fc-478e-9bca-77cf91a222d0",
+          "is_selected": true,
+          "display_name": "compliance_status",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5aa81b76-1643-4f7f-a1a2-ed58119034c6",
+          "is_selected": true,
+          "display_name": "due_date_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8f3e89b7-20d8-4c29-808f-ee09055a575f",
+          "is_selected": true,
+          "display_name": "employee_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9ba5e880-42d1-443f-8bca-adc5c88f5cc6",
+          "is_selected": true,
+          "display_name": "filed_date_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8c348662-f27b-4325-ac78-ffda9dcbac7c",
+          "is_selected": true,
+          "display_name": "filing_type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f7c8c934-9826-482b-8d29-fe8d415d6b8a",
+          "is_selected": true,
+          "display_name": "issue_severity",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c5d930a7-3d18-4492-85f9-500680161d08",
+          "is_selected": true,
+          "display_name": "jurisdiction_code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4842e0c0-fa37-4c6e-83ef-1c227e5c5c79",
+          "is_selected": true,
+          "display_name": "partition_col_MONTH_event_ts",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e036c86f-a92f-4d1c-8943-54b138fc12a3",
+          "is_selected": true,
+          "display_name": "penalty_amount",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a5f5d635-57fe-4672-82e5-c0635575d8ae",
+          "is_selected": true,
+          "display_name": "policy_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0e59ae67-f6fd-45a6-8d70-b4e9f28a48a4",
+          "is_selected": true,
+          "display_name": "record_hash",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "eb689491-e61a-459a-94f2-4defea868ab4",
+          "is_selected": true,
+          "display_name": "Total Compliance Cases",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2754276f-5b46-4912-befc-0af87068b74f",
+          "is_selected": true,
+          "display_name": "Total Penalties",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "80b5f63c-be88-4a23-bf50-0eb9315bfe87",
+      "is_selected": true,
+      "display_name": "fact_employment_lifecycle",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "b29c75ae-cc3b-4c66-9619-ac8ae6582065",
+          "is_selected": true,
+          "display_name": "Avg Performance Rating",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "92308294-e38e-40e8-90e6-43ceaaa2ec37",
+          "is_selected": true,
+          "display_name": "client_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "25317d2f-12f7-4056-81a7-dd54faee48eb",
+          "is_selected": true,
+          "display_name": "department",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b59b69e1-e9c4-40fb-bc67-886f6650497d",
+          "is_selected": true,
+          "display_name": "effective_date_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1ede4c81-20a4-4308-acfb-c7aa6b5b6663",
+          "is_selected": true,
+          "display_name": "employee_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "48b5a2a1-9020-41fe-b712-6a898e92c87e",
+          "is_selected": true,
+          "display_name": "event_date_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "240ff288-531b-4af2-973b-7aebddac07f7",
+          "is_selected": true,
+          "display_name": "event_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "57554e29-6494-4c9c-9597-65aeab068d11",
+          "is_selected": true,
+          "display_name": "event_key",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "86de66ca-6293-4160-9da0-c969060888a6",
+          "is_selected": true,
+          "display_name": "event_type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "eadf609b-0a8c-486d-a0d8-0ba2ca4b3553",
+          "is_selected": true,
+          "display_name": "job_title",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c55da16e-cae0-41e9-9de5-2cb7d5b04ed8",
+          "is_selected": true,
+          "display_name": "manager_employee_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "95e53f4e-9be9-4d94-b659-18de7831747f",
+          "is_selected": true,
+          "display_name": "partition_col_MONTH_event_ts",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a4835aae-3b27-443f-9a2a-c29e05c931b0",
+          "is_selected": true,
+          "display_name": "performance_rating",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "770889c7-770b-48f5-81c5-ba6a69f6ef09",
+          "is_selected": true,
+          "display_name": "separation_reason",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9aa5bd3a-5e86-4c11-9aea-8c833868e0e2",
+          "is_selected": true,
+          "display_name": "Total Lifecycle Events",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "36ba0344-aeb8-4852-8bd4-eb1b7583d53d",
+          "is_selected": true,
+          "display_name": "workflow_status",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "8670fe0b-1de6-41c3-81ef-ad2d958ae908",
+      "is_selected": true,
+      "display_name": "fact_payroll_result",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "19184511-45ac-411f-b61c-fbeb04795983",
+          "is_selected": true,
+          "display_name": "Average Net Pay per Employee",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e68a42e3-0758-4969-8834-986b724cd966",
+          "is_selected": true,
+          "display_name": "bonus_pay",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e37750ad-a773-4359-a5b5-e717f5e4c37e",
+          "is_selected": true,
+          "display_name": "client_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "aada0cb0-9c5a-4c74-a7a4-8d532f6ac45f",
+          "is_selected": true,
+          "display_name": "deductions_total",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "319355e5-f804-4105-b322-6d5ca4e7cad2",
+          "is_selected": true,
+          "display_name": "employee_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "faffe942-a7a3-437a-8e69-e1284a866529",
+          "is_selected": true,
+          "display_name": "employer_tax_total",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5cd98bd1-4cf5-49b5-853d-bc2e36acb0ce",
+          "is_selected": true,
+          "display_name": "garnishments_total",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "507dacab-f2e3-4d02-829c-23a1ab7712e3",
+          "is_selected": true,
+          "display_name": "gross_pay",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "60a0a3e7-855f-4e6d-bd8e-6dc7079e1869",
+          "is_selected": true,
+          "display_name": "journal_posted_flag",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "53bd3288-9675-47ae-8e33-86c4f49c64b5",
+          "is_selected": true,
+          "display_name": "net_pay",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "87dc94f6-bb8c-4542-9917-c0284075fc31",
+          "is_selected": true,
+          "display_name": "overtime_pay",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c6e7254e-555e-42b7-8e03-ea735dc92b86",
+          "is_selected": true,
+          "display_name": "partition_col_MONTH_payroll_ts",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b97dbeb3-15d4-423d-8fae-fd247c7bc7f3",
+          "is_selected": true,
+          "display_name": "pay_date_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "75ad8864-f82b-4a6d-8bd2-e07991300057",
+          "is_selected": true,
+          "display_name": "pay_frequency",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "48ecf3ff-b453-46e7-9473-6385f5841387",
+          "is_selected": true,
+          "display_name": "pay_period_end_date_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "507180f3-d1a7-42e5-9f6a-56c780075b47",
+          "is_selected": true,
+          "display_name": "payroll_cycle_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cf5dd1b3-2f9e-4269-a019-0d7866060806",
+          "is_selected": true,
+          "display_name": "payroll_result_key",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "879cd626-9ef7-42e9-816e-91f254c8ac27",
+          "is_selected": true,
+          "display_name": "regular_pay",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "319497f5-8d55-434a-856f-c928cc494b9d",
+          "is_selected": true,
+          "display_name": "tax_filing_status",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9ed4a396-cb2a-4c61-ae04-c837221f0594",
+          "is_selected": true,
+          "display_name": "tax_withholding_total",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cb49218d-9481-4fa1-9772-41d94a454904",
+          "is_selected": true,
+          "display_name": "Total Employer Payroll Taxes",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0ca7f681-df1d-4d89-a095-a8b6daa2e2ab",
+          "is_selected": true,
+          "display_name": "Total Employer People Cost",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c0cd8587-3681-4baa-97fd-c5ce42ca3445",
+          "is_selected": true,
+          "display_name": "Total Gross Pay",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6966f368-3993-4bad-9859-ea37378c4e6c",
+          "is_selected": true,
+          "display_name": "Total Net Pay",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "8f6a6a4f-9bdc-4580-a9a0-c20b8bcd48dd",
+      "is_selected": true,
+      "display_name": "fact_service_interaction",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "870eea30-5a04-4f82-99ff-5f4bbed6159f",
+          "is_selected": true,
+          "display_name": "assigned_rep_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0c875135-c67c-4114-a31a-39416b9d2339",
+          "is_selected": true,
+          "display_name": "Avg CSAT",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ff1c8898-c193-44e3-9552-2115efa88bf3",
+          "is_selected": true,
+          "display_name": "Breach Count",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "56d659b6-9a8b-4973-83c5-689e85acd2ac",
+          "is_selected": true,
+          "display_name": "breached_sla_flag",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a8665d5a-bdec-47fe-8013-66b0cde87463",
+          "is_selected": true,
+          "display_name": "case_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6e26de7c-e86f-4afe-a866-adcfafbabf0b",
+          "is_selected": true,
+          "display_name": "client_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a4b7a066-7cc3-4ec2-8d1c-294b81d1c7f5",
+          "is_selected": true,
+          "display_name": "closed_date_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "64004f97-4b00-4d3f-bca1-db6a20d1cc72",
+          "is_selected": true,
+          "display_name": "csat_score",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ec89dccf-4d18-4e6a-9482-ac1c7e9531ba",
+          "is_selected": true,
+          "display_name": "interaction_channel",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ee222821-c75b-41e6-918e-1bb84b2bdb1b",
+          "is_selected": true,
+          "display_name": "interaction_count",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2e009bc9-b7e2-4ad7-8443-0e30fc3e3263",
+          "is_selected": true,
+          "display_name": "interaction_key",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "900d4ecf-5b82-489f-a4dd-3ec1de5ba7c2",
+          "is_selected": true,
+          "display_name": "opened_date_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "847f0941-b305-4ac2-93f4-6fde39c1da81",
+          "is_selected": true,
+          "display_name": "partition_col_MONTH_interaction_ts",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f793d39a-1e56-4955-b6fc-9acd63e430fb",
+          "is_selected": true,
+          "display_name": "resolution_sla_hours",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "523490fb-bafc-4ffc-91b9-837926b8edf5",
+          "is_selected": true,
+          "display_name": "service_category",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "68dfe004-9598-41bd-a81c-be777d85d5fe",
+          "is_selected": true,
+          "display_name": "SLA Breach Rate",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6e7edc4b-3fae-4cee-bc60-8b38ecd71f05",
+          "is_selected": true,
+          "display_name": "Total Interactions",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b26dce99-cd38-4f37-8ff2-00141b3fb96a",
+          "is_selected": true,
+          "display_name": "Total Service Cases",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "ebbaee44-503a-4590-95c5-edd5d2267b25",
+      "is_selected": true,
+      "display_name": "fact_time_attendance",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "e2b871c7-8942-46fb-bd3f-257d245c9556",
+          "is_selected": true,
+          "display_name": "approved_flag",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7bd64c5c-99ce-4612-a640-205591cabc01",
+          "is_selected": true,
+          "display_name": "client_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "dbf11ee6-daee-47cf-88c5-b0354cdf1e3d",
+          "is_selected": true,
+          "display_name": "employee_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2796a5b1-a1f7-4c65-8d47-23ea798521e2",
+          "is_selected": true,
+          "display_name": "hours_worked",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "dd48dfce-703f-4d7e-bc4c-e8c4211e2546",
+          "is_selected": true,
+          "display_name": "labor_cost",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a2e79cde-cf1f-452b-899b-6cf39c1160db",
+          "is_selected": true,
+          "display_name": "Overtime %",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a98a3ac2-07b4-40dd-99ba-6cf013db716d",
+          "is_selected": true,
+          "display_name": "Overtime Hours",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e3d060ea-9d2f-4af1-9217-c331fdfa34ff",
+          "is_selected": true,
+          "display_name": "overtime_hours",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9bd68569-0587-4b70-820a-93c9dec6bb16",
+          "is_selected": true,
+          "display_name": "partition_col_MONTH_created_ts",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3926f37a-61d0-4fb4-892b-655bf86f7887",
+          "is_selected": true,
+          "display_name": "pay_period_end_date_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e4781b8b-2593-4b93-b52f-b557843df83b",
+          "is_selected": true,
+          "display_name": "pto_hours",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b84fff40-615b-49c1-867e-9761624ae428",
+          "is_selected": true,
+          "display_name": "shift_type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c70324f6-9eb4-4dcf-8c4f-922bf6db6e09",
+          "is_selected": true,
+          "display_name": "source_system",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6a0f89bb-689e-417f-986e-133787a06467",
+          "is_selected": true,
+          "display_name": "time_entry_key",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9cceb2c8-6304-476b-bb0c-ac9e32281655",
+          "is_selected": true,
+          "display_name": "Total Hours Worked",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6658da74-a930-4382-97f3-aef3990e0d95",
+          "is_selected": true,
+          "display_name": "work_date_key",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

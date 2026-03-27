@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "ChicagoReportsModel"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "21aed81b-5c6d-ba70-4d4f-941e3745bb6e"
+  }
+}

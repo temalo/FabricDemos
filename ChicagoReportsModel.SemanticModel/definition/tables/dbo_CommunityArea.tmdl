@@ -1,0 +1,64 @@
+table dbo_CommunityArea
+	lineageTag: f570712d-ac61-4111-bad4-203a8f5d0bd8
+	sourceLineageTag: [dbo].[dbo_CommunityArea]
+
+	column CommunityId
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0c8c1f63-436d-4fb7-806e-ef6991cead9a
+		sourceLineageTag: CommunityId
+		summarizeBy: none
+		sourceColumn: CommunityId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommunityName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e02aae1c-40bd-47bc-bef6-2242be4e088f
+		sourceLineageTag: CommunityName
+		summarizeBy: none
+		sourceColumn: CommunityName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommunityArea
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c582477d-48b0-4c01-95c7-e217c3f2c6b0
+		sourceLineageTag: CommunityArea
+		summarizeBy: none
+		sourceColumn: CommunityArea
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommunityLocation
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a4bdd0db-84d6-4c4a-9c4f-d4f2aad1550e
+		sourceLineageTag: CommunityLocation
+		summarizeBy: none
+		sourceColumn: CommunityLocation
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeatherStation
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 264b6ca7-bf35-4719-b3ac-fe810319f077
+		sourceLineageTag: WeatherStation
+		summarizeBy: none
+		sourceColumn: WeatherStation
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dbo_CommunityArea = entity
+		mode: directLake
+		source
+			entityName: dbo_CommunityArea
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
