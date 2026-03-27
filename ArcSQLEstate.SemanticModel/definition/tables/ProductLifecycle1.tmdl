@@ -1,0 +1,161 @@
+table ProductLifecycle1
+	lineageTag: 5b0d269b-5254-4c34-aeaa-3e82f4ddd430
+
+	column Product
+		dataType: string
+		lineageTag: fdf10e8a-11d3-4e53-8065-245780d3504e
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column MainstreamEndDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0b1b5c25-37cd-4231-affb-65d4e13ec1ca
+		summarizeBy: none
+		sourceColumn: MainstreamEndDate
+
+		variation Variation
+			isDefault
+			relationship: 21267d3b-6c95-4687-8c59-5fc45e6da2e7
+			defaultHierarchy: LocalDateTable_c1db5021-26bb-4e35-8359-eb98ea072128.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ExtendedEndDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8e37e629-6231-4f76-9f99-830306160ace
+		summarizeBy: none
+		sourceColumn: ExtendedEndDate
+
+		variation Variation
+			isDefault
+			relationship: ac680b6a-79db-4fe1-9c49-081b9b8e8782
+			defaultHierarchy: LocalDateTable_e7198b07-d551-4d48-8ec9-44e3821ade8d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EndOfLifeDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8537a973-d353-41d9-904f-c1dfbe838e28
+		summarizeBy: none
+		sourceColumn: EndOfLifeDate
+
+		variation Variation
+			isDefault
+			relationship: cc8d0831-515a-49b4-94c9-44ca64e0efcd
+			defaultHierarchy: LocalDateTable_b19ad774-b293-41f0-8286-03db35aa1412.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CurrentSupportState = ```
+			
+			VAR CurrentDate = TODAY()
+			VAR CurrentState = IF(CurrentDate < [ExtendedEndDate], 
+			        "Mainstream", 
+			        IF(CurrentDate <= [EndOfLifeDate], 
+			            "Extended", IF(ISBLANK([ExtendedEndDate]) && ISBLANK([MainstreamEndDate]),"Unknown","End of life")
+			        )
+			    )
+			RETURN IF(
+			    ISBLANK(CurrentState),
+			    "Unknown",
+			    CurrentState
+			)
+			```
+		lineageTag: 80ae54f6-bc3c-483f-a838-e820c76136c8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExtendedSupportCostPerCorePerMonth
+		dataType: double
+		lineageTag: 5b490ec2-0c8e-4945-8c32-8086420ad1ff
+		summarizeBy: sum
+		sourceColumn: ExtendedSupportCostPerCorePerMonth
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OrgApprovedProduct
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0cb5f30f-a142-40d2-8713-50d27704296f
+		summarizeBy: none
+		sourceColumn: OrgApprovedProduct
+
+		annotation SummarizationSetBy = Automatic
+
+	column ThirdPartyAppliance
+		dataType: string
+		lineageTag: b1744df1-24f7-40bb-a183-75da68669d45
+		summarizeBy: none
+		sourceColumn: ThirdPartyAppliance
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductFriendlyName
+		dataType: string
+		lineageTag: 949cb475-32ec-47a1-a5a9-2e6319ba4a85
+		summarizeBy: none
+		sourceColumn: ProductFriendlyName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductFamily
+		dataType: string
+		lineageTag: c8b6bf52-d80c-480d-82c6-0b375a2b1e6a
+		summarizeBy: none
+		sourceColumn: ProductFamily
+
+		annotation SummarizationSetBy = Automatic
+
+	column LifecycleDetails
+		dataType: string
+		lineageTag: 752f861a-da01-476f-bdf3-8f2732e1ac11
+		summarizeBy: none
+		sourceColumn: LifecycleDetails
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Azure VM image'
+		dataType: string
+		lineageTag: 21d8532f-5795-47f4-94d6-1d2087effaeb
+		summarizeBy: none
+		sourceColumn: Azure VM image
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product version stage'
+		dataType: string
+		lineageTag: 44d40f30-05b2-4620-92ea-3228d25666c3
+		summarizeBy: none
+		sourceColumn: Product version stage
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ProductLifecycle1 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\DevOps\azure-arc-dashboard\ProductLifecycle.xlsx"), null, true),
+				    #"Filtered Rows" = Table.SelectRows(Source, each true),
+				    ProductLifecycle_Table = #"Filtered Rows"{[Item="ProductLifecycle",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(ProductLifecycle_Table,{{"Product", type text}, {"MainstreamEndDate", type date}, {"ExtendedEndDate", type date}, {"EndOfLifeDate", type date}, {"ExtendedSupportCostPerCorePerMonth", type number}, {"OrgApprovedProduct", type logical}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

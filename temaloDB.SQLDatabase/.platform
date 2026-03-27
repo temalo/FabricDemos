@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SQLDatabase",
+    "displayName": "temaloDB"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3eb69417-1a66-bdb9-4ef5-46be37ee9c57"
+  }
+}

@@ -1,0 +1,78 @@
+table dim_employee
+	lineageTag: 3eb9d4b7-4487-454a-ad97-65a9f6c560d2
+	sourceLineageTag: [dbo].[dim_employee]
+
+	column employee_key
+		dataType: int64
+		formatString: 0
+		lineageTag: cb01f324-10a2-4b5d-b683-a530ee670e25
+		sourceLineageTag: employee_key
+		summarizeBy: none
+		sourceColumn: employee_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_id
+		dataType: string
+		lineageTag: a3a56150-1106-4797-94d7-e1f34ef188b1
+		sourceLineageTag: employee_id
+		summarizeBy: none
+		sourceColumn: employee_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_name
+		dataType: string
+		lineageTag: a918dcc8-82fe-4d2f-b295-0a02634b9dee
+		sourceLineageTag: full_name
+		summarizeBy: none
+		sourceColumn: full_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column role
+		dataType: string
+		lineageTag: 9a84de19-9f98-48eb-b9cf-3d2af69da258
+		sourceLineageTag: role
+		summarizeBy: none
+		sourceColumn: role
+
+		annotation SummarizationSetBy = Automatic
+
+	column branch_location_key
+		dataType: int64
+		formatString: 0
+		lineageTag: d7147f6b-3ae9-4190-8241-1952a3771947
+		sourceLineageTag: branch_location_key
+		summarizeBy: sum
+		sourceColumn: branch_location_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column hire_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fb1996fc-0239-4776-a502-b555401c4ba1
+		sourceLineageTag: hire_date
+		summarizeBy: none
+		sourceColumn: hire_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 498d9d72-2903-4b1b-8eb4-81cef37658c6
+		sourceLineageTag: is_active
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_employee = entity
+		mode: directLake
+		source
+			entityName: dim_employee
+			schemaName: dbo
+			expressionSource: 'DirectLake - IndustrialSupply'
+

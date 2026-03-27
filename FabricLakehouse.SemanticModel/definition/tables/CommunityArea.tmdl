@@ -1,0 +1,64 @@
+table CommunityArea
+	lineageTag: 50e57e3b-99de-402e-9251-a3f7bb799351
+	sourceLineageTag: [dbo].[CommunityArea]
+
+	column CommunityId
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 836cfd97-007f-489b-a883-421c57438276
+		sourceLineageTag: CommunityId
+		summarizeBy: sum
+		sourceColumn: CommunityId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommunityName
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7738bbb1-770b-41db-b7a9-1e1f417ea47e
+		sourceLineageTag: CommunityName
+		summarizeBy: none
+		sourceColumn: CommunityName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommunityArea
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 64dd7f09-483f-4ae2-b844-16f05474ce34
+		sourceLineageTag: CommunityArea
+		summarizeBy: none
+		sourceColumn: CommunityArea
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommunityLocation
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cd1a0d07-8ae8-49cf-b841-88a42588bf14
+		sourceLineageTag: CommunityLocation
+		summarizeBy: none
+		sourceColumn: CommunityLocation
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeatherStation
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ca5109bc-22d1-4eb2-b109-5e8b4352ebfa
+		sourceLineageTag: WeatherStation
+		summarizeBy: none
+		sourceColumn: WeatherStation
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CommunityArea-794fd498-ace2-443a-b8bf-158ed9208604 = entity
+		mode: directLake
+		source
+			entityName: CommunityArea
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

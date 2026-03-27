@@ -1,0 +1,347 @@
+table fact_sales_order
+	lineageTag: f6c5f3b5-6a90-4fab-acd8-792a486f315b
+	sourceLineageTag: [dbo].[fact_sales_order]
+
+	measure 'Total Net Revenue' = ```
+			
+			    SUM ( 'fact_sales_order'[net_revenue] )
+			```
+		lineageTag: d7a5562f-150b-43ae-abce-4e9a2e742d92
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Gross Revenue' = ```
+			
+			    SUM ( 'fact_sales_order'[gross_revenue] )
+			```
+		lineageTag: dbf2c161-8bf7-4e67-a5e0-8063d3775a5a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Quantity Shipped' = ```
+			
+			    SUM ( 'fact_sales_order'[quantity_shipped] )
+			```
+		formatString: 0
+		lineageTag: 951c8b71-e079-493e-a322-26824d18b810
+
+	measure 'Order Count' = ```
+			
+			    DISTINCTCOUNT ( 'fact_sales_order'[order_id] )
+			```
+		formatString: 0
+		lineageTag: 2f7556ef-e16d-4e74-a4c7-70dcd96efb9c
+
+	measure 'Total Gross Margin' = ```
+			
+			    SUM ( 'fact_sales_order'[gross_margin] )
+			```
+		lineageTag: e60c42f0-b1e7-4969-90b2-b9e1e971b7d1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Gross Margin %' = ```
+			
+			    VAR _NetRevenue = [Total Net Revenue]
+			    RETURN
+			      DIVIDE ( [Total Gross Margin], _NetRevenue )
+			```
+		lineageTag: 63dbff69-5f17-4f6f-aefa-a59902a4839f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Discount Amount' = ```
+			
+			    SUM ( 'fact_sales_order'[discount_amount] )
+			```
+		lineageTag: 3c3261f1-922b-45ef-b5b6-a9b62175c0de
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Discount %' = ```
+			
+			    DIVIDE ( [Total Discount Amount], [Total Gross Revenue] )
+			```
+		lineageTag: 57893911-0b5a-4d76-8319-36614390d595
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Selling Price' = ```
+			
+			    DIVIDE ( [Total Net Revenue], [Total Quantity Shipped] )
+			```
+		lineageTag: e3643299-2aa6-4349-947b-6f37cdcc6ecd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Order Value' = ```
+			
+			    DIVIDE ( [Total Net Revenue], [Order Count] )
+			```
+		lineageTag: ef094e0e-2e6f-4a24-be93-956bd13de9f9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Customer Count' = ```
+			
+			    DISTINCTCOUNT ( 'fact_sales_order'[customer_key] )
+			```
+		formatString: 0
+		lineageTag: 47ed8a40-0046-4819-b255-47551efa6669
+
+	measure 'Net Revenue per Customer' = ```
+			
+			    DIVIDE ( [Total Net Revenue], [Customer Count] )
+			```
+		lineageTag: e63e6569-0bc3-4ec5-aa04-f5169cf85d91
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Revenue YTD' = ```
+			
+			    TOTALYTD (
+			      [Total Net Revenue],
+			      'dim_date'[full_date]      // standard date column
+			    )
+			```
+		lineageTag: 6f654688-ee49-4a88-b291-00a50a8a0b55
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Revenue YoY %' = ```
+			
+			    VAR _CurrentNetRevenue =
+			      [Total Net Revenue]
+			    VAR _PriorNetRevenue =
+			      CALCULATE (
+			        [Total Net Revenue],
+			        SAMEPERIODLASTYEAR ( 'dim_date'[full_date] )
+			      )
+			    RETURN
+			      DIVIDE ( _CurrentNetRevenue - _PriorNetRevenue, _PriorNetRevenue )
+			```
+		lineageTag: 93c779eb-f310-4b99-b779-ea27ac5e8bcf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_line_key
+		dataType: string
+		lineageTag: a8730257-2ad7-46d1-81ad-35b171a0b531
+		sourceLineageTag: order_line_key
+		summarizeBy: none
+		sourceColumn: order_line_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: string
+		lineageTag: 12c6d435-0349-4b2b-8965-72019689a259
+		sourceLineageTag: order_id
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_line_number
+		dataType: int64
+		formatString: 0
+		lineageTag: bc67585a-2395-436d-bc84-72cb1fa9b3c2
+		sourceLineageTag: order_line_number
+		summarizeBy: sum
+		sourceColumn: order_line_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1468542d-b260-4ff0-8cd1-f63fd56850f7
+		sourceLineageTag: order_date_key
+		summarizeBy: none
+		sourceColumn: order_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column ship_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 377bc2b9-3a91-4da9-b93e-2661ec2387a6
+		sourceLineageTag: ship_date_key
+		summarizeBy: sum
+		sourceColumn: ship_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 5309449a-43a8-497d-98af-956b320464a9
+		sourceLineageTag: customer_key
+		summarizeBy: none
+		sourceColumn: customer_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: d552ed85-bddd-4a70-a2ab-4441623e122c
+		sourceLineageTag: product_key
+		summarizeBy: none
+		sourceColumn: product_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_key
+		dataType: int64
+		formatString: 0
+		lineageTag: c6f32dfc-41b2-4a64-bb79-aa825eaf8398
+		sourceLineageTag: employee_key
+		summarizeBy: none
+		sourceColumn: employee_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column ship_location_key
+		dataType: int64
+		formatString: 0
+		lineageTag: ac1bc325-4834-490d-af96-e7cb172a97bd
+		sourceLineageTag: ship_location_key
+		summarizeBy: none
+		sourceColumn: ship_location_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column channel
+		dataType: string
+		lineageTag: e54d8fac-fd44-46e0-8965-02abd0900ca4
+		sourceLineageTag: channel
+		summarizeBy: none
+		sourceColumn: channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity_ordered
+		dataType: int64
+		formatString: 0
+		lineageTag: cf41b9c4-14ce-486c-b7d5-84a98e87a681
+		sourceLineageTag: quantity_ordered
+		summarizeBy: sum
+		sourceColumn: quantity_ordered
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity_shipped
+		dataType: int64
+		formatString: 0
+		lineageTag: 338dd7f5-7fcc-439d-85c9-c1c6ee69c77b
+		sourceLineageTag: quantity_shipped
+		summarizeBy: sum
+		sourceColumn: quantity_shipped
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_list_price
+		dataType: double
+		lineageTag: 568d09b0-7d02-4f0b-ae11-4a73a453ab20
+		sourceLineageTag: unit_list_price
+		summarizeBy: sum
+		sourceColumn: unit_list_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unit_sell_price
+		dataType: double
+		lineageTag: 971209e5-315a-4c0d-818d-3d8ce3f9c6c6
+		sourceLineageTag: unit_sell_price
+		summarizeBy: sum
+		sourceColumn: unit_sell_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column discount_pct
+		dataType: double
+		lineageTag: 6a3bd7d5-1119-4959-a2bd-949d5cd393b4
+		sourceLineageTag: discount_pct
+		summarizeBy: sum
+		sourceColumn: discount_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column gross_revenue
+		dataType: double
+		lineageTag: 72540740-c0c6-4d77-bf09-74a75dd9b778
+		sourceLineageTag: gross_revenue
+		summarizeBy: sum
+		sourceColumn: gross_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column discount_amount
+		dataType: double
+		lineageTag: f826494a-7b16-4245-87b8-2a79bab40762
+		sourceLineageTag: discount_amount
+		summarizeBy: sum
+		sourceColumn: discount_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column net_revenue
+		dataType: double
+		lineageTag: 55c386b3-cf8a-45bc-a430-333ef78f2ac8
+		sourceLineageTag: net_revenue
+		summarizeBy: sum
+		sourceColumn: net_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cost_of_goods
+		dataType: double
+		lineageTag: 368abca3-39d6-4578-80ee-9468c7feef8a
+		sourceLineageTag: cost_of_goods
+		summarizeBy: sum
+		sourceColumn: cost_of_goods
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column gross_margin
+		dataType: double
+		lineageTag: 0efd8b98-ee5d-4320-8fa6-f19079180f03
+		sourceLineageTag: gross_margin
+		summarizeBy: sum
+		sourceColumn: gross_margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_status
+		dataType: string
+		lineageTag: a18d2374-a082-4f4a-a9a4-b79cd2431408
+		sourceLineageTag: order_status
+		summarizeBy: none
+		sourceColumn: order_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_sales_order = entity
+		mode: directLake
+		source
+			entityName: fact_sales_order
+			schemaName: dbo
+			expressionSource: 'DirectLake - IndustrialSupply'
+

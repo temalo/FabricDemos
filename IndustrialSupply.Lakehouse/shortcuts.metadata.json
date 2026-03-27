@@ -1,0 +1,314 @@
+[
+  {
+    "name": "mart_sales_summary_daily",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/mart_sales_summary_daily"
+      }
+    }
+  },
+  {
+    "name": "mart_product_velocity",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/mart_product_velocity"
+      }
+    }
+  },
+  {
+    "name": "mart_customer_360",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/mart_customer_360"
+      }
+    }
+  },
+  {
+    "name": "fact_sales_order",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/fact_sales_order"
+      }
+    }
+  },
+  {
+    "name": "fact_returns",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/fact_returns"
+      }
+    }
+  },
+  {
+    "name": "fact_purchase_order",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/fact_purchase_order"
+      }
+    }
+  },
+  {
+    "name": "fact_inventory_snapshot",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/fact_inventory_snapshot"
+      }
+    }
+  },
+  {
+    "name": "dim_supplier",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/dim_supplier"
+      }
+    }
+  },
+  {
+    "name": "dim_product",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/dim_product"
+      }
+    }
+  },
+  {
+    "name": "dim_location",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/dim_location"
+      }
+    }
+  },
+  {
+    "name": "dim_employee",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/dim_employee"
+      }
+    }
+  },
+  {
+    "name": "dim_date",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/dim_date"
+      }
+    }
+  },
+  {
+    "name": "dim_customer",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/dim_customer"
+      }
+    }
+  },
+  {
+    "name": "mart_sales_summary_daily",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/mart_sales_summary_daily"
+      }
+    }
+  },
+  {
+    "name": "mart_product_velocity",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/mart_product_velocity"
+      }
+    }
+  },
+  {
+    "name": "mart_customer_360",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/mart_customer_360"
+      }
+    }
+  },
+  {
+    "name": "fact_sales_order",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/fact_sales_order"
+      }
+    }
+  },
+  {
+    "name": "fact_returns",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/fact_returns"
+      }
+    }
+  },
+  {
+    "name": "fact_purchase_order",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/fact_purchase_order"
+      }
+    }
+  },
+  {
+    "name": "fact_inventory_snapshot",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/fact_inventory_snapshot"
+      }
+    }
+  },
+  {
+    "name": "dim_supplier",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/dim_supplier"
+      }
+    }
+  },
+  {
+    "name": "dim_product",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/dim_product"
+      }
+    }
+  },
+  {
+    "name": "dim_location",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/dim_location"
+      }
+    }
+  },
+  {
+    "name": "dim_employee",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/dim_employee"
+      }
+    }
+  },
+  {
+    "name": "dim_date",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/dim_date"
+      }
+    }
+  },
+  {
+    "name": "dim_customer",
+    "path": "/Files",
+    "target": {
+      "type": "AmazonS3",
+      "amazonS3": {
+        "connectionId": "027d969b-79dd-469f-bf01-1acfc206c02d",
+        "location": "s3://lakehousedata-638442050476-us-east-2-an",
+        "subpath": "/lakehouse/gold/gold/dim_customer"
+      }
+    }
+  }
+]

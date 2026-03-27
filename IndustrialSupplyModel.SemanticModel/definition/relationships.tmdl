@@ -1,0 +1,69 @@
+relationship 8d25edff-d67c-e9ac-7b33-b889ee976982
+	fromColumn: fact_sales_order.product_key
+	toColumn: dim_product.product_key
+
+relationship f450d010-8e07-5bdb-4868-b4f72bcbbe96
+	fromColumn: fact_sales_order.customer_key
+	toColumn: dim_customer.customer_key
+
+relationship 9aa2a183-f9a0-0a76-328c-52e43b187ba7
+	fromColumn: fact_sales_order.order_date_key
+	toColumn: dim_date.date_key
+
+relationship 06b38bbe-cddb-a657-5630-e9ec66f59b76
+	fromColumn: fact_sales_order.employee_key
+	toColumn: dim_employee.employee_key
+
+relationship 4524f795-d952-9e16-aa12-a8c021af8ec4
+	isActive: false
+	fromColumn: fact_sales_order.ship_date_key
+	toColumn: dim_date.date_key
+
+relationship 37ad6d27-7174-5210-6865-9ac84d274e02
+	fromColumn: dim_product.supplier_key
+	toColumn: dim_supplier.supplier_key
+
+relationship 8a7570c5-ac0d-1ca8-dc8d-c94cd3c616b6
+	fromColumn: fact_sales_order.ship_location_key
+	toColumn: dim_location.location_key
+
+relationship 05247d2d-9926-a2c6-8dc9-d4bf8444d045
+	fromColumn: fact_inventory_snapshot.product_key
+	toColumn: dim_product.product_key
+
+relationship 063a5627-1e0a-558a-5d37-6fa9cf291fe3
+	fromColumn: fact_purchase_order.product_key
+	toColumn: dim_product.product_key
+
+relationship d88f82cb-8db6-f5e7-76ab-a151c3a79479
+	fromColumn: fact_purchase_order.buyer_employee_key
+	toColumn: dim_employee.employee_key
+
+relationship e9afea14-e03d-de3e-8f03-ca341c6e528b
+	fromColumn: fact_returns.customer_key
+	toColumn: dim_customer.customer_key
+
+relationship 15148eb5-10f8-e54c-0754-b6086948a081
+	fromColumn: fact_returns.location_key
+	toColumn: dim_location.location_key
+
+relationship 8194a5e1-3f16-ad6f-2efc-b31e866edb5e
+	fromColumn: fact_returns.product_key
+	toColumn: dim_product.product_key
+
+relationship c6f94ff3-69a8-e06b-2afc-3f0fc21bce6e
+	fromColumn: fact_returns.return_date_key
+	toColumn: dim_date.date_key
+
+relationship f8099f31-86a8-346b-c834-ed279cc4b32f
+	fromColumn: mart_sales_summary_daily.date_key
+	toColumn: dim_date.date_key
+
+relationship c918da32-aac4-8f96-77d0-32328c88a06d
+	fromColumn: mart_sales_summary_daily.product_key
+	toColumn: dim_product.product_key
+
+relationship f17e3088-c3df-6263-d127-21842ac6c4b9
+	fromColumn: mart_sales_summary_daily.customer_key
+	toColumn: dim_customer.customer_key
+

@@ -1,0 +1,173 @@
+table fact_purchase_order
+	lineageTag: 929056de-f85c-4f37-af0b-2bb27e6fc9be
+	sourceLineageTag: [dbo].[fact_purchase_order]
+
+	column po_line_key
+		dataType: string
+		lineageTag: f39beeff-da43-4585-a5f3-6fda3a16c8c5
+		sourceLineageTag: po_line_key
+		summarizeBy: none
+		sourceColumn: po_line_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column po_id
+		dataType: string
+		lineageTag: 3b60fa87-a88c-4885-bc00-66f7576a9bce
+		sourceLineageTag: po_id
+		summarizeBy: none
+		sourceColumn: po_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column po_line_number
+		dataType: int64
+		formatString: 0
+		lineageTag: f0cc6ec4-ffc1-40af-8f7d-ab56348fe412
+		sourceLineageTag: po_line_number
+		summarizeBy: sum
+		sourceColumn: po_line_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column po_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 38aaf5b5-7144-440f-8d0b-3ba026700723
+		sourceLineageTag: po_date_key
+		summarizeBy: sum
+		sourceColumn: po_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column receipt_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: dca8ad46-2ce3-48ed-bc0d-c600276e28f2
+		sourceLineageTag: receipt_date_key
+		summarizeBy: sum
+		sourceColumn: receipt_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 72ec7310-6a45-4306-94e0-1ab032a233d4
+		sourceLineageTag: supplier_key
+		summarizeBy: sum
+		sourceColumn: supplier_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 39b3b752-154f-4f87-bb7c-ac03e2749ce4
+		sourceLineageTag: product_key
+		summarizeBy: none
+		sourceColumn: product_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_key
+		dataType: int64
+		formatString: 0
+		lineageTag: a7260471-77e6-4b23-89cd-587160ee9206
+		sourceLineageTag: location_key
+		summarizeBy: sum
+		sourceColumn: location_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column buyer_employee_key
+		dataType: int64
+		formatString: 0
+		lineageTag: fdf72ae6-84a9-4247-b096-686d7df7e8bb
+		sourceLineageTag: buyer_employee_key
+		summarizeBy: none
+		sourceColumn: buyer_employee_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity_ordered
+		dataType: int64
+		formatString: 0
+		lineageTag: b0eabfb9-a731-4ea4-b661-674bd64cb058
+		sourceLineageTag: quantity_ordered
+		summarizeBy: sum
+		sourceColumn: quantity_ordered
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity_received
+		dataType: int64
+		formatString: 0
+		lineageTag: 51882100-7d41-41a7-bb0e-29e8c838fd50
+		sourceLineageTag: quantity_received
+		summarizeBy: sum
+		sourceColumn: quantity_received
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_cost
+		dataType: double
+		lineageTag: 178cfdd1-b6b9-463d-9f10-d18bf7cfa1b8
+		sourceLineageTag: unit_cost
+		summarizeBy: sum
+		sourceColumn: unit_cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column extended_cost
+		dataType: double
+		lineageTag: e8d6cc09-728e-428c-8400-8e7567196936
+		sourceLineageTag: extended_cost
+		summarizeBy: sum
+		sourceColumn: extended_cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column freight_cost
+		dataType: double
+		lineageTag: 6b5ac7a7-9843-40b5-95f9-b4f3ca2487e0
+		sourceLineageTag: freight_cost
+		summarizeBy: sum
+		sourceColumn: freight_cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_landed_cost
+		dataType: double
+		lineageTag: fa10673b-cd9d-46e9-9bad-5270400ca7b9
+		sourceLineageTag: total_landed_cost
+		summarizeBy: sum
+		sourceColumn: total_landed_cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_on_time
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 863028c1-a74c-4f69-8b85-ca1ea939442e
+		sourceLineageTag: is_on_time
+		summarizeBy: none
+		sourceColumn: is_on_time
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_purchase_order = entity
+		mode: directLake
+		source
+			entityName: fact_purchase_order
+			schemaName: dbo
+			expressionSource: 'DirectLake - IndustrialSupply'
+

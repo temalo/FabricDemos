@@ -1,0 +1,143 @@
+table fact_inventory_snapshot
+	lineageTag: 097a8b29-731d-4778-9ceb-dad071bc71d8
+	sourceLineageTag: [dbo].[fact_inventory_snapshot]
+
+	column snapshot_key
+		dataType: string
+		lineageTag: 8f3d27cd-f02f-47ec-84cd-34df58f80363
+		sourceLineageTag: snapshot_key
+		summarizeBy: none
+		sourceColumn: snapshot_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column snapshot_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a64158f-c106-4cbd-a423-b3d9dbc0cd58
+		sourceLineageTag: snapshot_date_key
+		summarizeBy: sum
+		sourceColumn: snapshot_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 88be5586-852d-4b45-a08f-37d8e8b834eb
+		sourceLineageTag: product_key
+		summarizeBy: none
+		sourceColumn: product_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_key
+		dataType: int64
+		formatString: 0
+		lineageTag: c6fb3190-3708-4e66-8a41-69b978e1f5b7
+		sourceLineageTag: location_key
+		summarizeBy: sum
+		sourceColumn: location_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column qty_on_hand
+		dataType: int64
+		formatString: 0
+		lineageTag: b7a153e2-53b7-4b10-843e-85988d7f6f23
+		sourceLineageTag: qty_on_hand
+		summarizeBy: sum
+		sourceColumn: qty_on_hand
+
+		annotation SummarizationSetBy = Automatic
+
+	column qty_on_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 26894bea-8018-4838-9320-77ebb578014b
+		sourceLineageTag: qty_on_order
+		summarizeBy: sum
+		sourceColumn: qty_on_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column qty_allocated
+		dataType: int64
+		formatString: 0
+		lineageTag: f607b4a6-8ac4-448f-90bb-068daff89d98
+		sourceLineageTag: qty_allocated
+		summarizeBy: sum
+		sourceColumn: qty_allocated
+
+		annotation SummarizationSetBy = Automatic
+
+	column qty_available
+		dataType: int64
+		formatString: 0
+		lineageTag: 5125ebce-b0ce-4b42-9c06-4b761962926d
+		sourceLineageTag: qty_available
+		summarizeBy: sum
+		sourceColumn: qty_available
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_cost
+		dataType: double
+		lineageTag: adca2291-5204-4fd5-b098-6fc31a271e0f
+		sourceLineageTag: unit_cost
+		summarizeBy: sum
+		sourceColumn: unit_cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column inventory_value
+		dataType: double
+		lineageTag: a5975335-960c-4da4-a9b5-c73af7060e9a
+		sourceLineageTag: inventory_value
+		summarizeBy: sum
+		sourceColumn: inventory_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reorder_point
+		dataType: int64
+		formatString: 0
+		lineageTag: 485c7f86-3ccf-4b46-8802-8a5f6223b1d3
+		sourceLineageTag: reorder_point
+		summarizeBy: sum
+		sourceColumn: reorder_point
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_below_reorder
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 494355e9-655a-41f7-bb02-f92e8a7f56be
+		sourceLineageTag: is_below_reorder
+		summarizeBy: none
+		sourceColumn: is_below_reorder
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_of_supply
+		dataType: double
+		lineageTag: d028eb90-f79a-405d-acf2-1d029ea84819
+		sourceLineageTag: days_of_supply
+		summarizeBy: sum
+		sourceColumn: days_of_supply
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_inventory_snapshot = entity
+		mode: directLake
+		source
+			entityName: fact_inventory_snapshot
+			schemaName: dbo
+			expressionSource: 'DirectLake - IndustrialSupply'
+

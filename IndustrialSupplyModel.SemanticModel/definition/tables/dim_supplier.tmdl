@@ -1,0 +1,96 @@
+table dim_supplier
+	lineageTag: 1b0273f6-7c9d-4f8e-a1de-e36c11db1b0c
+	sourceLineageTag: [dbo].[dim_supplier]
+
+	column supplier_key
+		dataType: int64
+		formatString: 0
+		lineageTag: ef7f5cfb-fe51-4900-9bc0-f9e2bf47123d
+		sourceLineageTag: supplier_key
+		summarizeBy: none
+		sourceColumn: supplier_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_id
+		dataType: string
+		lineageTag: 293299c9-a933-412a-bcd7-58b37ba291d4
+		sourceLineageTag: supplier_id
+		summarizeBy: none
+		sourceColumn: supplier_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_name
+		dataType: string
+		lineageTag: 7ee3664e-03e2-40ab-bf0c-71ff8c610c3e
+		sourceLineageTag: supplier_name
+		summarizeBy: none
+		sourceColumn: supplier_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_type
+		dataType: string
+		lineageTag: 726aefa8-fcdf-47eb-a89f-a5d9fcf3d6fd
+		sourceLineageTag: supplier_type
+		summarizeBy: none
+		sourceColumn: supplier_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column primary_state
+		dataType: string
+		lineageTag: ecd6a4f0-615e-4d3c-b65b-8950b53ba34b
+		sourceLineageTag: primary_state
+		summarizeBy: none
+		sourceColumn: primary_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column lead_time_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b7b9d0b-4133-4dea-8f02-6fa41608c766
+		sourceLineageTag: lead_time_days
+		summarizeBy: none
+		sourceColumn: lead_time_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_terms
+		dataType: string
+		lineageTag: 29d557d3-e258-4726-a7de-cd4eabb132ae
+		sourceLineageTag: payment_terms
+		summarizeBy: none
+		sourceColumn: payment_terms
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_preferred
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: aadce11c-c512-475f-af16-95961fe11239
+		sourceLineageTag: is_preferred
+		summarizeBy: none
+		sourceColumn: is_preferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 00900f96-21c6-4bdc-97d6-3166cbfe9949
+		sourceLineageTag: is_active
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_supplier = entity
+		mode: directLake
+		source
+			entityName: dim_supplier
+			schemaName: dbo
+			expressionSource: 'DirectLake - IndustrialSupply'
+

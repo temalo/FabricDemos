@@ -1,0 +1,14 @@
+[
+  {
+    "name": "WeatherData",
+    "path": "/Files/Bronze",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "0c75aab5-bef5-415b-8b34-2291e3a99387",
+        "location": "https://temalohns.dfs.core.windows.net",
+        "subpath": "/root/WeatherData"
+      }
+    }
+  }
+]

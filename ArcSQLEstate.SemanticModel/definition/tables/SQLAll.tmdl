@@ -1,0 +1,890 @@
+table SQLAll
+	lineageTag: ccc7fbb3-bf52-403f-8d58-803938ab6da5
+
+	column id
+		dataType: string
+		lineageTag: 049bb993-bc9e-4f56-aad8-6ae625ccebc1
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: b2507fde-6664-407b-b573-4b96042a5a89
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column type
+		dataType: string
+		lineageTag: fbadbbdf-06ce-40fa-9587-ac87fd4276db
+		summarizeBy: none
+		sourceColumn: type
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenantId
+		dataType: string
+		lineageTag: f0b786c8-bac9-479a-bd51-7cfc4087cd74
+		summarizeBy: none
+		sourceColumn: tenantId
+
+		annotation SummarizationSetBy = Automatic
+
+	column kind
+		dataType: string
+		lineageTag: 559960e3-d034-4340-a3c8-de6344ba2e2f
+		summarizeBy: none
+		sourceColumn: kind
+
+		annotation SummarizationSetBy = Automatic
+
+	column location
+		dataType: string
+		lineageTag: 05a66b32-6314-4500-b6ae-213a74361a6e
+		summarizeBy: none
+		sourceColumn: location
+
+		annotation SummarizationSetBy = Automatic
+
+	column resourceGroup
+		dataType: string
+		lineageTag: 968477bf-ff83-411c-8e30-d208feaebecd
+		summarizeBy: none
+		sourceColumn: resourceGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column subscriptionId
+		dataType: string
+		lineageTag: e2c173bb-2fa8-466a-9928-39e6e7fcf625
+		summarizeBy: none
+		sourceColumn: subscriptionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column managedBy
+		dataType: string
+		lineageTag: 52f598b0-7076-4f22-a6ac-0d2bee667e8a
+		summarizeBy: none
+		sourceColumn: managedBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column plan
+		dataType: string
+		lineageTag: 1e60ec43-8bb2-4b3a-b0b4-9bdb1a984833
+		summarizeBy: none
+		sourceColumn: plan
+
+		annotation SummarizationSetBy = Automatic
+
+	column tags
+		dataType: string
+		lineageTag: af57e59c-d4b2-40fe-a08b-d15d0d7caee4
+		summarizeBy: none
+		sourceColumn: tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column identity
+		dataType: string
+		lineageTag: e6c72281-4d84-4fe8-9251-72637cfa9084
+		summarizeBy: none
+		sourceColumn: identity
+
+		annotation SummarizationSetBy = Automatic
+
+	column zones
+		dataType: string
+		lineageTag: 6f72d56f-8ba6-4386-8541-50a07fa710d7
+		summarizeBy: none
+		sourceColumn: zones
+
+		annotation SummarizationSetBy = Automatic
+
+	column extendedLocation
+		dataType: string
+		lineageTag: 34e68fdf-b25f-4307-bf86-05bf112a4ea0
+		summarizeBy: none
+		sourceColumn: extendedLocation
+
+		annotation SummarizationSetBy = Automatic
+
+	column sqlVersion
+		dataType: string
+		lineageTag: fbb43b99-4be2-4dc4-887c-1aae585f6038
+		summarizeBy: none
+		sourceColumn: sqlVersion
+
+		annotation SummarizationSetBy = Automatic
+
+	column sqlEdition
+		dataType: string
+		lineageTag: 38c72a86-85d4-4c2e-b103-c0a65396073d
+		summarizeBy: none
+		sourceColumn: sqlEdition
+
+		annotation SummarizationSetBy = Automatic
+
+	column bpa
+		dataType: string
+		lineageTag: 4a6c5cca-6d2e-40c7-b5c9-fa27245508d2
+		summarizeBy: none
+		sourceColumn: bpa
+
+		annotation SummarizationSetBy = Automatic
+
+	column arcMachineName
+		dataType: string
+		lineageTag: 547b87ef-37ed-4346-8459-1cfafbbde10d
+		summarizeBy: none
+		sourceColumn: arcMachineName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'sku.name'
+		dataType: string
+		lineageTag: 7d5b1ade-c329-43d5-a140-10872e6dda45
+		summarizeBy: none
+		sourceColumn: sku.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'sku.tier'
+		dataType: string
+		lineageTag: dc5c03b2-b640-4951-b675-fe1ca15d9956
+		summarizeBy: none
+		sourceColumn: sku.tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'sku.capacity'
+		dataType: string
+		lineageTag: 82641609-f423-4912-9407-3be3e4d67517
+		summarizeBy: none
+		sourceColumn: sku.capacity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'sku.family'
+		dataType: string
+		lineageTag: 97f80f57-b4c4-410a-b2ae-d74c0c398420
+		summarizeBy: none
+		sourceColumn: sku.family
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.publicNetworkAccess'
+		dataType: string
+		lineageTag: d1827e9e-f966-4777-a10c-f2dc90898341
+		summarizeBy: none
+		sourceColumn: properties.publicNetworkAccess
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.privateEndpointConnections'
+		dataType: string
+		lineageTag: 4c222a4d-e98f-4e74-ab9a-792ef50fa7ab
+		summarizeBy: none
+		sourceColumn: properties.privateEndpointConnections
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.state'
+		dataType: string
+		lineageTag: 9cbb9faf-f5ee-4615-9af1-390994444f6f
+		summarizeBy: none
+		sourceColumn: properties.state
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.version'
+		dataType: string
+		lineageTag: f85c0c9c-7376-4947-a4ed-eaa2f1752d15
+		summarizeBy: none
+		sourceColumn: properties.version
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.restrictOutboundNetworkAccess'
+		dataType: string
+		lineageTag: eb1960fe-57f0-4330-8027-8e13feba4371
+		summarizeBy: none
+		sourceColumn: properties.restrictOutboundNetworkAccess
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.fullyQualifiedDomainName'
+		dataType: string
+		lineageTag: 5c29669f-d5ef-4811-bba0-a0f7aaf74ae9
+		summarizeBy: none
+		sourceColumn: properties.fullyQualifiedDomainName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.externalGovernanceStatus'
+		dataType: string
+		lineageTag: 140d6003-b680-4676-927a-2caa075fc87e
+		summarizeBy: none
+		sourceColumn: properties.externalGovernanceStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.minimalTlsVersion'
+		dataType: string
+		lineageTag: 70453b21-c0e8-4b27-bb73-0c00b389f604
+		summarizeBy: none
+		sourceColumn: properties.minimalTlsVersion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.administratorLogin'
+		dataType: string
+		lineageTag: 4664693c-4c03-4630-849b-d5aec9a1b097
+		summarizeBy: none
+		sourceColumn: properties.administratorLogin
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.provisioningState'
+		dataType: string
+		lineageTag: 0c909fef-37d7-4212-96cf-d19f5fc1040e
+		summarizeBy: none
+		sourceColumn: properties.provisioningState
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.storageAccountType'
+		dataType: string
+		lineageTag: 04b043e6-c42f-4f64-b071-a5a8a145aa54
+		summarizeBy: none
+		sourceColumn: properties.storageAccountType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.maintenanceConfigurationId'
+		dataType: string
+		lineageTag: 2e70c9de-6e1b-4ca3-abbe-2501352846c1
+		summarizeBy: none
+		sourceColumn: properties.maintenanceConfigurationId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.zoneRedundant'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 990b0918-6142-43b0-8584-d4017f9cb104
+		summarizeBy: none
+		sourceColumn: properties.zoneRedundant
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.licenseType'
+		dataType: string
+		lineageTag: 3a9f86f3-2a52-47d1-8a64-d4f4d8c16d8e
+		summarizeBy: none
+		sourceColumn: properties.licenseType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.collation'
+		dataType: string
+		lineageTag: b5a77bf4-29e9-49f9-ba33-4aae02e67a6e
+		summarizeBy: none
+		sourceColumn: properties.collation
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.subnetId'
+		dataType: string
+		lineageTag: d2bc7c5c-a685-4f8a-9ddd-83b77553b364
+		summarizeBy: none
+		sourceColumn: properties.subnetId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.publicDataEndpointEnabled'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 731716f8-2026-4932-8735-92cde0309674
+		summarizeBy: none
+		sourceColumn: properties.publicDataEndpointEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.storageSizeInGB'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ca4c567-6673-4199-8ba0-8cdd54ce59c1
+		summarizeBy: sum
+		sourceColumn: properties.storageSizeInGB
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.proxyOverride'
+		dataType: string
+		lineageTag: 39adc73d-a895-4b4b-bbe3-113c3c7ec596
+		summarizeBy: none
+		sourceColumn: properties.proxyOverride
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.timezoneId'
+		dataType: string
+		lineageTag: c93cbf98-ab43-40a7-94c9-0402a2c4017d
+		summarizeBy: none
+		sourceColumn: properties.timezoneId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.dnsZone'
+		dataType: string
+		lineageTag: 98759a1d-4eb5-4b12-9d37-4250babf1b8d
+		summarizeBy: none
+		sourceColumn: properties.dnsZone
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.vCores'
+		dataType: int64
+		formatString: 0
+		lineageTag: c4987ad6-17fa-4bf1-b1d5-5f250df3d037
+		summarizeBy: sum
+		sourceColumn: properties.vCores
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.status'
+		dataType: string
+		lineageTag: d439ea15-8c71-4326-babc-b3df8e65a665
+		summarizeBy: none
+		sourceColumn: properties.status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.azureDefenderStatusLastUpdated'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 14b5824a-1e49-4b7b-82ae-627a17a9e4fb
+		summarizeBy: none
+		sourceColumn: properties.azureDefenderStatusLastUpdated
+
+		variation Variation
+			isDefault
+			relationship: 957429fe-ecd2-4c35-af65-8c36a6d4b31d
+			defaultHierarchy: LocalDateTable_69e8cd93-aca5-42ee-9f5d-bae457b3724d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.lastInventoryUploadTime'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a6c4ab5f-528f-42da-a5a8-779de93662ed
+		summarizeBy: none
+		sourceColumn: properties.lastInventoryUploadTime
+
+		variation Variation
+			isDefault
+			relationship: 3b798106-4a2e-4360-a7ef-ab579fc066b2
+			defaultHierarchy: LocalDateTable_2fcb0f32-9f76-4fb3-abb7-be0aeef5905e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.hostType'
+		dataType: string
+		lineageTag: 3ba84967-32e5-488a-99b1-bde8b8695bf5
+		summarizeBy: none
+		sourceColumn: properties.hostType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.azureDefenderStatus'
+		dataType: string
+		lineageTag: ae3d468b-f733-43ec-a7fc-bc3319ef30cc
+		summarizeBy: none
+		sourceColumn: properties.azureDefenderStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.containerResourceId'
+		dataType: string
+		lineageTag: 05c84857-f059-4a58-878c-aabeb0fbb7ff
+		summarizeBy: none
+		sourceColumn: properties.containerResourceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.lastUsageUploadTime'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a0debec5-7bcf-4dcf-b4f9-4de15c7b70c7
+		summarizeBy: none
+		sourceColumn: properties.lastUsageUploadTime
+
+		variation Variation
+			isDefault
+			relationship: f87f70c7-9f8c-4471-90b7-f6ae07583628
+			defaultHierarchy: LocalDateTable_befa1385-d9d0-462a-a678-63531f511fe0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.upgradeLockedUntil'
+		dataType: string
+		lineageTag: 9bf15a6c-2a9b-4923-90bc-6b46d535ad71
+		summarizeBy: none
+		sourceColumn: properties.upgradeLockedUntil
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.tcpDynamicPorts'
+		dataType: string
+		lineageTag: de27af55-05ad-47a8-b5fc-dbafc732f3b2
+		summarizeBy: none
+		sourceColumn: properties.tcpDynamicPorts
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.failoverCluster'
+		dataType: string
+		lineageTag: ffb9d1be-1a5c-46c7-960b-51e4befd690d
+		summarizeBy: none
+		sourceColumn: properties.failoverCluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.tcpStaticPorts'
+		dataType: string
+		lineageTag: 0ac39a1e-bc28-4a93-84ba-683e42ba2be9
+		summarizeBy: none
+		sourceColumn: properties.tcpStaticPorts
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.currentVersion'
+		dataType: string
+		lineageTag: c12ff6a9-82c5-433e-b4da-d285c4befb0f
+		summarizeBy: none
+		sourceColumn: properties.currentVersion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.backupPolicy.retentionPeriodDays'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b824e5a-0561-4843-a7a7-01efac7b1030
+		summarizeBy: sum
+		sourceColumn: properties.backupPolicy.retentionPeriodDays
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.backupPolicy.fullBackupDays'
+		dataType: int64
+		formatString: 0
+		lineageTag: c40125db-4ccc-454f-83b1-6a4746b8e727
+		summarizeBy: sum
+		sourceColumn: properties.backupPolicy.fullBackupDays
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.backupPolicy.differentialBackupHours'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0605c6b8-11ed-4856-bc3b-9b8b8f2ac7f1
+		summarizeBy: sum
+		sourceColumn: properties.backupPolicy.differentialBackupHours
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.backupPolicy.transactionLogBackupMinutes'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5effd361-64b4-48c9-91bf-fca4bd3c63c7
+		summarizeBy: sum
+		sourceColumn: properties.backupPolicy.transactionLogBackupMinutes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.instanceName'
+		dataType: string
+		lineageTag: 68284ac9-0555-4cd4-bfdd-5421ffec9ff4
+		summarizeBy: none
+		sourceColumn: properties.instanceName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.alwaysOnRole'
+		dataType: string
+		lineageTag: 5feb1f01-13a4-4683-aaef-8568aaf96c6d
+		summarizeBy: none
+		sourceColumn: properties.alwaysOnRole
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.createTime'
+		dataType: string
+		lineageTag: d1816a13-a9c8-40ff-813e-5885999555f3
+		summarizeBy: none
+		sourceColumn: properties.createTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.patchLevel'
+		dataType: string
+		lineageTag: 36137a58-d1ce-4a29-84f3-e0b016401a5d
+		summarizeBy: none
+		sourceColumn: properties.patchLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.productId'
+		dataType: string
+		lineageTag: 938abee6-5766-4906-8811-6929d25e60e8
+		summarizeBy: none
+		sourceColumn: properties.productId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.edition'
+		dataType: string
+		lineageTag: 1823e5c0-a005-48f9-b106-32439954f7ae
+		summarizeBy: none
+		sourceColumn: properties.edition
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.vCore'
+		dataType: int64
+		formatString: 0
+		lineageTag: bedd2a97-3673-4513-a83f-3a22605175f0
+		summarizeBy: sum
+		sourceColumn: properties.vCore
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.cores'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7df64841-aa8c-4a92-8174-7a007477345b
+		summarizeBy: sum
+		sourceColumn: properties.cores
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.primaryUserAssignedIdentityId'
+		dataType: string
+		lineageTag: 4d885026-d711-4827-b774-7cac6bc34acc
+		summarizeBy: none
+		sourceColumn: properties.primaryUserAssignedIdentityId
+
+		annotation SummarizationSetBy = Automatic
+
+	column typeOfSql =
+			SWITCH([type],
+			"Microsoft.Sql/servers", "Azure SQL DB",
+			"microsoft.sql/managedinstances", "Azure SQL MI",
+			"microsoft.azurearcdata/sqlserverinstances", "Arc-enabled SQL Server",
+			"Microsoft.SqlVirtualMachine/sqlVirtualMachines", "Azure SQL VM",
+			[type]
+			)
+		lineageTag: 611eafc2-6c51-4f91-86ea-be0f648dbac6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column hostingPlatform = if([type] == "microsoft.azurearcdata/sqlserverinstances","Non-Azure","Azure")
+		lineageTag: f7449743-6344-48e0-8a6b-ada7d5520ccd
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column isIaasOrPaas = if(OR([type] == "Microsoft.SqlVirtualMachine/sqlVirtualMachines", [type] == "microsoft.azurearcdata/sqlserverinstances"),"IaaS","PaaS")
+		lineageTag: 4b301348-d0c5-4e2c-b8a5-4c9288968f8c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.administrators.tenantId'
+		dataType: string
+		lineageTag: c0e38b45-fdc1-4b2c-b8fa-efe3cc2ab14f
+		summarizeBy: none
+		sourceColumn: properties.administrators.tenantId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.administrators.azureADOnlyAuthentication'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7ad7bd9f-3323-4b44-b9b2-41a3cbb80f59
+		summarizeBy: none
+		sourceColumn: properties.administrators.azureADOnlyAuthentication
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.administrators.administratorType'
+		dataType: string
+		lineageTag: 9877d6a8-2eda-40e8-8d83-6e3c4ca9e353
+		summarizeBy: none
+		sourceColumn: properties.administrators.administratorType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.administrators.principalType'
+		dataType: string
+		lineageTag: ffc4048c-ee5b-42f6-ac95-0741757df932
+		summarizeBy: none
+		sourceColumn: properties.administrators.principalType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.administrators.login'
+		dataType: string
+		lineageTag: 675facea-7453-4d9f-90a9-f0229e1e8a38
+		summarizeBy: none
+		sourceColumn: properties.administrators.login
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.administrators.sid'
+		dataType: string
+		lineageTag: 35beaf29-511b-44c7-b98a-0fb1e9a23bf1
+		summarizeBy: none
+		sourceColumn: properties.administrators.sid
+
+		annotation SummarizationSetBy = Automatic
+
+	column apiVersion
+		dataType: string
+		lineageTag: 8cae73cf-1456-42a1-85f4-3e8e5b5e54cb
+		summarizeBy: none
+		sourceColumn: apiVersion
+
+		annotation SummarizationSetBy = Automatic
+
+	column systemData
+		dataType: string
+		lineageTag: 9dc6505c-bd63-4c5f-a5bb-172757191f32
+		summarizeBy: none
+		sourceColumn: systemData
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.monitoring.enabled'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 979adb4c-7c82-493c-84e7-6a208bfc41c3
+		summarizeBy: none
+		sourceColumn: properties.monitoring.enabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column sqlVersionAndEdition =
+			SWITCH([type],
+			"Microsoft.Sql/servers", CONCATENATE("Azure SQL DB",CONCATENATE(" ",[sqlVersion])),
+			"microsoft.sql/managedinstances", CONCATENATE("Azure SQL MI",CONCATENATE(" ",[sqlVersion])),
+			CONCATENATE([SQLversion],CONCATENATE(" ",[SQLedition]))
+			)
+		lineageTag: 194632a6-621b-4247-a150-5a97482204d0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column extSupportCoreBasedPerYear = 12*[properties.vCore]*RELATED(ProductLifecycle1[ExtendedSupportCostPerCorePerMonth])
+		lineageTag: 36850ead-5990-497f-9444-49cbc82e4e73
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.dbMasterKeyExists'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 518f9103-3866-455a-bf32-c0bdfd2a9b07
+		summarizeBy: none
+		sourceColumn: properties.dbMasterKeyExists
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.clientConnection'
+		dataType: string
+		lineageTag: 748386f5-6267-4496-8f58-c50ab83d9e4d
+		summarizeBy: none
+		sourceColumn: properties.clientConnection
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.isHadrEnabled'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b78e4a94-b081-4517-842c-745532a6fdfb
+		summarizeBy: none
+		sourceColumn: properties.isHadrEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.serviceType'
+		dataType: string
+		lineageTag: dc28e0d9-e424-45b5-a80e-8875c5b45c24
+		summarizeBy: none
+		sourceColumn: properties.serviceType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'properties.traceFlags'
+		dataType: string
+		lineageTag: e119e686-0759-4a7f-b411-ce3384eccda8
+		summarizeBy: none
+		sourceColumn: properties.traceFlags
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'migAssess.enabled'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ab1aa2b9-d6d4-4043-a71c-a4c4ab06e978
+		summarizeBy: none
+		sourceColumn: migAssess.enabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'migAssess.sku.sqlMI.numBlockIssues'
+		dataType: int64
+		formatString: 0
+		lineageTag: acf133ce-01d6-477c-9b66-80fae18acd10
+		summarizeBy: sum
+		sourceColumn: migAssess.sku.sqlMI.numBlockIssues
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'migAssess.sku.sqlMI.recStatus'
+		dataType: string
+		lineageTag: 4a5a512e-6abb-4e3c-a187-8d58ce683aa7
+		summarizeBy: none
+		sourceColumn: migAssess.sku.sqlMI.recStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'migAssess.sku.sqlMI.monthlyCostTotal'
+		dataType: double
+		lineageTag: a0808d16-6719-423d-901b-3affb2b57cd4
+		summarizeBy: sum
+		sourceColumn: migAssess.sku.sqlMI.monthlyCostTotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'migAssess.sku.sqlVM.numBlockIssues'
+		dataType: int64
+		formatString: 0
+		lineageTag: ab3d2d0e-0717-48c0-88a0-9c6ee05a99fd
+		summarizeBy: sum
+		sourceColumn: migAssess.sku.sqlVM.numBlockIssues
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'migAssess.sku.sqlVM.recStatus'
+		dataType: string
+		lineageTag: cf491474-9c2a-4d04-9d65-493f31b5d1ff
+		summarizeBy: none
+		sourceColumn: migAssess.sku.sqlVM.recStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'migAssess.sku.sqlVM.monthlyCostTotal'
+		dataType: double
+		lineageTag: 1dd90fe3-3a4d-402b-b35f-20e808a6ec04
+		summarizeBy: sum
+		sourceColumn: migAssess.sku.sqlVM.monthlyCostTotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'migAssess.sku.sqlDB.numBlockIssues'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4624bc5f-e25a-49f3-9a3d-094f3571e107
+		summarizeBy: sum
+		sourceColumn: migAssess.sku.sqlDB.numBlockIssues
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'migAssess.sku.sqlDB.recStatus'
+		dataType: string
+		lineageTag: 0c914c66-f89b-4b33-8bd9-b802a1bde672
+		summarizeBy: none
+		sourceColumn: migAssess.sku.sqlDB.recStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'migAssess.sku.sqlDB.monthlyCostTotal'
+		dataType: double
+		lineageTag: 6b38374b-fdd5-4b91-b6d6-6f9448b0e03d
+		summarizeBy: sum
+		sourceColumn: migAssess.sku.sqlDB.monthlyCostTotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'migAssess.assessmentUploadTime'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f3dd7451-ec8a-4704-9051-7477b20060ee
+		summarizeBy: none
+		sourceColumn: migAssess.assessmentUploadTime
+
+		variation Variation
+			isDefault
+			relationship: 5e005707-413c-47a5-8e55-5b89eb3b8ae3
+			defaultHierarchy: LocalDateTable_9bc99f5c-19e6-4838-aa0f-1dc06232015c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column migAssessPaasReady = ```
+			SWITCH(
+			    TRUE(),
+			    OR(SQLAll[migAssess.sku.sqlDB.recStatus] = "Ready", SQLAll[migAssess.sku.sqlMI.recStatus] = "Ready"), "Ready",
+			    AND(SQLAll[migAssess.sku.sqlDB.recStatus] = "Not ready", SQLAll[migAssess.sku.sqlMI.recStatus] = "Not ready"), "Not ready",
+			    "Unknown"
+			)
+			
+			```
+		lineageTag: ce416ab8-ec56-42cd-8e91-535520d77443
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SQLAll = m
+		mode: import
+		source =
+				let
+				    Source = AzureResourceGraph.Query("resources#(lf)| where type =~ 'Microsoft.Sql/servers' or type == 'microsoft.azurearcdata/sqlserverinstances' or type == 'microsoft.sql/managedinstances' or type == 'Microsoft.SqlVirtualMachine/sqlVirtualMachines'#(lf)| extend sqlVersion = properties.version, sqlEdition=properties.edition, bpa = iff(notnull(properties.settings.AssessmentSettings),""Enabled"",""Disabled"")#(lf)| extend arcMachineName = iff(type == 'microsoft.azurearcdata/sqlserverinstances' or type == 'Microsoft.SqlVirtualMachine/sqlVirtualMachines',iff(indexof(name,""_"") <= 0,name,substring(name,0,indexof(name,""_""))),'Not applicable')#(lf)| extend sqlVersion = iff(type == 'microsoft.sql/managedinstances',strcat(sku.name,""-"",sku.tier),sqlVersion)", null, null, null, [resultTruncated=false]),
+				    #"Expanded sku" = Table.ExpandRecordColumn(Source, "sku", {"name", "tier", "capacity", "family"}, {"sku.name", "sku.tier", "sku.capacity", "sku.family"}),
+				    #"Expanded properties" = Table.ExpandRecordColumn(#"Expanded sku", "properties", {"publicNetworkAccess", "privateEndpointConnections", "state", "version", "restrictOutboundNetworkAccess", "fullyQualifiedDomainName", "minimalTlsVersion", "externalGovernanceStatus", "administratorLogin", "administrators", "provisioningState", "storageAccountType", "licenseType", "maintenanceConfigurationId", "collation", "zoneRedundant", "subnetId", "publicDataEndpointEnabled", "storageSizeInGB", "proxyOverride", "timezoneId", "vCores", "dnsZone", "status", "azureDefenderStatusLastUpdated", "lastInventoryUploadTime", "containerResourceId", "azureDefenderStatus", "lastUsageUploadTime", "upgradeLockedUntil", "hostType", "tcpDynamicPorts", "failoverCluster", "tcpStaticPorts", "currentVersion", "backupPolicy", "instanceName", "alwaysOnRole", "createTime", "patchLevel", "monitoring", "migration", "productId", "edition", "vCore", "cores", "dbMasterKeyExists", "clientConnection", "isHadrEnabled", "serviceType", "traceFlags", "primaryUserAssignedIdentityId"}, {"properties.publicNetworkAccess", "properties.privateEndpointConnections", "properties.state", "properties.version", "properties.restrictOutboundNetworkAccess", "properties.fullyQualifiedDomainName", "properties.minimalTlsVersion", "properties.externalGovernanceStatus", "properties.administratorLogin", "properties.administrators", "properties.provisioningState", "properties.storageAccountType", "properties.licenseType", "properties.maintenanceConfigurationId", "properties.collation", "properties.zoneRedundant", "properties.subnetId", "properties.publicDataEndpointEnabled", "properties.storageSizeInGB", "properties.proxyOverride", "properties.timezoneId", "properties.vCores", "properties.dnsZone", "properties.status", "properties.azureDefenderStatusLastUpdated", "properties.lastInventoryUploadTime", "properties.containerResourceId", "properties.azureDefenderStatus", "properties.lastUsageUploadTime", "properties.upgradeLockedUntil", "properties.hostType", "properties.tcpDynamicPorts", "properties.failoverCluster", "properties.tcpStaticPorts", "properties.currentVersion", "properties.backupPolicy", "properties.instanceName", "properties.alwaysOnRole", "properties.createTime", "properties.patchLevel", "properties.monitoring", "properties.migration", "properties.productId", "properties.edition", "properties.vCore", "properties.cores", "properties.dbMasterKeyExists", "properties.clientConnection", "properties.isHadrEnabled", "properties.serviceType", "properties.traceFlags", "properties.primaryUserAssignedIdentityId"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded properties",{{"properties.publicDataEndpointEnabled", type logical}, {"properties.zoneRedundant", type logical}, {"properties.storageSizeInGB", Int64.Type}, {"properties.vCores", Int64.Type}, {"properties.lastUsageUploadTime", type datetime}}),
+				    #"Expanded properties.backupPolicy" = Table.ExpandRecordColumn(#"Changed Type", "properties.backupPolicy", {"retentionPeriodDays", "fullBackupDays", "differentialBackupHours", "transactionLogBackupMinutes"}, {"properties.backupPolicy.retentionPeriodDays", "properties.backupPolicy.fullBackupDays", "properties.backupPolicy.differentialBackupHours", "properties.backupPolicy.transactionLogBackupMinutes"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Expanded properties.backupPolicy",{{"properties.azureDefenderStatusLastUpdated", type datetime}, {"properties.lastInventoryUploadTime", type datetime}, {"properties.backupPolicy.retentionPeriodDays", Int64.Type}, {"properties.backupPolicy.fullBackupDays", Int64.Type}, {"properties.backupPolicy.differentialBackupHours", Int64.Type}, {"properties.backupPolicy.transactionLogBackupMinutes", Int64.Type}, {"properties.vCore", Int64.Type}, {"properties.cores", Int64.Type}}),
+				    #"Expanded properties.administrators" = Table.ExpandRecordColumn(#"Changed Type1", "properties.administrators", {"tenantId", "azureADOnlyAuthentication", "administratorType", "principalType", "login", "sid"}, {"properties.administrators.tenantId", "properties.administrators.azureADOnlyAuthentication", "properties.administrators.administratorType", "properties.administrators.principalType", "properties.administrators.login", "properties.administrators.sid"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Expanded properties.administrators",{{"properties.administrators.azureADOnlyAuthentication", type logical}}),
+				    #"Expanded properties.monitoring" = Table.ExpandRecordColumn(#"Changed Type2", "properties.monitoring", {"enabled"}, {"properties.monitoring.enabled"}),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Expanded properties.monitoring",{{"properties.monitoring.enabled", type logical}, {"properties.isHadrEnabled", type logical}, {"properties.dbMasterKeyExists", type logical}}),
+				    #"Expanded properties.migration" = Table.ExpandRecordColumn(#"Changed Type3", "properties.migration", {"assessment"}, {"migAssess"}),
+				    #"Expanded migAssess" = Table.ExpandRecordColumn(#"Expanded properties.migration", "migAssess", {"enabled", "skuRecommendationResults", "assessmentUploadTime"}, {"migAssess.enabled", "migAssess.sku", "migAssess.assessmentUploadTime"}),
+				    #"Expanded migAssess.skuRecs" = Table.ExpandRecordColumn(#"Expanded migAssess", "migAssess.sku", {"azureSqlManagedInstance", "azureSqlVirtualMachine", "azureSqlDatabase"}, {"migAssess.sku.sqlMI", "migAssess.sku.sqlVM", "migAssess.sku.sqlDB"}),
+				    #"Expanded migAssess.sku.sqlMI" = Table.ExpandRecordColumn(#"Expanded migAssess.skuRecs", "migAssess.sku.sqlMI", {"numberOfServerBlockerIssues", "recommendationStatus", "monthlyCost"}, {"migAssess.sku.sqlMI.numBlockIssues", "migAssess.sku.sqlMI.recStatus", "migAssess.sku.sqlMI.monthlyCost"}),
+				    #"Expanded migAssess.sku.sqlMI.monthlyCost" = Table.ExpandRecordColumn(#"Expanded migAssess.sku.sqlMI", "migAssess.sku.sqlMI.monthlyCost", {"totalCost"}, {"migAssess.sku.sqlMI.monthlyCostTotal"}),
+				    #"Expanded migAssess.sku.sqlDB" = Table.ExpandRecordColumn(#"Expanded migAssess.sku.sqlMI.monthlyCost", "migAssess.sku.sqlDB", {"numberOfServerBlockerIssues", "recommendationStatus", "monthlyCost"}, {"migAssess.sku.sqlDB.numBlockIssues", "migAssess.sku.sqlDB.recStatus", "migAssess.sku.sqlDB.monthlyCost"}),
+				    #"Expanded migAssess.sku.sqlDB.monthlyCost" = Table.ExpandRecordColumn(#"Expanded migAssess.sku.sqlDB", "migAssess.sku.sqlDB.monthlyCost", {"totalCost"}, {"migAssess.sku.sqlDB.monthlyCostTotal"}),
+				    #"Expanded migAssess.sku.sqlVM" = Table.ExpandRecordColumn(#"Expanded migAssess.sku.sqlDB.monthlyCost", "migAssess.sku.sqlVM", {"numberOfServerBlockerIssues", "recommendationStatus", "monthlyCost"}, {"migAssess.sku.sqlVM.numBlockIssues", "migAssess.sku.sqlVM.recStatus", "migAssess.sku.sqlVM.monthlyCost"}),
+				    #"Expanded migAssess.sku.sqlVM.monthlyCost" = Table.ExpandRecordColumn(#"Expanded migAssess.sku.sqlVM", "migAssess.sku.sqlVM.monthlyCost", {"totalCost"}, {"migAssess.sku.sqlVM.monthlyCostTotal"}),
+				    #"Changed Type4" = Table.TransformColumnTypes(#"Expanded migAssess.sku.sqlVM.monthlyCost",{{"migAssess.sku.sqlVM.monthlyCostTotal", type number}, {"migAssess.sku.sqlDB.monthlyCostTotal", type number}, {"migAssess.sku.sqlMI.monthlyCostTotal", type number}, {"migAssess.sku.sqlVM.numBlockIssues", Int64.Type}, {"migAssess.sku.sqlMI.numBlockIssues", Int64.Type}, {"migAssess.sku.sqlDB.numBlockIssues", Int64.Type}, {"migAssess.assessmentUploadTime", type datetime}, {"migAssess.enabled", type logical}})
+				in
+				    #"Changed Type4"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

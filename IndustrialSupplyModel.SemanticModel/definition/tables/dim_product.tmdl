@@ -1,0 +1,147 @@
+table dim_product
+	lineageTag: 0ff07098-1797-4827-85d6-16c948302bfc
+	sourceLineageTag: [dbo].[dim_product]
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: ecc4041d-6a6e-4d9b-8196-63fc1ad5107e
+		sourceLineageTag: product_key
+		summarizeBy: none
+		sourceColumn: product_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		lineageTag: bdd18b72-8e02-4f16-8545-6d25168e7409
+		sourceLineageTag: product_id
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sku
+		dataType: string
+		lineageTag: 08a648cf-3c3e-4073-a04b-501208f13a31
+		sourceLineageTag: sku
+		summarizeBy: none
+		sourceColumn: sku
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_name
+		dataType: string
+		lineageTag: 43548aaa-d350-4da1-9d9c-796c77cc8667
+		sourceLineageTag: product_name
+		summarizeBy: none
+		sourceColumn: product_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: 3caacefa-eaa7-4fee-8bf9-bf5367bce865
+		sourceLineageTag: category
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column subcategory
+		dataType: string
+		lineageTag: 3494675e-9477-42df-add5-60d8dfe64b63
+		sourceLineageTag: subcategory
+		summarizeBy: none
+		sourceColumn: subcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column brand
+		dataType: string
+		lineageTag: 62ebe7aa-7871-45a4-ad7f-f16260ed626b
+		sourceLineageTag: brand
+		summarizeBy: none
+		sourceColumn: brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 974f9d10-337c-45e2-b278-dfa14da93b04
+		sourceLineageTag: supplier_key
+		summarizeBy: none
+		sourceColumn: supplier_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column uom
+		dataType: string
+		lineageTag: c49be75a-1310-4561-8110-493d2e0db68b
+		sourceLineageTag: uom
+		summarizeBy: none
+		sourceColumn: uom
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_cost
+		dataType: double
+		lineageTag: b167704d-4466-4a56-bf24-44aaae7a5511
+		sourceLineageTag: unit_cost
+		summarizeBy: sum
+		sourceColumn: unit_cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column list_price
+		dataType: double
+		lineageTag: 3a916960-a9c1-41ed-b472-81660d4da799
+		sourceLineageTag: list_price
+		summarizeBy: sum
+		sourceColumn: list_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column weight_lbs
+		dataType: double
+		lineageTag: aac3f730-87f3-4478-9029-93bc4c4e08ce
+		sourceLineageTag: weight_lbs
+		summarizeBy: sum
+		sourceColumn: weight_lbs
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_hazmat
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 00dee769-870c-4f16-a7e9-8aac60b50453
+		sourceLineageTag: is_hazmat
+		summarizeBy: none
+		sourceColumn: is_hazmat
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c9854584-fb5e-41f4-b5f5-a4a8e90ecd19
+		sourceLineageTag: is_active
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_product = entity
+		mode: directLake
+		source
+			entityName: dim_product
+			schemaName: dbo
+			expressionSource: 'DirectLake - IndustrialSupply'
+

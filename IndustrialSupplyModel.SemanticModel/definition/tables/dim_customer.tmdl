@@ -1,0 +1,146 @@
+table dim_customer
+	lineageTag: 5f81f521-0ebe-41d0-9423-c5fe7197886b
+	sourceLineageTag: [dbo].[dim_customer]
+
+	column customer_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 60958e59-0095-44b7-b8db-5520df0eb61d
+		sourceLineageTag: customer_key
+		summarizeBy: none
+		sourceColumn: customer_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: 76574a15-68bb-4b48-a6b3-d086edbad69d
+		sourceLineageTag: customer_id
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_name
+		dataType: string
+		lineageTag: e547fbb9-f79f-4262-bb94-2a71c672e614
+		sourceLineageTag: customer_name
+		summarizeBy: none
+		sourceColumn: customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column segment
+		dataType: string
+		lineageTag: 9af12173-a4ba-4126-8921-5b629638e3fb
+		sourceLineageTag: segment
+		summarizeBy: none
+		sourceColumn: segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column tier
+		dataType: string
+		lineageTag: 1b3572c1-c5a2-42e2-9206-3f901b6fdd79
+		sourceLineageTag: tier
+		summarizeBy: none
+		sourceColumn: tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_terms
+		dataType: string
+		lineageTag: b4ebb018-0c01-4241-b8a7-dcbd064138fe
+		sourceLineageTag: payment_terms
+		summarizeBy: none
+		sourceColumn: payment_terms
+
+		annotation SummarizationSetBy = Automatic
+
+	column credit_limit
+		dataType: double
+		lineageTag: aeb31ee3-37a6-43a4-b207-a2520cd38c15
+		sourceLineageTag: credit_limit
+		summarizeBy: sum
+		sourceColumn: credit_limit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column primary_state
+		dataType: string
+		lineageTag: 3b465965-3759-4d87-bcf1-1ff75a461ce8
+		sourceLineageTag: primary_state
+		summarizeBy: none
+		sourceColumn: primary_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column primary_city
+		dataType: string
+		lineageTag: c8d81e78-4da5-4787-9998-39cb1931e67b
+		sourceLineageTag: primary_city
+		summarizeBy: none
+		sourceColumn: primary_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_manager_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 84542ee1-e0b8-45d1-b1b7-baeefaeeca20
+		sourceLineageTag: account_manager_id
+		summarizeBy: sum
+		sourceColumn: account_manager_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 54da008e-5cd7-4c8a-83a8-ea50b42b8d53
+		sourceLineageTag: is_active
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 007db25f-a948-4529-8bb0-9d31e34b7e22
+		sourceLineageTag: created_date
+		summarizeBy: none
+		sourceColumn: created_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_order_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cc731b93-ec2d-40e3-849c-0d24efbc16e0
+		sourceLineageTag: last_order_date
+		summarizeBy: none
+		sourceColumn: last_order_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column lifetime_revenue
+		dataType: double
+		lineageTag: cf296eb8-6bda-45be-a1a5-eb581998f7ab
+		sourceLineageTag: lifetime_revenue
+		summarizeBy: sum
+		sourceColumn: lifetime_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition dim_customer = entity
+		mode: directLake
+		source
+			entityName: dim_customer
+			schemaName: dbo
+			expressionSource: 'DirectLake - IndustrialSupply'
+

@@ -1,0 +1,140 @@
+table fact_returns
+	lineageTag: 8e74599a-450c-4493-9441-f036396b23b6
+	sourceLineageTag: [dbo].[fact_returns]
+
+	column return_key
+		dataType: string
+		lineageTag: 66c8f782-a884-4425-b59e-c07e272b1234
+		sourceLineageTag: return_key
+		summarizeBy: none
+		sourceColumn: return_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column rma_id
+		dataType: string
+		lineageTag: ca522d33-ffce-419c-a954-fd9cc197d767
+		sourceLineageTag: rma_id
+		summarizeBy: none
+		sourceColumn: rma_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column original_order_id
+		dataType: string
+		lineageTag: fc92975a-ed50-4847-9509-883a27ce67a8
+		sourceLineageTag: original_order_id
+		summarizeBy: none
+		sourceColumn: original_order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column return_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: d35efa80-c507-4c00-80a4-16e4f10ebcad
+		sourceLineageTag: return_date_key
+		summarizeBy: none
+		sourceColumn: return_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 8d0c640d-2606-419f-b5db-25d7d572f702
+		sourceLineageTag: customer_key
+		summarizeBy: none
+		sourceColumn: customer_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 2cd4e968-2579-449e-b6cf-a4ef176ddd85
+		sourceLineageTag: product_key
+		summarizeBy: none
+		sourceColumn: product_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 120166d3-e4c7-45f9-8fd4-d7f9990f2a1a
+		sourceLineageTag: location_key
+		summarizeBy: none
+		sourceColumn: location_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity_returned
+		dataType: int64
+		formatString: 0
+		lineageTag: f4ab1cfa-9887-43b6-878c-cae9bd4ee22d
+		sourceLineageTag: quantity_returned
+		summarizeBy: sum
+		sourceColumn: quantity_returned
+
+		annotation SummarizationSetBy = Automatic
+
+	column return_reason
+		dataType: string
+		lineageTag: 1ed9c5e5-41fa-4867-8b27-83464fce6247
+		sourceLineageTag: return_reason
+		summarizeBy: none
+		sourceColumn: return_reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column credit_amount
+		dataType: double
+		lineageTag: 1aef9378-127a-48d6-86ef-265726777ae9
+		sourceLineageTag: credit_amount
+		summarizeBy: sum
+		sourceColumn: credit_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column restocking_fee
+		dataType: double
+		lineageTag: 09de9bfc-c096-4b9d-80dc-264710923c78
+		sourceLineageTag: restocking_fee
+		summarizeBy: sum
+		sourceColumn: restocking_fee
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column net_credit
+		dataType: double
+		lineageTag: 49fcd59a-9721-4846-8099-83d3a1d5615b
+		sourceLineageTag: net_credit
+		summarizeBy: sum
+		sourceColumn: net_credit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_resaleable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 01afec89-7538-4133-b0b2-62821805c4b0
+		sourceLineageTag: is_resaleable
+		summarizeBy: none
+		sourceColumn: is_resaleable
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_returns = entity
+		mode: directLake
+		source
+			entityName: fact_returns
+			schemaName: dbo
+			expressionSource: 'DirectLake - IndustrialSupply'
+

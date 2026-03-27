@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "IcebergSync"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d8d4bb90-e968-9066-4959-e3d68c58d514"
+  }
+}

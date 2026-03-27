@@ -1,0 +1,102 @@
+relationship 21267d3b-6c95-4687-8c59-5fc45e6da2e7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ProductLifecycle1.MainstreamEndDate
+	toColumn: LocalDateTable_c1db5021-26bb-4e35-8359-eb98ea072128.Date
+
+relationship ac680b6a-79db-4fe1-9c49-081b9b8e8782
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ProductLifecycle1.ExtendedEndDate
+	toColumn: LocalDateTable_e7198b07-d551-4d48-8ec9-44e3821ade8d.Date
+
+relationship cc8d0831-515a-49b4-94c9-44ca64e0efcd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ProductLifecycle1.EndOfLifeDate
+	toColumn: LocalDateTable_b19ad774-b293-41f0-8286-03db35aa1412.Date
+
+relationship 61b27f50-426f-8965-462d-0464c5d39c7e
+	fromColumn: ArcAgents.operatingSystem
+	toColumn: ProductLifecycle1.Product
+
+relationship d4105e15-3749-4353-80c9-3107f58a3b56
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ArcAgents.'properties.timeCreated'
+	toColumn: LocalDateTable_8b1e3ba6-50ed-4ca7-8354-f4a55a017dbc.Date
+
+relationship bc057c05-bf95-4be9-9d4b-c1963cc32b77
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ArcAgents.'properties.osInstallDate'
+	toColumn: LocalDateTable_725ba857-fb89-41a2-a31e-5d0de50e3529.Date
+
+relationship 6e8a3fe4-f133-4c40-93eb-34ab1f4b2ecf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ArcAgents.'properties.lastStatusChange'
+	toColumn: LocalDateTable_88606c15-9728-4b4d-8182-e71950342a32.Date
+
+relationship 957429fe-ecd2-4c35-af65-8c36a6d4b31d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SQLAll.'properties.azureDefenderStatusLastUpdated'
+	toColumn: LocalDateTable_69e8cd93-aca5-42ee-9f5d-bae457b3724d.Date
+
+relationship 3b798106-4a2e-4360-a7ef-ab579fc066b2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SQLAll.'properties.lastInventoryUploadTime'
+	toColumn: LocalDateTable_2fcb0f32-9f76-4fb3-abb7-be0aeef5905e.Date
+
+relationship f87f70c7-9f8c-4471-90b7-f6ae07583628
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SQLAll.'properties.lastUsageUploadTime'
+	toColumn: LocalDateTable_befa1385-d9d0-462a-a678-63531f511fe0.Date
+
+relationship f84e73ec-60c1-45eb-a9a7-6c90b941c3bf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SQLAllDatabases.'properties.creationDate'
+	toColumn: LocalDateTable_9341708f-27f9-409c-ae0a-02b454a435a6.Date
+
+relationship 9f40e2ab-df28-4d55-a7b7-2dcdf20e7bb2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SQLAllDatabases.'properties.earliestRestoreDate'
+	toColumn: LocalDateTable_c4d00251-62ac-4d00-bed8-e15c5b975a00.Date
+
+relationship c4f43d86-ceb3-407f-922c-3b46e9124b65
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SQLAllDatabases.'properties.earliestRestorePoint'
+	toColumn: LocalDateTable_9a135d65-1e1c-45a7-968e-39fae5d4a022.Date
+
+relationship 5a500e07-f81a-a225-8734-229a0541b1c8
+	fromColumn: SQLAllDatabases.parentSqlResourceId
+	toColumn: SQLAll.id
+
+relationship 89e00661-c1cf-4900-a2c7-791cafb015fd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SQLAllDatabases.'properties.lastDatabaseUploadTime'
+	toColumn: LocalDateTable_1b5a607d-eb0a-4efb-b733-11ee53f21adc.Date
+
+relationship 884d32ad-66f3-46b6-bc8f-fe88488e0a90
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SQLAllDatabases.'properties.databaseCreationDate'
+	toColumn: LocalDateTable_50c9c12e-b8cc-400d-ad55-e0d2b0fde470.Date
+
+relationship 3faac2a7-2162-4455-99c6-d0262483c909
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SQLAllDatabases.'properties.backupInformation.lastFullBackup'
+	toColumn: LocalDateTable_121a4cbf-cce5-4b04-b121-f5c3206426ff.Date
+
+relationship 25697814-40cc-474a-8d5d-bb3ea2476cf1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SQLAllDatabases.'properties.backupInformation.lastLogBackup'
+	toColumn: LocalDateTable_44c0d1d4-c158-44b3-bcc6-fc91d2f8bb3a.Date
+
+relationship ee501714-184b-4142-8815-d2f63b703e96
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SQLAllDatabases.dbCreationDate
+	toColumn: LocalDateTable_cfd416eb-402a-481f-9096-ce8afca7c124.Date
+
+relationship 51d9d0fe-7392-5235-fdf1-285f1078a020
+	fromColumn: SQLAll.sqlVersionAndEdition
+	toColumn: ProductLifecycle1.Product
+
+relationship 5e005707-413c-47a5-8e55-5b89eb3b8ae3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SQLAll.'migAssess.assessmentUploadTime'
+	toColumn: LocalDateTable_9bc99f5c-19e6-4838-aa0f-1dc06232015c.Date
+

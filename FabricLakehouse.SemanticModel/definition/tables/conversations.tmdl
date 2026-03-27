@@ -1,0 +1,127 @@
+table conversations
+	lineageTag: 84f9ce55-9f86-4d0c-b6b6-e2b862029e18
+	sourceLineageTag: [dbo].[conversations]
+
+	column id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a7fea476-4f43-409f-af76-512fa9459e96
+		sourceLineageTag: id
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column inreplyto
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: acc25569-6d00-4213-b099-aaaecd60e916
+		sourceLineageTag: inreplyto
+		summarizeBy: sum
+		sourceColumn: inreplyto
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 243ae5f1-3672-4a13-b139-c40052662136
+		sourceLineageTag: name
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column userid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a81b7841-acff-4f68-af8b-c82c62d74e3c
+		sourceLineageTag: userid
+		summarizeBy: none
+		sourceColumn: userid
+
+		annotation SummarizationSetBy = Automatic
+
+	column emailaddress
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0f9cc7e4-87d7-4391-b104-19a8cb035de6
+		sourceLineageTag: emailaddress
+		summarizeBy: none
+		sourceColumn: emailaddress
+
+		annotation SummarizationSetBy = Automatic
+
+	column datetime
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1a0f48ff-c915-476e-b58a-7b9b5a542580
+		sourceLineageTag: datetime
+		summarizeBy: none
+		sourceColumn: datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column topic
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: eea70d99-ff00-42c1-bf07-bea4552e3ac4
+		sourceLineageTag: topic
+		summarizeBy: none
+		sourceColumn: topic
+
+		annotation SummarizationSetBy = Automatic
+
+	column subject
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 450d6088-6eeb-4b61-9712-236c2c9dbc5c
+		sourceLineageTag: subject
+		summarizeBy: none
+		sourceColumn: subject
+
+		annotation SummarizationSetBy = Automatic
+
+	column comment
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 11723a54-e829-4eb9-9f56-061ec471d983
+		sourceLineageTag: comment
+		summarizeBy: none
+		sourceColumn: comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column spamscore
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ddfd59ba-796d-4eeb-bd6c-13c0c82098a4
+		sourceLineageTag: spamscore
+		summarizeBy: sum
+		sourceColumn: spamscore
+
+		annotation SummarizationSetBy = Automatic
+
+	column votes
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 715bc49f-4835-4a6a-b355-1f315c37fd28
+		sourceLineageTag: votes
+		summarizeBy: sum
+		sourceColumn: votes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition conversations-40e51a73-2df0-408e-b146-29635955cc1e = entity
+		mode: directLake
+		source
+			entityName: conversations
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

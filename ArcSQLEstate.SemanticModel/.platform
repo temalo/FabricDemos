@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "ArcSQLEstate"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "21eee7c5-7f17-bf2a-4c58-a34cb47a11a8"
+  }
+}

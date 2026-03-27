@@ -1,0 +1,95 @@
+table dim_location
+	lineageTag: af199e3a-0c3b-42e5-817c-bcd35f1db4bc
+	sourceLineageTag: [dbo].[dim_location]
+
+	column location_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c1f2490-3177-4df3-9ac6-a74ef5650a24
+		sourceLineageTag: location_key
+		summarizeBy: none
+		sourceColumn: location_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_id
+		dataType: string
+		lineageTag: c457d888-011d-44ec-b8e4-5c4ae895f83e
+		sourceLineageTag: location_id
+		summarizeBy: none
+		sourceColumn: location_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_name
+		dataType: string
+		lineageTag: c99a5405-359d-4f64-9d9e-84fff7594259
+		sourceLineageTag: location_name
+		summarizeBy: none
+		sourceColumn: location_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: c9bac657-607e-42c9-84ff-63975d84f2cc
+		sourceLineageTag: city
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		lineageTag: 8dea47f2-2a60-4898-8699-4cc55f6800cd
+		sourceLineageTag: state
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column zip_code
+		dataType: string
+		lineageTag: f5b6f835-7950-4098-9803-404f86a60e09
+		sourceLineageTag: zip_code
+		summarizeBy: none
+		sourceColumn: zip_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: 68e5772e-06a0-4faa-bc65-5cad0b6b6473
+		sourceLineageTag: region
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_distribution_center
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1c56c6d5-ed49-4e7b-986f-a8be5b1a9715
+		sourceLineageTag: is_distribution_center
+		summarizeBy: none
+		sourceColumn: is_distribution_center
+
+		annotation SummarizationSetBy = Automatic
+
+	column sq_footage
+		dataType: int64
+		formatString: 0
+		lineageTag: 43025df0-67f6-400a-bfe6-89c3f388e848
+		sourceLineageTag: sq_footage
+		summarizeBy: sum
+		sourceColumn: sq_footage
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_location = entity
+		mode: directLake
+		source
+			entityName: dim_location
+			schemaName: dbo
+			expressionSource: 'DirectLake - IndustrialSupply'
+

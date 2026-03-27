@@ -1,0 +1,23 @@
+model e364afe8-131f-4e4f-a53d-224eb857bcf8
+	culture: en-US
+	collation: Latin1_General_100_BIN2_UTF8
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["exec_requests_history","long_running_queries","frequently_run_queries","exec_sessions_history","sql_pool_insights","conversations","PoliceStations","CommunityArea","iUCRCodes","DateDimension","PoliceDistricts","ChicagoReports"]
+
+annotation SourceLineageTagType = DatabaseFullyQualifiedName
+
+ref table PoliceStations
+ref table CommunityArea
+ref table iUCRCodes
+ref table DateDimension
+ref table PoliceDistricts
+ref table ChicagoReports
+ref table conversations
+
