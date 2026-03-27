@@ -1,0 +1,1466 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "ForEach",
+        "typeProperties": {
+          "items": {
+            "value": "@pipeline().parameters.cw_items_cw9",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "Copy",
+              "typeProperties": {
+                "source": {
+                  "type": "AzureSqlSource",
+                  "partitionOption": "None",
+                  "datasetSettings": {
+                    "type": "AzureSqlTable",
+                    "typeProperties": {
+                      "schema": "dbo",
+                      "table": {
+                        "value": "@item().source.table",
+                        "type": "Expression"
+                      },
+                      "database": "ChicagoCrime"
+                    },
+                    "schema": [],
+                    "externalReferences": {
+                      "connection": "d729fdfa-a277-44b8-8026-d0a844bd241c"
+                    },
+                    "annotations": []
+                  }
+                },
+                "sink": {
+                  "type": "LakehouseTableSink",
+                  "tableActionOption": "OverwriteSchema",
+                  "partitionOption": "None",
+                  "datasetSettings": {
+                    "type": "LakehouseTable",
+                    "typeProperties": {
+                      "table": {
+                        "value": "@item().destination.table",
+                        "type": "Expression"
+                      }
+                    },
+                    "schema": [],
+                    "linkedService": {
+                      "name": "ChicagoPublicSafety",
+                      "properties": {
+                        "type": "Lakehouse",
+                        "typeProperties": {
+                          "artifactId": "49c286db-e519-90d5-4ae7-5eaf27593f2c",
+                          "workspaceId": "00000000-0000-0000-0000-000000000000",
+                          "rootFolder": "Tables"
+                        },
+                        "annotations": []
+                      }
+                    },
+                    "annotations": []
+                  }
+                },
+                "translator": {
+                  "value": "@item().copyActivity.translator",
+                  "type": "Expression"
+                },
+                "enableStaging": false
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Copy_cw9",
+              "dependsOn": []
+            }
+          ]
+        },
+        "name": "ForEach_cw9",
+        "dependsOn": []
+      }
+    ],
+    "parameters": {
+      "cw_items_rek": {
+        "type": "Array",
+        "defaultValue": [
+          {
+            "source": {
+              "table": "CommunityArea"
+            },
+            "destination": {
+              "table": "CommunityArea"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "CommunityId",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "CommunityId",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "CommunityName",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "CommunityName",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "CommunityArea",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "CommunityArea",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "CommunityLocation",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "CommunityLocation",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "WeatherStation",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "WeatherStation",
+                      "physicalType": "string"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "source": {
+              "table": "DateDimension"
+            },
+            "destination": {
+              "table": "DateDimension"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "DateKey",
+                      "type": "Int64",
+                      "physicalType": "bigint"
+                    },
+                    "sink": {
+                      "name": "DateKey",
+                      "physicalType": "long"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Date",
+                      "type": "DateTime",
+                      "physicalType": "datetime2",
+                      "precision": 7
+                    },
+                    "sink": {
+                      "name": "Date",
+                      "physicalType": "timestamp"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Day",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "Day",
+                      "physicalType": "short"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DaySuffix",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "DaySuffix",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Weekday",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "Weekday",
+                      "physicalType": "short"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "WeekDayName",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "WeekDayName",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "HolidayNameUS",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "HolidayNameUS",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Year",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "Year",
+                      "physicalType": "short"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "MMYYYY",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "MMYYYY",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "MonthYear",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "MonthYear",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Season",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "Season",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "IsWeekend",
+                      "type": "Boolean",
+                      "physicalType": "bit"
+                    },
+                    "sink": {
+                      "name": "IsWeekend",
+                      "physicalType": "boolean"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "IsHoliday",
+                      "type": "Boolean",
+                      "physicalType": "bit"
+                    },
+                    "sink": {
+                      "name": "IsHoliday",
+                      "physicalType": "boolean"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Month",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "Month",
+                      "physicalType": "short"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "MonthName",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "MonthName",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "MonthName_Short",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "MonthName_Short",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "MonthName_FirstLetter",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "MonthName_FirstLetter",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Quarter",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "Quarter",
+                      "physicalType": "short"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "QuarterName",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "QuarterName",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "WeekDayName_Short",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "WeekDayName_Short",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "WeekDayName_FirstLetter",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "WeekDayName_FirstLetter",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DOWInMonth",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "DOWInMonth",
+                      "physicalType": "short"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DayOfYear",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "DayOfYear",
+                      "physicalType": "short"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "WeekOfMonth",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "WeekOfMonth",
+                      "physicalType": "short"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "WeekOfYear",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "WeekOfYear",
+                      "physicalType": "short"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "source": {
+              "table": "iUCRCodes"
+            },
+            "destination": {
+              "table": "iUCRCodes"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "IUCR",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "IUCR",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "PrimaryDescription",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "PrimaryDescription",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "SecondaryDescription",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "SecondaryDescription",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "IndexCode",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "IndexCode",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Active",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "Active",
+                      "physicalType": "string"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "source": {
+              "table": "PoliceDistricts"
+            },
+            "destination": {
+              "table": "PoliceDistricts"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "the_geom",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "the_geom",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DIST_LABEL",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "DIST_LABEL",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DIST_NUM",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "DIST_NUM",
+                      "physicalType": "string"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "source": {
+              "table": "PoliceStations"
+            },
+            "destination": {
+              "table": "PoliceStations"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "District",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "District",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DistrictName",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "DistrictName",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Address",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "Address",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "City",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "City",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "State",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "State",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "ZipCode",
+                      "type": "Double",
+                      "physicalType": "float"
+                    },
+                    "sink": {
+                      "name": "ZipCode",
+                      "physicalType": "double"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "WebUrl",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "WebUrl",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Phone",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "Phone",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Fax",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "Fax",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Teletype",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "Teletype",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Latitude",
+                      "type": "Double",
+                      "physicalType": "float"
+                    },
+                    "sink": {
+                      "name": "Latitude",
+                      "physicalType": "double"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Longitude",
+                      "type": "Double",
+                      "physicalType": "float"
+                    },
+                    "sink": {
+                      "name": "Longitude",
+                      "physicalType": "double"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          }
+        ]
+      },
+      "cw_items_cw9": {
+        "type": "Array",
+        "defaultValue": [
+          {
+            "source": {
+              "table": "CommunityArea"
+            },
+            "destination": {
+              "table": "dbo_CommunityArea"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "CommunityId",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "CommunityId",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "CommunityName",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "CommunityName",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "CommunityArea",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "CommunityArea",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "CommunityLocation",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "CommunityLocation",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "WeatherStation",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "WeatherStation",
+                      "physicalType": "string"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "source": {
+              "table": "DateDimension"
+            },
+            "destination": {
+              "table": "dbo_DateDimension"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "DateKey",
+                      "type": "Int64",
+                      "physicalType": "bigint"
+                    },
+                    "sink": {
+                      "name": "DateKey",
+                      "physicalType": "long"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Date",
+                      "type": "DateTime",
+                      "physicalType": "datetime2",
+                      "precision": 7
+                    },
+                    "sink": {
+                      "name": "Date",
+                      "physicalType": "timestamp"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Day",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "Day",
+                      "physicalType": "short"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DaySuffix",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "DaySuffix",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Weekday",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "Weekday",
+                      "physicalType": "short"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "WeekDayName",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "WeekDayName",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "HolidayNameUS",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "HolidayNameUS",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Year",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "Year",
+                      "physicalType": "short"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "MMYYYY",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "MMYYYY",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "MonthYear",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "MonthYear",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Season",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "Season",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "IsWeekend",
+                      "type": "Boolean",
+                      "physicalType": "bit"
+                    },
+                    "sink": {
+                      "name": "IsWeekend",
+                      "physicalType": "boolean"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "IsHoliday",
+                      "type": "Boolean",
+                      "physicalType": "bit"
+                    },
+                    "sink": {
+                      "name": "IsHoliday",
+                      "physicalType": "boolean"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Month",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "Month",
+                      "physicalType": "short"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "MonthName",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "MonthName",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "MonthName_Short",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "MonthName_Short",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "MonthName_FirstLetter",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "MonthName_FirstLetter",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Quarter",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "Quarter",
+                      "physicalType": "short"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "QuarterName",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "QuarterName",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "WeekDayName_Short",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "WeekDayName_Short",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "WeekDayName_FirstLetter",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "WeekDayName_FirstLetter",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DOWInMonth",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "DOWInMonth",
+                      "physicalType": "short"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DayOfYear",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "DayOfYear",
+                      "physicalType": "short"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "WeekOfMonth",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "WeekOfMonth",
+                      "physicalType": "short"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "WeekOfYear",
+                      "type": "Int16",
+                      "physicalType": "smallint"
+                    },
+                    "sink": {
+                      "name": "WeekOfYear",
+                      "physicalType": "short"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "source": {
+              "table": "iUCRCodes"
+            },
+            "destination": {
+              "table": "dbo_iUCRCodes"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "IUCR",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "IUCR",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "PrimaryDescription",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "PrimaryDescription",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "SecondaryDescription",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "SecondaryDescription",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "IndexCode",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "IndexCode",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Active",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "Active",
+                      "physicalType": "string"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "source": {
+              "table": "PoliceDistricts"
+            },
+            "destination": {
+              "table": "dbo_PoliceDistricts"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "the_geom",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "the_geom",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DIST_LABEL",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "DIST_LABEL",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DIST_NUM",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "DIST_NUM",
+                      "physicalType": "string"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "source": {
+              "table": "PoliceStations"
+            },
+            "destination": {
+              "table": "dbo_PoliceStations"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "District",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "District",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DistrictName",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "DistrictName",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Address",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "Address",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "City",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "City",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "State",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "State",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "ZipCode",
+                      "type": "Double",
+                      "physicalType": "float"
+                    },
+                    "sink": {
+                      "name": "ZipCode",
+                      "physicalType": "double"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "WebUrl",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "WebUrl",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Phone",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "Phone",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Fax",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "Fax",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Teletype",
+                      "type": "String",
+                      "physicalType": "nvarchar",
+                      "length": "MAX"
+                    },
+                    "sink": {
+                      "name": "Teletype",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Latitude",
+                      "type": "Double",
+                      "physicalType": "float"
+                    },
+                    "sink": {
+                      "name": "Latitude",
+                      "physicalType": "double"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Longitude",
+                      "type": "Double",
+                      "physicalType": "float"
+                    },
+                    "sink": {
+                      "name": "Longitude",
+                      "physicalType": "double"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

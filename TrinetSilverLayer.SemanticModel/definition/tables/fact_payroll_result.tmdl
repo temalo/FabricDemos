@@ -1,0 +1,248 @@
+table fact_payroll_result
+	lineageTag: 8670fe0b-1de6-41c3-81ef-ad2d958ae908
+	sourceLineageTag: [silver].[fact_payroll_result]
+
+	measure 'Total Gross Pay' = ```
+			
+			        SUM('fact_payroll_result'[gross_pay])
+			```
+		lineageTag: c0cd8587-3681-4baa-97fd-c5ce42ca3445
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Net Pay' = ```
+			
+			        SUM('fact_payroll_result'[net_pay])
+			```
+		lineageTag: 6966f368-3993-4bad-9859-ea37378c4e6c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Net Pay per Employee' = ```
+			
+			        DIVIDE(
+			            [Total Net Pay],
+			            DISTINCTCOUNT('fact_payroll_result'[employee_key])
+			        )
+			```
+		lineageTag: 19184511-45ac-411f-b61c-fbeb04795983
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Employer Payroll Taxes' = ```
+			
+			        SUM('fact_payroll_result'[employer_tax_total])
+			```
+		lineageTag: cb49218d-9481-4fa1-9772-41d94a454904
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Employer People Cost' = ```
+			
+			        [Total Employer Payroll Taxes] + [Employer Benefit Contribution]
+			```
+		lineageTag: 0ca7f681-df1d-4d89-a095-a8b6daa2e2ab
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column payroll_result_key
+		dataType: string
+		lineageTag: cf5dd1b3-2f9e-4269-a019-0d7866060806
+		sourceLineageTag: payroll_result_key
+		summarizeBy: none
+		sourceColumn: payroll_result_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 319355e5-f804-4105-b322-6d5ca4e7cad2
+		sourceLineageTag: employee_key
+		summarizeBy: none
+		sourceColumn: employee_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_key
+		dataType: int64
+		formatString: 0
+		lineageTag: e37750ad-a773-4359-a5b5-e717f5e4c37e
+		sourceLineageTag: client_key
+		summarizeBy: none
+		sourceColumn: client_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column payroll_cycle_id
+		dataType: string
+		lineageTag: 507180f3-d1a7-42e5-9f6a-56c780075b47
+		sourceLineageTag: payroll_cycle_id
+		summarizeBy: none
+		sourceColumn: payroll_cycle_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column pay_frequency
+		dataType: string
+		lineageTag: 75ad8864-f82b-4a6d-8bd2-e07991300057
+		sourceLineageTag: pay_frequency
+		summarizeBy: none
+		sourceColumn: pay_frequency
+
+		annotation SummarizationSetBy = Automatic
+
+	column pay_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: b97dbeb3-15d4-423d-8fae-fd247c7bc7f3
+		sourceLineageTag: pay_date_key
+		summarizeBy: none
+		sourceColumn: pay_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column pay_period_end_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 48ecf3ff-b453-46e7-9473-6385f5841387
+		sourceLineageTag: pay_period_end_date_key
+		summarizeBy: sum
+		sourceColumn: pay_period_end_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column gross_pay
+		dataType: double
+		lineageTag: 507dacab-f2e3-4d02-829c-23a1ab7712e3
+		sourceLineageTag: gross_pay
+		summarizeBy: sum
+		sourceColumn: gross_pay
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column regular_pay
+		dataType: double
+		lineageTag: 879cd626-9ef7-42e9-816e-91f254c8ac27
+		sourceLineageTag: regular_pay
+		summarizeBy: sum
+		sourceColumn: regular_pay
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column overtime_pay
+		dataType: double
+		lineageTag: 87dc94f6-bb8c-4542-9917-c0284075fc31
+		sourceLineageTag: overtime_pay
+		summarizeBy: sum
+		sourceColumn: overtime_pay
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column bonus_pay
+		dataType: double
+		lineageTag: e68a42e3-0758-4969-8834-986b724cd966
+		sourceLineageTag: bonus_pay
+		summarizeBy: sum
+		sourceColumn: bonus_pay
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column deductions_total
+		dataType: double
+		lineageTag: aada0cb0-9c5a-4c74-a7a4-8d532f6ac45f
+		sourceLineageTag: deductions_total
+		summarizeBy: sum
+		sourceColumn: deductions_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column garnishments_total
+		dataType: double
+		lineageTag: 5cd98bd1-4cf5-49b5-853d-bc2e36acb0ce
+		sourceLineageTag: garnishments_total
+		summarizeBy: sum
+		sourceColumn: garnishments_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tax_withholding_total
+		dataType: double
+		lineageTag: 9ed4a396-cb2a-4c61-ae04-c837221f0594
+		sourceLineageTag: tax_withholding_total
+		summarizeBy: sum
+		sourceColumn: tax_withholding_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column employer_tax_total
+		dataType: double
+		lineageTag: faffe942-a7a3-437a-8e69-e1284a866529
+		sourceLineageTag: employer_tax_total
+		summarizeBy: sum
+		sourceColumn: employer_tax_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column net_pay
+		dataType: double
+		lineageTag: 53bd3288-9675-47ae-8e33-86c4f49c64b5
+		sourceLineageTag: net_pay
+		summarizeBy: sum
+		sourceColumn: net_pay
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column journal_posted_flag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 60a0a3e7-855f-4e6d-bd8e-6dc7079e1869
+		sourceLineageTag: journal_posted_flag
+		summarizeBy: none
+		sourceColumn: journal_posted_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column tax_filing_status
+		dataType: string
+		lineageTag: 319497f5-8d55-434a-856f-c928cc494b9d
+		sourceLineageTag: tax_filing_status
+		summarizeBy: none
+		sourceColumn: tax_filing_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column partition_col_MONTH_payroll_ts
+		dataType: string
+		lineageTag: c6e7254e-555e-42b7-8e03-ea735dc92b86
+		sourceLineageTag: partition_col_MONTH_payroll_ts
+		summarizeBy: none
+		sourceColumn: partition_col_MONTH_payroll_ts
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_payroll_result = entity
+		mode: directLake
+		source
+			entityName: fact_payroll_result
+			schemaName: silver
+			expressionSource: 'DirectLake - TrinetDemo'
+

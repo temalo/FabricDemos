@@ -1,0 +1,179 @@
+table fact_service_interaction
+	lineageTag: 8f6a6a4f-9bdc-4580-a9a0-c20b8bcd48dd
+	sourceLineageTag: [silver].[fact_service_interaction]
+
+	measure 'Total Service Cases' = ```
+			
+			        DISTINCTCOUNT('fact_service_interaction'[case_id])
+			```
+		formatString: 0
+		lineageTag: b26dce99-cd38-4f37-8ff2-00141b3fb96a
+
+	measure 'Total Interactions' = ```
+			
+			        SUM('fact_service_interaction'[interaction_count])
+			```
+		formatString: 0
+		lineageTag: 6e7edc4b-3fae-4cee-bc60-8b38ecd71f05
+
+	measure 'Avg CSAT' = ```
+			
+			        AVERAGE('fact_service_interaction'[csat_score])
+			```
+		lineageTag: 0c875135-c67c-4114-a31a-39416b9d2339
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Breach Count' = ```
+			
+			        SUMX(
+			            'fact_service_interaction',
+			            IF('fact_service_interaction'[breached_sla_flag], 1, 0)
+			        )
+			```
+		formatString: 0
+		lineageTag: ff1c8898-c193-44e3-9552-2115efa88bf3
+
+	measure 'SLA Breach Rate' = ```
+			
+			        DIVIDE(
+			            [Breach Count],
+			            [Total Service Cases]
+			        )
+			```
+		lineageTag: 68dfe004-9598-41bd-a81c-be777d85d5fe
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column interaction_key
+		dataType: string
+		lineageTag: 2e009bc9-b7e2-4ad7-8443-0e30fc3e3263
+		sourceLineageTag: interaction_key
+		summarizeBy: none
+		sourceColumn: interaction_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e26de7c-e86f-4afe-a866-adcfafbabf0b
+		sourceLineageTag: client_key
+		summarizeBy: none
+		sourceColumn: client_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column case_id
+		dataType: string
+		lineageTag: a8665d5a-bdec-47fe-8013-66b0cde87463
+		sourceLineageTag: case_id
+		summarizeBy: none
+		sourceColumn: case_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_category
+		dataType: string
+		lineageTag: 523490fb-bafc-4ffc-91b9-837926b8edf5
+		sourceLineageTag: service_category
+		summarizeBy: none
+		sourceColumn: service_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column interaction_channel
+		dataType: string
+		lineageTag: ec89dccf-4d18-4e6a-9482-ac1c7e9531ba
+		sourceLineageTag: interaction_channel
+		summarizeBy: none
+		sourceColumn: interaction_channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column opened_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 900d4ecf-5b82-489f-a4dd-3ec1de5ba7c2
+		sourceLineageTag: opened_date_key
+		summarizeBy: sum
+		sourceColumn: opened_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column closed_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: a4b7a066-7cc3-4ec2-8d1c-294b81d1c7f5
+		sourceLineageTag: closed_date_key
+		summarizeBy: none
+		sourceColumn: closed_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column assigned_rep_id
+		dataType: string
+		lineageTag: 870eea30-5a04-4f82-99ff-5f4bbed6159f
+		sourceLineageTag: assigned_rep_id
+		summarizeBy: none
+		sourceColumn: assigned_rep_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column resolution_sla_hours
+		dataType: double
+		lineageTag: f793d39a-1e56-4955-b6fc-9acd63e430fb
+		sourceLineageTag: resolution_sla_hours
+		summarizeBy: sum
+		sourceColumn: resolution_sla_hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column breached_sla_flag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 56d659b6-9a8b-4973-83c5-689e85acd2ac
+		sourceLineageTag: breached_sla_flag
+		summarizeBy: none
+		sourceColumn: breached_sla_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column csat_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 64004f97-4b00-4d3f-bca1-db6a20d1cc72
+		sourceLineageTag: csat_score
+		summarizeBy: sum
+		sourceColumn: csat_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column interaction_count
+		dataType: int64
+		formatString: 0
+		lineageTag: ee222821-c75b-41e6-918e-1bb84b2bdb1b
+		sourceLineageTag: interaction_count
+		summarizeBy: sum
+		sourceColumn: interaction_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column partition_col_MONTH_interaction_ts
+		dataType: string
+		lineageTag: 847f0941-b305-4ac2-93f4-6fde39c1da81
+		sourceLineageTag: partition_col_MONTH_interaction_ts
+		summarizeBy: none
+		sourceColumn: partition_col_MONTH_interaction_ts
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_service_interaction = entity
+		mode: directLake
+		source
+			entityName: fact_service_interaction
+			schemaName: silver
+			expressionSource: 'DirectLake - TrinetDemo'
+

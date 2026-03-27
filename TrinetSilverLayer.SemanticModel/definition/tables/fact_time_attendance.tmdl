@@ -1,0 +1,168 @@
+table fact_time_attendance
+	lineageTag: ebbaee44-503a-4590-95c5-edd5d2267b25
+	sourceLineageTag: [silver].[fact_time_attendance]
+
+	measure 'Total Hours Worked' = ```
+			
+			        SUM('fact_time_attendance'[hours_worked])
+			```
+		lineageTag: 9cceb2c8-6304-476b-bb0c-ac9e32281655
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Overtime Hours' = ```
+			
+			        SUM('fact_time_attendance'[overtime_hours])
+			```
+		lineageTag: a98a3ac2-07b4-40dd-99ba-6cf013db716d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Overtime %' = ```
+			
+			        DIVIDE(
+			            [Overtime Hours],
+			            [Total Hours Worked]
+			        )
+			```
+		lineageTag: a2e79cde-cf1f-452b-899b-6cf39c1160db
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column time_entry_key
+		dataType: string
+		lineageTag: 6a0f89bb-689e-417f-986e-133787a06467
+		sourceLineageTag: time_entry_key
+		summarizeBy: none
+		sourceColumn: time_entry_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_key
+		dataType: int64
+		formatString: 0
+		lineageTag: dbf11ee6-daee-47cf-88c5-b0354cdf1e3d
+		sourceLineageTag: employee_key
+		summarizeBy: none
+		sourceColumn: employee_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 7bd64c5c-99ce-4612-a640-205591cabc01
+		sourceLineageTag: client_key
+		summarizeBy: none
+		sourceColumn: client_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column work_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 6658da74-a930-4382-97f3-aef3990e0d95
+		sourceLineageTag: work_date_key
+		summarizeBy: none
+		sourceColumn: work_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column pay_period_end_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 3926f37a-61d0-4fb4-892b-655bf86f7887
+		sourceLineageTag: pay_period_end_date_key
+		summarizeBy: sum
+		sourceColumn: pay_period_end_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column hours_worked
+		dataType: double
+		lineageTag: 2796a5b1-a1f7-4c65-8d47-23ea798521e2
+		sourceLineageTag: hours_worked
+		summarizeBy: sum
+		sourceColumn: hours_worked
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column overtime_hours
+		dataType: double
+		lineageTag: e3d060ea-9d2f-4af1-9217-c331fdfa34ff
+		sourceLineageTag: overtime_hours
+		summarizeBy: sum
+		sourceColumn: overtime_hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pto_hours
+		dataType: double
+		lineageTag: e4781b8b-2593-4b93-b52f-b557843df83b
+		sourceLineageTag: pto_hours
+		summarizeBy: sum
+		sourceColumn: pto_hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column shift_type
+		dataType: string
+		lineageTag: b84fff40-615b-49c1-867e-9761624ae428
+		sourceLineageTag: shift_type
+		summarizeBy: none
+		sourceColumn: shift_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column approved_flag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e2b871c7-8942-46fb-bd3f-257d245c9556
+		sourceLineageTag: approved_flag
+		summarizeBy: none
+		sourceColumn: approved_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column labor_cost
+		dataType: double
+		lineageTag: dd48dfce-703f-4d7e-bc4c-e8c4211e2546
+		sourceLineageTag: labor_cost
+		summarizeBy: sum
+		sourceColumn: labor_cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column source_system
+		dataType: string
+		lineageTag: c70324f6-9eb4-4dcf-8c4f-922bf6db6e09
+		sourceLineageTag: source_system
+		summarizeBy: none
+		sourceColumn: source_system
+
+		annotation SummarizationSetBy = Automatic
+
+	column partition_col_MONTH_created_ts
+		dataType: string
+		lineageTag: 9bd68569-0587-4b70-820a-93c9dec6bb16
+		sourceLineageTag: partition_col_MONTH_created_ts
+		summarizeBy: none
+		sourceColumn: partition_col_MONTH_created_ts
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_time_attendance = entity
+		mode: directLake
+		source
+			entityName: fact_time_attendance
+			schemaName: silver
+			expressionSource: 'DirectLake - TrinetDemo'
+

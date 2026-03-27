@@ -1,0 +1,134 @@
+table mart_client_service_360
+	lineageTag: 3b66fae1-a74e-4933-84ad-b4eaabd4a7df
+	sourceLineageTag: [gold].[mart_client_service_360]
+
+	column client_key
+		dataType: int64
+		formatString: 0
+		lineageTag: b28a2cb6-59d4-4f6f-80ca-d452f22c2c1e
+		sourceLineageTag: client_key
+		summarizeBy: sum
+		sourceColumn: client_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column snapshot_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 0922822f-63e8-411a-99dd-1bde6573c969
+		sourceLineageTag: snapshot_date_key
+		summarizeBy: sum
+		sourceColumn: snapshot_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column active_employee_count
+		dataType: int64
+		formatString: 0
+		lineageTag: a4a58d9e-cb12-4e79-817d-6a3ea85cef48
+		sourceLineageTag: active_employee_count
+		summarizeBy: sum
+		sourceColumn: active_employee_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column annual_contract_value
+		dataType: double
+		lineageTag: ee7a8986-e99c-4bdb-b166-e1aacd01b0e8
+		sourceLineageTag: annual_contract_value
+		summarizeBy: sum
+		sourceColumn: annual_contract_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column case_volume_90d
+		dataType: int64
+		formatString: 0
+		lineageTag: c5e70168-780c-433c-a6ca-6ecc646ae521
+		sourceLineageTag: case_volume_90d
+		summarizeBy: sum
+		sourceColumn: case_volume_90d
+
+		annotation SummarizationSetBy = Automatic
+
+	column portal_monthly_active_users
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e441e98-3d2d-46c7-a6c3-476fa09cea0b
+		sourceLineageTag: portal_monthly_active_users
+		summarizeBy: sum
+		sourceColumn: portal_monthly_active_users
+
+		annotation SummarizationSetBy = Automatic
+
+	column api_calls_30d
+		dataType: int64
+		formatString: 0
+		lineageTag: c5ec0e24-33e7-45fe-a025-5251fa2e4351
+		sourceLineageTag: api_calls_30d
+		summarizeBy: sum
+		sourceColumn: api_calls_30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column benefits_utilization_pct
+		dataType: double
+		lineageTag: b5c85bc6-0e3c-4cb3-8256-9ccec8d44198
+		sourceLineageTag: benefits_utilization_pct
+		summarizeBy: sum
+		sourceColumn: benefits_utilization_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column compliance_risk_score
+		dataType: double
+		lineageTag: d440a778-419c-43c4-b4d8-92b8e6e6ca63
+		sourceLineageTag: compliance_risk_score
+		summarizeBy: sum
+		sourceColumn: compliance_risk_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column attrition_risk_score
+		dataType: double
+		lineageTag: 3358e722-0313-49d2-877c-45243f2b58d0
+		sourceLineageTag: attrition_risk_score
+		summarizeBy: sum
+		sourceColumn: attrition_risk_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column nps_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 6427a1a3-67d6-4c8d-a337-b9bd346388ac
+		sourceLineageTag: nps_score
+		summarizeBy: sum
+		sourceColumn: nps_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column partition_col_MONTH_dw_insert_ts
+		dataType: string
+		lineageTag: aa005f83-a9de-400c-bcfc-dd96787fe5f4
+		sourceLineageTag: partition_col_MONTH_dw_insert_ts
+		summarizeBy: none
+		sourceColumn: partition_col_MONTH_dw_insert_ts
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mart_client_service_360 = entity
+		mode: directLake
+		source
+			entityName: mart_client_service_360
+			schemaName: gold
+			expressionSource: 'DirectLake - TrinetDemo'
+

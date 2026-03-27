@@ -1,0 +1,179 @@
+table fact_application_event
+	lineageTag: 5acdfbbe-f387-4183-976b-780bc3ee72a4
+	sourceLineageTag: [silver].[fact_application_event]
+
+	measure 'Total Application Events' = ```
+			
+			        COUNTROWS('fact_application_event')
+			```
+		formatString: 0
+		lineageTag: f910723f-938d-46a3-ae57-d0b7017b1a83
+
+	measure 'Avg Response Time (ms)' = ```
+			
+			        AVERAGE('fact_application_event'[response_time_ms])
+			```
+		lineageTag: 75385b4d-a132-4706-bbd6-5149c6a50115
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Success Count' = ```
+			
+			        SUMX(
+			            'fact_application_event',
+			            IF('fact_application_event'[success_flag], 1, 0)
+			        )
+			```
+		formatString: 0
+		lineageTag: 0005525d-06a2-43fb-911b-e6438b8ac3ff
+
+	measure 'Success Rate' = ```
+			
+			        DIVIDE(
+			            [Success Count],
+			            [Total Application Events]
+			        )
+			```
+		lineageTag: 14541261-1697-4d78-9d52-9eb8e629320a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column app_event_key
+		dataType: string
+		lineageTag: d00c34db-d653-4030-8525-76b17b0f75cc
+		sourceLineageTag: app_event_key
+		summarizeBy: none
+		sourceColumn: app_event_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_key
+		dataType: int64
+		formatString: 0
+		lineageTag: b31fb4e1-08c9-480b-af4c-6472a8f8ea52
+		sourceLineageTag: client_key
+		summarizeBy: none
+		sourceColumn: client_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 236f29cf-20fe-4fe2-9f7f-50c0fbde9d76
+		sourceLineageTag: employee_key
+		summarizeBy: none
+		sourceColumn: employee_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d469621-b13a-4052-ab0a-f94bee243bea
+		sourceLineageTag: event_date_key
+		summarizeBy: none
+		sourceColumn: event_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_name
+		dataType: string
+		lineageTag: 2f79ef57-6814-4437-b660-c469dcf5d864
+		sourceLineageTag: event_name
+		summarizeBy: none
+		sourceColumn: event_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column application_area
+		dataType: string
+		lineageTag: 28d077cf-38d1-4ae3-b47b-ca26d4c3963c
+		sourceLineageTag: application_area
+		summarizeBy: none
+		sourceColumn: application_area
+
+		annotation SummarizationSetBy = Automatic
+
+	column channel
+		dataType: string
+		lineageTag: 2518755c-c7bb-4309-bf70-f31858adb709
+		sourceLineageTag: channel
+		summarizeBy: none
+		sourceColumn: channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column api_endpoint
+		dataType: string
+		lineageTag: 4c7fd113-df04-49eb-bd6c-43d1aa7fe068
+		sourceLineageTag: api_endpoint
+		summarizeBy: none
+		sourceColumn: api_endpoint
+
+		annotation SummarizationSetBy = Automatic
+
+	column response_time_ms
+		dataType: int64
+		formatString: 0
+		lineageTag: 31d18839-1fc5-46dd-ac5c-e211aaaea323
+		sourceLineageTag: response_time_ms
+		summarizeBy: sum
+		sourceColumn: response_time_ms
+
+		annotation SummarizationSetBy = Automatic
+
+	column success_flag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 58b651ea-36ce-4ba4-8c52-aae8b29702ce
+		sourceLineageTag: success_flag
+		summarizeBy: none
+		sourceColumn: success_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column auth_method
+		dataType: string
+		lineageTag: 35b7df0b-21b2-4694-b6a0-5ca2d0e1280e
+		sourceLineageTag: auth_method
+		summarizeBy: none
+		sourceColumn: auth_method
+
+		annotation SummarizationSetBy = Automatic
+
+	column session_duration_seconds
+		dataType: int64
+		formatString: 0
+		lineageTag: 1cdbebbc-2d15-4db5-b507-bcb3860853c1
+		sourceLineageTag: session_duration_seconds
+		summarizeBy: sum
+		sourceColumn: session_duration_seconds
+
+		annotation SummarizationSetBy = Automatic
+
+	column audit_action
+		dataType: string
+		lineageTag: d8525b78-fda4-4169-a7f1-d308cad6bd94
+		sourceLineageTag: audit_action
+		summarizeBy: none
+		sourceColumn: audit_action
+
+		annotation SummarizationSetBy = Automatic
+
+	column partition_col_MONTH_event_ts
+		dataType: string
+		lineageTag: c8e41b5a-cdf9-463a-b871-54ad579697df
+		sourceLineageTag: partition_col_MONTH_event_ts
+		summarizeBy: none
+		sourceColumn: partition_col_MONTH_event_ts
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_application_event = entity
+		mode: directLake
+		source
+			entityName: fact_application_event
+			schemaName: silver
+			expressionSource: 'DirectLake - TrinetDemo'
+

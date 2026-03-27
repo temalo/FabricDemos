@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "ChicagoCrimeAnalysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e8f15b30-450f-8fff-43ae-4d7e8862b1aa"
+  }
+}

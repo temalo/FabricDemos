@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "ChicagoCrimeReportsLoad"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b6d37bdf-e20b-8dcc-4555-eef56ce5a9a9"
+  }
+}

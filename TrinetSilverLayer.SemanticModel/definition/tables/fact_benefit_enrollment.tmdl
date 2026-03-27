@@ -1,0 +1,196 @@
+table fact_benefit_enrollment
+	lineageTag: 8e3fc8ba-004c-403a-9b27-9fe9cfcb61e5
+	sourceLineageTag: [silver].[fact_benefit_enrollment]
+
+	measure 'Employee Benefit Contribution' = ```
+			
+			        SUM('fact_benefit_enrollment'[employee_contribution])
+			```
+		lineageTag: 3d346d9b-7d1b-4edc-aecd-8c9330c981f6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Employer Benefit Contribution' = ```
+			
+			        SUM('fact_benefit_enrollment'[employer_contribution])
+			```
+		lineageTag: e8e4b047-1040-4b44-9b95-85a12277b3ab
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Benefit Cost' = ```
+			
+			        [Employee Benefit Contribution] + [Employer Benefit Contribution]
+			```
+		lineageTag: 1f12c065-e16c-4e4a-804b-ad236bba3f33
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Employer Benefit per Employee' = ```
+			
+			        DIVIDE(
+			            [Employer Benefit Contribution],
+			            DISTINCTCOUNT('fact_benefit_enrollment'[employee_key])
+			        )
+			```
+		lineageTag: 0d73c027-65f5-44e1-a7e4-f9d17ea6f1f1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column enrollment_key
+		dataType: string
+		lineageTag: bf9d9e4d-d3ee-401f-bdb9-0c334d3ac752
+		sourceLineageTag: enrollment_key
+		summarizeBy: none
+		sourceColumn: enrollment_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_key
+		dataType: int64
+		formatString: 0
+		lineageTag: b98786df-3b08-4021-9451-ed3e1740236d
+		sourceLineageTag: employee_key
+		summarizeBy: none
+		sourceColumn: employee_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_key
+		dataType: int64
+		formatString: 0
+		lineageTag: b990f5f7-be12-407c-8a48-6b09bb53d985
+		sourceLineageTag: client_key
+		summarizeBy: none
+		sourceColumn: client_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column plan_key
+		dataType: int64
+		formatString: 0
+		lineageTag: a19fb283-15a7-48d5-b12d-a830c46ee986
+		sourceLineageTag: plan_key
+		summarizeBy: none
+		sourceColumn: plan_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column election_type
+		dataType: string
+		lineageTag: 41776234-976f-4e09-bbcf-eeec4d4d2373
+		sourceLineageTag: election_type
+		summarizeBy: none
+		sourceColumn: election_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column dependent_count
+		dataType: int64
+		formatString: 0
+		lineageTag: d2f65d90-8836-45e7-a34b-d4cd2ead530f
+		sourceLineageTag: dependent_count
+		summarizeBy: sum
+		sourceColumn: dependent_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column open_enrollment_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 0298b985-e1a9-4a8b-924b-45362bbccfc2
+		sourceLineageTag: open_enrollment_year
+		summarizeBy: sum
+		sourceColumn: open_enrollment_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column coverage_start_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: cee454fa-454d-4643-9f09-8b272f914e30
+		sourceLineageTag: coverage_start_date_key
+		summarizeBy: none
+		sourceColumn: coverage_start_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column coverage_end_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: b2d17320-10dc-4c06-bc0d-be31c4c4a6bf
+		sourceLineageTag: coverage_end_date_key
+		summarizeBy: sum
+		sourceColumn: coverage_end_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column election_status
+		dataType: string
+		lineageTag: 010f8a36-eaff-41fc-a801-4474c6660224
+		sourceLineageTag: election_status
+		summarizeBy: none
+		sourceColumn: election_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_contribution
+		dataType: double
+		lineageTag: fa3ddff9-cd79-4982-a440-f4a722fef6b4
+		sourceLineageTag: employee_contribution
+		summarizeBy: sum
+		sourceColumn: employee_contribution
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column employer_contribution
+		dataType: double
+		lineageTag: 11d16549-74af-485e-8988-3bf64b028438
+		sourceLineageTag: employer_contribution
+		summarizeBy: sum
+		sourceColumn: employer_contribution
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fsa_balance
+		dataType: double
+		lineageTag: c6b04804-dafe-45d1-9507-4ba90c201fed
+		sourceLineageTag: fsa_balance
+		summarizeBy: sum
+		sourceColumn: fsa_balance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column hsa_balance
+		dataType: double
+		lineageTag: 5e6c66cf-a8cf-423a-bc80-113c807858fb
+		sourceLineageTag: hsa_balance
+		summarizeBy: sum
+		sourceColumn: hsa_balance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column partition_col_MONTH_enrollment_ts
+		dataType: string
+		lineageTag: a8f17cca-bd34-4b6c-97d7-10baddcf43cb
+		sourceLineageTag: partition_col_MONTH_enrollment_ts
+		summarizeBy: none
+		sourceColumn: partition_col_MONTH_enrollment_ts
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_benefit_enrollment = entity
+		mode: directLake
+		source
+			entityName: fact_benefit_enrollment
+			schemaName: silver
+			expressionSource: 'DirectLake - TrinetDemo'
+

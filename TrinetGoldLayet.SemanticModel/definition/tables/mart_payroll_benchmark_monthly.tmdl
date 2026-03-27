@@ -1,0 +1,147 @@
+table mart_payroll_benchmark_monthly
+	lineageTag: c316868d-1c7d-4b93-a21e-5251d31614ef
+	sourceLineageTag: [gold].[mart_payroll_benchmark_monthly]
+
+	column payroll_benchmark_key
+		dataType: string
+		lineageTag: 4a3d1318-9c26-4855-bff9-a16295b9c93b
+		sourceLineageTag: payroll_benchmark_key
+		summarizeBy: none
+		sourceColumn: payroll_benchmark_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 28d7e300-29f1-48bf-b941-eb4782b26d40
+		sourceLineageTag: client_key
+		summarizeBy: sum
+		sourceColumn: client_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column period_month_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 15bbba1d-4d85-4a23-bf39-e3b2705047d9
+		sourceLineageTag: period_month_key
+		summarizeBy: sum
+		sourceColumn: period_month_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column active_employees
+		dataType: int64
+		formatString: 0
+		lineageTag: b0be9049-d18d-451b-b18b-0606b18e808f
+		sourceLineageTag: active_employees
+		summarizeBy: sum
+		sourceColumn: active_employees
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_gross_pay
+		dataType: double
+		lineageTag: 41cdc532-88ed-4958-ac10-857da50a33b8
+		sourceLineageTag: total_gross_pay
+		summarizeBy: sum
+		sourceColumn: total_gross_pay
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_net_pay
+		dataType: double
+		lineageTag: 6827d777-d3f9-47a2-862d-bee709f762b9
+		sourceLineageTag: avg_net_pay
+		summarizeBy: sum
+		sourceColumn: avg_net_pay
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column overtime_pct
+		dataType: double
+		lineageTag: 9e41793e-4f7d-4c03-9a51-671cc5777e5d
+		sourceLineageTag: overtime_pct
+		summarizeBy: sum
+		sourceColumn: overtime_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column bonus_pct
+		dataType: double
+		lineageTag: 36719c2f-3c06-4ff5-921f-f0525fe272f4
+		sourceLineageTag: bonus_pct
+		summarizeBy: sum
+		sourceColumn: bonus_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column benefit_deduction_rate
+		dataType: double
+		lineageTag: 8eeb42c8-ef78-437b-a49d-04dc5ff51579
+		sourceLineageTag: benefit_deduction_rate
+		summarizeBy: sum
+		sourceColumn: benefit_deduction_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tax_liability
+		dataType: double
+		lineageTag: 6e285f99-ad97-4547-bec3-d49375eb096e
+		sourceLineageTag: tax_liability
+		summarizeBy: sum
+		sourceColumn: tax_liability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column payroll_accuracy_pct
+		dataType: double
+		lineageTag: 9d81f770-06f6-429a-8efb-cb2993e4c4d9
+		sourceLineageTag: payroll_accuracy_pct
+		summarizeBy: sum
+		sourceColumn: payroll_accuracy_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pay_equity_index
+		dataType: double
+		lineageTag: 9b8cb9d4-a49e-40b3-87bb-d4195af8ea00
+		sourceLineageTag: pay_equity_index
+		summarizeBy: sum
+		sourceColumn: pay_equity_index
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column partition_col_MONTH_dw_insert_ts
+		dataType: string
+		lineageTag: e5267a2e-83df-454d-b3d7-adc4e87827bc
+		sourceLineageTag: partition_col_MONTH_dw_insert_ts
+		summarizeBy: none
+		sourceColumn: partition_col_MONTH_dw_insert_ts
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mart_payroll_benchmark_monthly = entity
+		mode: directLake
+		source
+			entityName: mart_payroll_benchmark_monthly
+			schemaName: gold
+			expressionSource: 'DirectLake - TrinetDemo'
+

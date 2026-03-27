@@ -1,0 +1,131 @@
+table mart_policy_compliance_monthly
+	lineageTag: a28b82f6-2b8c-4c4d-aa20-a434fb369f02
+	sourceLineageTag: [gold].[mart_policy_compliance_monthly]
+
+	column policy_compliance_key
+		dataType: string
+		lineageTag: daa1231c-50ee-48f6-b05f-e41facc0123e
+		sourceLineageTag: policy_compliance_key
+		summarizeBy: none
+		sourceColumn: policy_compliance_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f525895-f8cc-4643-badb-e9ec1e39ccc5
+		sourceLineageTag: client_key
+		summarizeBy: sum
+		sourceColumn: client_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column policy_key
+		dataType: int64
+		formatString: 0
+		lineageTag: bafcdcd4-4d40-42ee-bfcb-f5dd1ba30642
+		sourceLineageTag: policy_key
+		summarizeBy: sum
+		sourceColumn: policy_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column period_month_key
+		dataType: int64
+		formatString: 0
+		lineageTag: cd1ae69e-61b0-47c0-9ced-ab91380da6b1
+		sourceLineageTag: period_month_key
+		summarizeBy: sum
+		sourceColumn: period_month_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column cases_due
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d1b4c65-0227-4a81-a704-2d447f2af280
+		sourceLineageTag: cases_due
+		summarizeBy: sum
+		sourceColumn: cases_due
+
+		annotation SummarizationSetBy = Automatic
+
+	column cases_filed
+		dataType: int64
+		formatString: 0
+		lineageTag: f921f9a5-ed3b-429e-86f3-a3ebb9d0d435
+		sourceLineageTag: cases_filed
+		summarizeBy: sum
+		sourceColumn: cases_filed
+
+		annotation SummarizationSetBy = Automatic
+
+	column on_time_rate_pct
+		dataType: double
+		lineageTag: 19249ca8-e40d-44a5-8320-2ec7d96a6ac4
+		sourceLineageTag: on_time_rate_pct
+		summarizeBy: sum
+		sourceColumn: on_time_rate_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column late_case_count
+		dataType: int64
+		formatString: 0
+		lineageTag: a179977b-41b8-46af-87c2-0be2d4539b6f
+		sourceLineageTag: late_case_count
+		summarizeBy: sum
+		sourceColumn: late_case_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column audit_case_count
+		dataType: int64
+		formatString: 0
+		lineageTag: c899319a-fb49-41e5-94f7-f359f7f685bc
+		sourceLineageTag: audit_case_count
+		summarizeBy: sum
+		sourceColumn: audit_case_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column severe_issue_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 5da7a306-b022-4ad4-b630-a6785bcbc0fa
+		sourceLineageTag: severe_issue_count
+		summarizeBy: sum
+		sourceColumn: severe_issue_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_penalty_amount
+		dataType: double
+		lineageTag: dfa4014f-97e4-4cc0-ad36-88f2e4f9ee4b
+		sourceLineageTag: total_penalty_amount
+		summarizeBy: sum
+		sourceColumn: total_penalty_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column partition_col_MONTH_dw_insert_ts
+		dataType: string
+		lineageTag: 3d63319a-0d9d-4908-b722-fdee6565bb5a
+		sourceLineageTag: partition_col_MONTH_dw_insert_ts
+		summarizeBy: none
+		sourceColumn: partition_col_MONTH_dw_insert_ts
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mart_policy_compliance_monthly = entity
+		mode: directLake
+		source
+			entityName: mart_policy_compliance_monthly
+			schemaName: gold
+			expressionSource: 'DirectLake - TrinetDemo'
+

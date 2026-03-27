@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataAgent",
+    "displayName": "TrinetAgent"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "946d7985-d3c2-a043-477b-cc5b04a6627d"
+  }
+}

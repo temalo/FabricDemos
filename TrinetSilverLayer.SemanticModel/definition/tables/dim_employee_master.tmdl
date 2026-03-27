@@ -1,0 +1,174 @@
+table dim_employee_master
+	lineageTag: e6d230bb-134c-4fbf-be08-0bfcf36f51db
+	sourceLineageTag: [silver].[dim_employee_master]
+
+	column employee_key
+		dataType: int64
+		formatString: 0
+		lineageTag: a3e8fdab-27fd-4bd9-aead-2e9bcfb4a89a
+		sourceLineageTag: employee_key
+		summarizeBy: none
+		sourceColumn: employee_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_id
+		dataType: string
+		lineageTag: d7010ef4-ef25-4647-8e39-94ef7904ddb2
+		sourceLineageTag: employee_id
+		summarizeBy: none
+		sourceColumn: employee_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_key
+		dataType: int64
+		formatString: 0
+		lineageTag: cc68c88d-0486-42f3-8389-61c0714452f0
+		sourceLineageTag: client_key
+		summarizeBy: sum
+		sourceColumn: client_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column person_number
+		dataType: string
+		lineageTag: 76ec2694-6f9c-4472-828c-eb225fa22841
+		sourceLineageTag: person_number
+		summarizeBy: none
+		sourceColumn: person_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column worker_type
+		dataType: string
+		lineageTag: 5dda55a8-3c93-441c-869e-5668b6a0b8b3
+		sourceLineageTag: worker_type
+		summarizeBy: none
+		sourceColumn: worker_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column pay_type
+		dataType: string
+		lineageTag: c331c49d-4b46-483e-873c-6582c2398392
+		sourceLineageTag: pay_type
+		summarizeBy: none
+		sourceColumn: pay_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column employment_status
+		dataType: string
+		lineageTag: e91d69a5-1266-475e-ab1c-61c56a1fa51a
+		sourceLineageTag: employment_status
+		summarizeBy: none
+		sourceColumn: employment_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_level
+		dataType: string
+		lineageTag: 51cde86e-d854-4708-bcbe-7af63c98a792
+		sourceLineageTag: job_level
+		summarizeBy: none
+		sourceColumn: job_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_title
+		dataType: string
+		lineageTag: bce618ab-5c08-4a65-89a4-1014daffce16
+		sourceLineageTag: job_title
+		summarizeBy: none
+		sourceColumn: job_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column department
+		dataType: string
+		lineageTag: d1fcc4d7-e64c-4c0f-be51-70ea025fb09d
+		sourceLineageTag: department
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = Automatic
+
+	column manager_employee_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 9877bab7-e7bf-4abd-8f53-688565641633
+		sourceLineageTag: manager_employee_key
+		summarizeBy: sum
+		sourceColumn: manager_employee_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column work_state
+		dataType: string
+		lineageTag: 6d954b51-8c4c-4d53-9971-5d66ae3b4bde
+		sourceLineageTag: work_state
+		summarizeBy: none
+		sourceColumn: work_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column hire_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fef9e58b-58e8-4e1a-a5af-628a354c6345
+		sourceLineageTag: hire_date
+		summarizeBy: none
+		sourceColumn: hire_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column termination_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f7c7badd-776d-4f82-9a8a-f933be037971
+		sourceLineageTag: termination_date
+		summarizeBy: none
+		sourceColumn: termination_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column annual_salary
+		dataType: double
+		lineageTag: b42e0add-5722-45c3-9219-18ede6534b40
+		sourceLineageTag: annual_salary
+		summarizeBy: sum
+		sourceColumn: annual_salary
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column hourly_rate
+		dataType: double
+		lineageTag: 8f54054a-9649-415c-a11c-b053d3c060c5
+		sourceLineageTag: hourly_rate
+		summarizeBy: sum
+		sourceColumn: hourly_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column remote_flag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7d3b7c22-60c6-41c4-86de-c3dd78bd1fe3
+		sourceLineageTag: remote_flag
+		summarizeBy: none
+		sourceColumn: remote_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_employee_master = entity
+		mode: directLake
+		source
+			entityName: dim_employee_master
+			schemaName: silver
+			expressionSource: 'DirectLake - TrinetDemo'
+

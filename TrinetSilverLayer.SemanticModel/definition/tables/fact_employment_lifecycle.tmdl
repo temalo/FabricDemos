@@ -1,0 +1,158 @@
+table fact_employment_lifecycle
+	lineageTag: 80b5f63c-be88-4a23-bf50-0eb9315bfe87
+	sourceLineageTag: [silver].[fact_employment_lifecycle]
+
+	measure 'Total Lifecycle Events' = ```
+			
+			        COUNTROWS('fact_employment_lifecycle')
+			```
+		formatString: 0
+		lineageTag: 9aa5bd3a-5e86-4c11-9aea-8c833868e0e2
+
+	measure 'Avg Performance Rating' = ```
+			
+			        AVERAGE('fact_employment_lifecycle'[performance_rating])
+			```
+		lineageTag: b29c75ae-cc3b-4c66-9619-ac8ae6582065
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column event_key
+		dataType: string
+		lineageTag: 57554e29-6494-4c9c-9597-65aeab068d11
+		sourceLineageTag: event_key
+		summarizeBy: none
+		sourceColumn: event_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_id
+		dataType: string
+		lineageTag: 240ff288-531b-4af2-973b-7aebddac07f7
+		sourceLineageTag: event_id
+		summarizeBy: none
+		sourceColumn: event_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1ede4c81-20a4-4308-acfb-c7aa6b5b6663
+		sourceLineageTag: employee_key
+		summarizeBy: none
+		sourceColumn: employee_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 92308294-e38e-40e8-90e6-43ceaaa2ec37
+		sourceLineageTag: client_key
+		summarizeBy: none
+		sourceColumn: client_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_type
+		dataType: string
+		lineageTag: 86de66ca-6293-4160-9da0-c969060888a6
+		sourceLineageTag: event_type
+		summarizeBy: none
+		sourceColumn: event_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 48b5a2a1-9020-41fe-b712-6a898e92c87e
+		sourceLineageTag: event_date_key
+		summarizeBy: none
+		sourceColumn: event_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: b59b69e1-e9c4-40fb-bc67-886f6650497d
+		sourceLineageTag: effective_date_key
+		summarizeBy: sum
+		sourceColumn: effective_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_title
+		dataType: string
+		lineageTag: eadf609b-0a8c-486d-a0d8-0ba2ca4b3553
+		sourceLineageTag: job_title
+		summarizeBy: none
+		sourceColumn: job_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column department
+		dataType: string
+		lineageTag: 25317d2f-12f7-4056-81a7-dd54faee48eb
+		sourceLineageTag: department
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = Automatic
+
+	column manager_employee_key
+		dataType: int64
+		formatString: 0
+		lineageTag: c55da16e-cae0-41e9-9de5-2cb7d5b04ed8
+		sourceLineageTag: manager_employee_key
+		summarizeBy: sum
+		sourceColumn: manager_employee_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column workflow_status
+		dataType: string
+		lineageTag: 36ba0344-aeb8-4852-8bd4-eb1b7583d53d
+		sourceLineageTag: workflow_status
+		summarizeBy: none
+		sourceColumn: workflow_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column performance_rating
+		dataType: int64
+		formatString: 0
+		lineageTag: a4835aae-3b27-443f-9a2a-c29e05c931b0
+		sourceLineageTag: performance_rating
+		summarizeBy: sum
+		sourceColumn: performance_rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column separation_reason
+		dataType: string
+		lineageTag: 770889c7-770b-48f5-81c5-ba6a69f6ef09
+		sourceLineageTag: separation_reason
+		summarizeBy: none
+		sourceColumn: separation_reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column partition_col_MONTH_event_ts
+		dataType: string
+		lineageTag: 95e53f4e-9be9-4d94-b659-18de7831747f
+		sourceLineageTag: partition_col_MONTH_event_ts
+		summarizeBy: none
+		sourceColumn: partition_col_MONTH_event_ts
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_employment_lifecycle = entity
+		mode: directLake
+		source
+			entityName: fact_employment_lifecycle
+			schemaName: silver
+			expressionSource: 'DirectLake - TrinetDemo'
+

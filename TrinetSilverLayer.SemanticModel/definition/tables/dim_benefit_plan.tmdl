@@ -1,0 +1,127 @@
+table dim_benefit_plan
+	lineageTag: d8c5a791-c60e-455b-8441-b2503aad9af7
+	sourceLineageTag: [silver].[dim_benefit_plan]
+
+	column plan_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 454ea5ce-e68e-4ee2-8aaa-6c5c5dff801a
+		sourceLineageTag: plan_key
+		summarizeBy: none
+		sourceColumn: plan_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column plan_id
+		dataType: string
+		lineageTag: 3d2ad97f-c01a-4e35-961b-19f792bae69c
+		sourceLineageTag: plan_id
+		summarizeBy: none
+		sourceColumn: plan_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column carrier_name
+		dataType: string
+		lineageTag: bd2293f9-128c-458f-9819-c0e385f951f1
+		sourceLineageTag: carrier_name
+		summarizeBy: none
+		sourceColumn: carrier_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column plan_type
+		dataType: string
+		lineageTag: 0a86f0e1-82e0-4492-bfd5-70c4a5cf93a9
+		sourceLineageTag: plan_type
+		summarizeBy: none
+		sourceColumn: plan_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column plan_name
+		dataType: string
+		lineageTag: bc62bb09-87f4-4d0e-95a3-85c1eb94fe6b
+		sourceLineageTag: plan_name
+		summarizeBy: none
+		sourceColumn: plan_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column coverage_tier
+		dataType: string
+		lineageTag: 1e3146ee-df47-4293-a653-576dc2ad0cea
+		sourceLineageTag: coverage_tier
+		summarizeBy: none
+		sourceColumn: coverage_tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column network_type
+		dataType: string
+		lineageTag: 1504c103-6d07-45bb-9086-91a9c744e69a
+		sourceLineageTag: network_type
+		summarizeBy: none
+		sourceColumn: network_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column hsa_eligible
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3fc99b8c-c061-44ff-a613-d77f3cab296d
+		sourceLineageTag: hsa_eligible
+		summarizeBy: none
+		sourceColumn: hsa_eligible
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_monthly_premium
+		dataType: double
+		lineageTag: 9726ba12-cd13-46b9-b953-14dc274c8c0c
+		sourceLineageTag: employee_monthly_premium
+		summarizeBy: none
+		sourceColumn: employee_monthly_premium
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column employer_monthly_premium
+		dataType: double
+		lineageTag: d4630597-f4e9-4d17-b8c9-91ce6730e501
+		sourceLineageTag: employer_monthly_premium
+		summarizeBy: none
+		sourceColumn: employer_monthly_premium
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column effective_start_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1e99b96a-0f05-4309-ad95-6e0f2a3d29a6
+		sourceLineageTag: effective_start_date
+		summarizeBy: none
+		sourceColumn: effective_start_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_end_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 88a9e6a1-95b1-4bec-9ed0-427b42aee8e9
+		sourceLineageTag: effective_end_date
+		summarizeBy: none
+		sourceColumn: effective_end_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_benefit_plan = entity
+		mode: directLake
+		source
+			entityName: dim_benefit_plan
+			schemaName: silver
+			expressionSource: 'DirectLake - TrinetDemo'
+

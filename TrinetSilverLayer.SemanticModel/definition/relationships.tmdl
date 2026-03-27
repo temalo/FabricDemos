@@ -1,0 +1,88 @@
+relationship 89a5a3e7-8a2b-29ea-b763-157ac6f771d6
+	fromColumn: fact_benefit_enrollment.coverage_start_date_key
+	toColumn: dim_date.date_key
+
+relationship 0634e6ef-5c82-a916-4d5a-f0d306849b1c
+	fromColumn: fact_benefit_enrollment.client_key
+	toColumn: dim_client_company.client_key
+
+relationship 5bc37522-51c3-348f-d547-ce4669d27cb2
+	fromColumn: fact_benefit_enrollment.employee_key
+	toColumn: dim_employee_master.employee_key
+
+relationship ca6d678c-f930-584e-9ac2-14fa67b684ae
+	fromColumn: fact_benefit_enrollment.plan_key
+	toColumn: dim_benefit_plan.plan_key
+
+relationship e8dd82d5-184e-50e8-27e7-d1e2ba8309cc
+	fromColumn: fact_application_event.client_key
+	toColumn: dim_client_company.client_key
+
+relationship 5909d11d-dccb-b7b5-963a-d9b7054b8cdd
+	fromColumn: fact_application_event.employee_key
+	toColumn: dim_employee_master.employee_key
+
+relationship 3737e51e-d742-c15a-67fb-17b5b62d34e0
+	fromColumn: fact_application_event.event_date_key
+	toColumn: dim_date.date_key
+
+relationship 70ee2b31-1f90-abec-6049-de75633886d9
+	fromColumn: fact_employment_lifecycle.client_key
+	toColumn: dim_client_company.client_key
+
+relationship e30dbf33-b81f-2e3a-0321-e8dbae4a5fb4
+	fromColumn: fact_employment_lifecycle.event_date_key
+	toColumn: dim_date.date_key
+
+relationship da3e88ea-66bc-33d2-6f82-9e07495d6bc9
+	fromColumn: fact_employment_lifecycle.employee_key
+	toColumn: dim_employee_master.employee_key
+
+relationship 7b08dcb9-5531-a2a7-9585-50fea615b437
+	fromColumn: fact_time_attendance.client_key
+	toColumn: dim_client_company.client_key
+
+relationship 851ce0ed-2824-20ab-6071-781643867081
+	fromColumn: fact_time_attendance.employee_key
+	toColumn: dim_employee_master.employee_key
+
+relationship c54e2cea-9c4e-2fe6-cd36-b0f3bb82e8f6
+	fromColumn: fact_time_attendance.work_date_key
+	toColumn: dim_date.date_key
+
+relationship eb299fc5-2633-5aba-3d7c-b675ef1ebd2e
+	fromColumn: fact_service_interaction.client_key
+	toColumn: dim_client_company.client_key
+
+relationship 63982e5a-16f6-de90-bd3b-e3ea70c6e104
+	fromColumn: fact_service_interaction.closed_date_key
+	toColumn: dim_date.date_key
+
+relationship 24f57b81-1157-184b-699e-5f5dc11367fb
+	fromColumn: fact_payroll_result.client_key
+	toColumn: dim_client_company.client_key
+
+relationship 686f9316-3571-3ba3-7463-d1236b3d2c39
+	fromColumn: fact_payroll_result.employee_key
+	toColumn: dim_employee_master.employee_key
+
+relationship c696aeab-9cfa-394b-2883-d58032ef702e
+	fromColumn: fact_payroll_result.pay_date_key
+	toColumn: dim_date.date_key
+
+relationship 6a1203c7-3b63-8b55-d21f-672fee249202
+	fromColumn: fact_compliance_case.client_key
+	toColumn: dim_client_company.client_key
+
+relationship fda7d912-ae3b-5032-d0fa-468901ad072c
+	fromColumn: fact_compliance_case.due_date_key
+	toColumn: dim_date.date_key
+
+relationship 2bc6aa1a-170d-7d3a-99b4-9fbfc5150dcc
+	fromColumn: fact_compliance_case.employee_key
+	toColumn: dim_employee_master.employee_key
+
+relationship b5d1f7b6-11b8-0351-224e-1a03cdb853fe
+	fromColumn: fact_compliance_case.policy_key
+	toColumn: dim_hr_policy.policy_key
+

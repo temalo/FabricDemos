@@ -1,0 +1,114 @@
+table dim_hr_policy
+	lineageTag: 6fb3b30d-b04f-4788-9c93-e31c2b89338a
+	sourceLineageTag: [silver].[dim_hr_policy]
+
+	column policy_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 95f0c678-08ce-464f-b288-af4f5bfbf704
+		sourceLineageTag: policy_key
+		summarizeBy: none
+		sourceColumn: policy_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column policy_id
+		dataType: string
+		lineageTag: 2d71650a-3221-4b67-9511-035ef47c041b
+		sourceLineageTag: policy_id
+		summarizeBy: none
+		sourceColumn: policy_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column policy_name
+		dataType: string
+		lineageTag: 12fbb75c-616d-4178-8e75-a4b3d71a599d
+		sourceLineageTag: policy_name
+		summarizeBy: none
+		sourceColumn: policy_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column policy_category
+		dataType: string
+		lineageTag: 6b412f0c-05e2-4990-adc7-4dbb4c8e962b
+		sourceLineageTag: policy_category
+		summarizeBy: none
+		sourceColumn: policy_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column jurisdiction_level
+		dataType: string
+		lineageTag: db6e0b64-08aa-433c-a401-0dbf01899050
+		sourceLineageTag: jurisdiction_level
+		summarizeBy: none
+		sourceColumn: jurisdiction_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column jurisdiction_code
+		dataType: string
+		lineageTag: 97055111-d477-4f7e-82b3-57a0d6cb14c1
+		sourceLineageTag: jurisdiction_code
+		summarizeBy: none
+		sourceColumn: jurisdiction_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column document_classification
+		dataType: string
+		lineageTag: 452bff0c-9d56-4514-ad1d-3e9901673756
+		sourceLineageTag: document_classification
+		summarizeBy: none
+		sourceColumn: document_classification
+
+		annotation SummarizationSetBy = Automatic
+
+	column policy_owner
+		dataType: string
+		lineageTag: bec8f0b0-3020-40dd-b9dc-399fcdae41fd
+		sourceLineageTag: policy_owner
+		summarizeBy: none
+		sourceColumn: policy_owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7bd355b7-92fb-4039-b04e-79ed3591a7ed
+		sourceLineageTag: effective_date
+		summarizeBy: none
+		sourceColumn: effective_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column next_review_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a1daab04-6bb8-4d9b-b23b-0b75b922a07b
+		sourceLineageTag: next_review_date
+		summarizeBy: none
+		sourceColumn: next_review_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column immutable_retention_required
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8789d993-8017-43da-b21a-876cad987bdc
+		sourceLineageTag: immutable_retention_required
+		summarizeBy: none
+		sourceColumn: immutable_retention_required
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_hr_policy = entity
+		mode: directLake
+		source
+			entityName: dim_hr_policy
+			schemaName: silver
+			expressionSource: 'DirectLake - TrinetDemo'
+
