@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "GetLatestDate",
+    "description": "This notebook looks at the latest date in the ChicagoCrime Table and returns it. If no date is found (purged) then the date defaults to 1/1/2001"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5038cc32-ae27-a79b-41a0-a931634cfcab"
+  }
+}
