@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "7522b2a6-b487-4266-9d99-8426a276eaec",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "plan_key",
+        "targetPropertyId": "7131637446707858067"
+      },
+      {
+        "sourceColumnName": "plan_id",
+        "targetPropertyId": "7131637473978042852"
+      },
+      {
+        "sourceColumnName": "carrier_name",
+        "targetPropertyId": "7131637494640443696"
+      },
+      {
+        "sourceColumnName": "plan_type",
+        "targetPropertyId": "7131637516486925204"
+      },
+      {
+        "sourceColumnName": "plan_name",
+        "targetPropertyId": "7131637541197987126"
+      },
+      {
+        "sourceColumnName": "coverage_tier",
+        "targetPropertyId": "7131637564914908530"
+      },
+      {
+        "sourceColumnName": "network_type",
+        "targetPropertyId": "7131637584900078222"
+      },
+      {
+        "sourceColumnName": "hsa_eligible",
+        "targetPropertyId": "7131637608270548393"
+      },
+      {
+        "sourceColumnName": "employee_monthly_premium",
+        "targetPropertyId": "7131637627773569526"
+      },
+      {
+        "sourceColumnName": "employer_monthly_premium",
+        "targetPropertyId": "7131637653212276844"
+      },
+      {
+        "sourceColumnName": "effective_start_date",
+        "targetPropertyId": "7131637678330638943"
+      },
+      {
+        "sourceColumnName": "effective_end_date",
+        "targetPropertyId": "7131637698005450428"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "18c93f05-44a2-4a59-8a64-785ccdbd7725",
+      "itemId": "5bcbde01-0a86-4305-b016-79ebd34c2bc0",
+      "sourceTableName": "dim_benefit_plan",
+      "sourceSchema": "silver"
+    }
+  }
+}

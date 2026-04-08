@@ -1,0 +1,84 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "4144c68a-b513-47e6-91ee-b1427580ccb0",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "employee_key",
+        "targetPropertyId": "7131640763018950960"
+      },
+      {
+        "sourceColumnName": "employee_id",
+        "targetPropertyId": "7131640785444206177"
+      },
+      {
+        "sourceColumnName": "client_key",
+        "targetPropertyId": "7131640807538663476"
+      },
+      {
+        "sourceColumnName": "person_number",
+        "targetPropertyId": "7131640828625878310"
+      },
+      {
+        "sourceColumnName": "worker_type",
+        "targetPropertyId": "7131640850484338263"
+      },
+      {
+        "sourceColumnName": "pay_type",
+        "targetPropertyId": "7131640873464772171"
+      },
+      {
+        "sourceColumnName": "employment_status",
+        "targetPropertyId": "7131640893939571997"
+      },
+      {
+        "sourceColumnName": "job_level",
+        "targetPropertyId": "7131640915395728511"
+      },
+      {
+        "sourceColumnName": "job_title",
+        "targetPropertyId": "7131640936709421639"
+      },
+      {
+        "sourceColumnName": "department",
+        "targetPropertyId": "7131640958382233955"
+      },
+      {
+        "sourceColumnName": "manager_employee_key",
+        "targetPropertyId": "7131640980853199981"
+      },
+      {
+        "sourceColumnName": "work_state",
+        "targetPropertyId": "7131641002340797900"
+      },
+      {
+        "sourceColumnName": "hire_date",
+        "targetPropertyId": "7131641023230016326"
+      },
+      {
+        "sourceColumnName": "termination_date",
+        "targetPropertyId": "7131641045243283985"
+      },
+      {
+        "sourceColumnName": "annual_salary",
+        "targetPropertyId": "7131641063020463686"
+      },
+      {
+        "sourceColumnName": "hourly_rate",
+        "targetPropertyId": "7131641087474839644"
+      },
+      {
+        "sourceColumnName": "remote_flag",
+        "targetPropertyId": "7131641107572502648"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "18c93f05-44a2-4a59-8a64-785ccdbd7725",
+      "itemId": "5bcbde01-0a86-4305-b016-79ebd34c2bc0",
+      "sourceTableName": "dim_employee_master",
+      "sourceSchema": "silver"
+    }
+  }
+}

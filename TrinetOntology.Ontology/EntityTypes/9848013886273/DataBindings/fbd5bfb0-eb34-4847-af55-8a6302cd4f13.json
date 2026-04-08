@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "fbd5bfb0-eb34-4847-af55-8a6302cd4f13",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "client_key",
+        "targetPropertyId": "7131639660507822592"
+      },
+      {
+        "sourceColumnName": "company_id",
+        "targetPropertyId": "7131639683151203120"
+      },
+      {
+        "sourceColumnName": "company_name",
+        "targetPropertyId": "7131639704079780832"
+      },
+      {
+        "sourceColumnName": "industry",
+        "targetPropertyId": "7131639730026079509"
+      },
+      {
+        "sourceColumnName": "segment",
+        "targetPropertyId": "7131639749709985450"
+      },
+      {
+        "sourceColumnName": "covered_lives",
+        "targetPropertyId": "7131639772067317389"
+      },
+      {
+        "sourceColumnName": "hr_service_tier",
+        "targetPropertyId": "7131639794187221447"
+      },
+      {
+        "sourceColumnName": "contract_status",
+        "targetPropertyId": "7131639820128329824"
+      },
+      {
+        "sourceColumnName": "peo_start_date",
+        "targetPropertyId": "7131639842551274528"
+      },
+      {
+        "sourceColumnName": "headquarter_state",
+        "targetPropertyId": "7131639862203066012"
+      },
+      {
+        "sourceColumnName": "headquarter_city",
+        "targetPropertyId": "7131639884196256736"
+      },
+      {
+        "sourceColumnName": "compliance_complexity",
+        "targetPropertyId": "7131639907139110273"
+      },
+      {
+        "sourceColumnName": "annual_contract_value",
+        "targetPropertyId": "7131639925674136868"
+      },
+      {
+        "sourceColumnName": "is_active",
+        "targetPropertyId": "7131639947359306681"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "18c93f05-44a2-4a59-8a64-785ccdbd7725",
+      "itemId": "5bcbde01-0a86-4305-b016-79ebd34c2bc0",
+      "sourceTableName": "dim_client_company",
+      "sourceSchema": "silver"
+    }
+  }
+}

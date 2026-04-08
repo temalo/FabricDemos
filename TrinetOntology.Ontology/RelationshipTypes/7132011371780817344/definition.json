@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "7132011371780817344",
+  "name": "fact_compliance_case_has_dim_client_company",
+  "namespaceType": "Imported",
+  "source": {
+    "entityTypeId": "23940449665137"
+  },
+  "target": {
+    "entityTypeId": "9848013886273"
+  }
+}

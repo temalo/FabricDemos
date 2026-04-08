@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "779fa137-aca5-416e-8877-fcc0f200308b",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "policy_key",
+        "targetPropertyId": "7131637052534670396"
+      },
+      {
+        "sourceColumnName": "policy_id",
+        "targetPropertyId": "7131637078827608511"
+      },
+      {
+        "sourceColumnName": "policy_name",
+        "targetPropertyId": "7131637101524177410"
+      },
+      {
+        "sourceColumnName": "policy_category",
+        "targetPropertyId": "7131637124213593160"
+      },
+      {
+        "sourceColumnName": "jurisdiction_level",
+        "targetPropertyId": "7131637143371067408"
+      },
+      {
+        "sourceColumnName": "jurisdiction_code",
+        "targetPropertyId": "7131637169951165229"
+      },
+      {
+        "sourceColumnName": "document_classification",
+        "targetPropertyId": "7131637196621939135"
+      },
+      {
+        "sourceColumnName": "policy_owner",
+        "targetPropertyId": "7131637217409547115"
+      },
+      {
+        "sourceColumnName": "effective_date",
+        "targetPropertyId": "7131637243314143708"
+      },
+      {
+        "sourceColumnName": "next_review_date",
+        "targetPropertyId": "7131637262861853001"
+      },
+      {
+        "sourceColumnName": "immutable_retention_required",
+        "targetPropertyId": "7131637286964221658"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "18c93f05-44a2-4a59-8a64-785ccdbd7725",
+      "itemId": "5bcbde01-0a86-4305-b016-79ebd34c2bc0",
+      "sourceTableName": "dim_hr_policy",
+      "sourceSchema": "silver"
+    }
+  }
+}

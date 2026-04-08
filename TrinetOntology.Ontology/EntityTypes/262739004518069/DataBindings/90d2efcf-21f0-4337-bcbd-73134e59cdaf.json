@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "90d2efcf-21f0-4337-bcbd-73134e59cdaf",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "event_key",
+        "targetPropertyId": "7131638262202443481"
+      },
+      {
+        "sourceColumnName": "event_id",
+        "targetPropertyId": "7131638282398572402"
+      },
+      {
+        "sourceColumnName": "employee_key",
+        "targetPropertyId": "7131638303952213888"
+      },
+      {
+        "sourceColumnName": "client_key",
+        "targetPropertyId": "7131638327695364028"
+      },
+      {
+        "sourceColumnName": "event_type",
+        "targetPropertyId": "7131638352540972215"
+      },
+      {
+        "sourceColumnName": "event_date_key",
+        "targetPropertyId": "7131638373664982553"
+      },
+      {
+        "sourceColumnName": "effective_date_key",
+        "targetPropertyId": "7131638393607770765"
+      },
+      {
+        "sourceColumnName": "job_title",
+        "targetPropertyId": "7131638413889276363"
+      },
+      {
+        "sourceColumnName": "department",
+        "targetPropertyId": "7131638437446464536"
+      },
+      {
+        "sourceColumnName": "manager_employee_key",
+        "targetPropertyId": "7131638456364729993"
+      },
+      {
+        "sourceColumnName": "workflow_status",
+        "targetPropertyId": "7131638478607938967"
+      },
+      {
+        "sourceColumnName": "performance_rating",
+        "targetPropertyId": "7131638504754162467"
+      },
+      {
+        "sourceColumnName": "separation_reason",
+        "targetPropertyId": "7131638525464709366"
+      },
+      {
+        "sourceColumnName": "partition_col_MONTH_event_ts",
+        "targetPropertyId": "7131638548136777712"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "18c93f05-44a2-4a59-8a64-785ccdbd7725",
+      "itemId": "5bcbde01-0a86-4305-b016-79ebd34c2bc0",
+      "sourceTableName": "fact_employment_lifecycle",
+      "sourceSchema": "silver"
+    }
+  }
+}

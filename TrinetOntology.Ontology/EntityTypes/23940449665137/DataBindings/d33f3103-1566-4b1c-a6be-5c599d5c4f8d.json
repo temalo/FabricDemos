@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "d33f3103-1566-4b1c-a6be-5c599d5c4f8d",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "compliance_case_key",
+        "targetPropertyId": "7131639994031287315"
+      },
+      {
+        "sourceColumnName": "client_key",
+        "targetPropertyId": "7131640016798639052"
+      },
+      {
+        "sourceColumnName": "employee_key",
+        "targetPropertyId": "7131640037370337685"
+      },
+      {
+        "sourceColumnName": "policy_key",
+        "targetPropertyId": "7131640061553005850"
+      },
+      {
+        "sourceColumnName": "filing_type",
+        "targetPropertyId": "7131640081507074300"
+      },
+      {
+        "sourceColumnName": "jurisdiction_code",
+        "targetPropertyId": "7131640101147328190"
+      },
+      {
+        "sourceColumnName": "due_date_key",
+        "targetPropertyId": "7131640124516547082"
+      },
+      {
+        "sourceColumnName": "filed_date_key",
+        "targetPropertyId": "7131640147430421868"
+      },
+      {
+        "sourceColumnName": "compliance_status",
+        "targetPropertyId": "7131640168044168918"
+      },
+      {
+        "sourceColumnName": "issue_severity",
+        "targetPropertyId": "7131640190834944246"
+      },
+      {
+        "sourceColumnName": "penalty_amount",
+        "targetPropertyId": "7131640209438073148"
+      },
+      {
+        "sourceColumnName": "audit_flag",
+        "targetPropertyId": "7131640233188606181"
+      },
+      {
+        "sourceColumnName": "record_hash",
+        "targetPropertyId": "7131640251400609407"
+      },
+      {
+        "sourceColumnName": "partition_col_MONTH_event_ts",
+        "targetPropertyId": "7131640275804120762"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "18c93f05-44a2-4a59-8a64-785ccdbd7725",
+      "itemId": "5bcbde01-0a86-4305-b016-79ebd34c2bc0",
+      "sourceTableName": "fact_compliance_case",
+      "sourceSchema": "silver"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "f3e63c86-6187-42c9-aac6-e2420beac80a",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "enrollment_key",
+        "targetPropertyId": "7131636459280395879"
+      },
+      {
+        "sourceColumnName": "employee_key",
+        "targetPropertyId": "7131636484549043287"
+      },
+      {
+        "sourceColumnName": "client_key",
+        "targetPropertyId": "7131636512961667238"
+      },
+      {
+        "sourceColumnName": "plan_key",
+        "targetPropertyId": "7131636539395207077"
+      },
+      {
+        "sourceColumnName": "election_type",
+        "targetPropertyId": "7131636561434454911"
+      },
+      {
+        "sourceColumnName": "dependent_count",
+        "targetPropertyId": "7131636585076850864"
+      },
+      {
+        "sourceColumnName": "open_enrollment_year",
+        "targetPropertyId": "7131636606907708501"
+      },
+      {
+        "sourceColumnName": "coverage_start_date_key",
+        "targetPropertyId": "7131636628594527832"
+      },
+      {
+        "sourceColumnName": "coverage_end_date_key",
+        "targetPropertyId": "7131636650694002243"
+      },
+      {
+        "sourceColumnName": "election_status",
+        "targetPropertyId": "7131636670343786451"
+      },
+      {
+        "sourceColumnName": "employee_contribution",
+        "targetPropertyId": "7131636697417140856"
+      },
+      {
+        "sourceColumnName": "employer_contribution",
+        "targetPropertyId": "7131636717446746721"
+      },
+      {
+        "sourceColumnName": "fsa_balance",
+        "targetPropertyId": "7131636741299974469"
+      },
+      {
+        "sourceColumnName": "hsa_balance",
+        "targetPropertyId": "7131636760368243813"
+      },
+      {
+        "sourceColumnName": "partition_col_MONTH_enrollment_ts",
+        "targetPropertyId": "7131636782041055920"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "18c93f05-44a2-4a59-8a64-785ccdbd7725",
+      "itemId": "5bcbde01-0a86-4305-b016-79ebd34c2bc0",
+      "sourceTableName": "fact_benefit_enrollment",
+      "sourceSchema": "silver"
+    }
+  }
+}

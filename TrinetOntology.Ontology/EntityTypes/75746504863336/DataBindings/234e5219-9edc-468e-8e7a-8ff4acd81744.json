@@ -1,0 +1,92 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "234e5219-9edc-468e-8e7a-8ff4acd81744",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "payroll_result_key",
+        "targetPropertyId": "7131641172629360793"
+      },
+      {
+        "sourceColumnName": "employee_key",
+        "targetPropertyId": "7131641198442441620"
+      },
+      {
+        "sourceColumnName": "client_key",
+        "targetPropertyId": "7131641224494703441"
+      },
+      {
+        "sourceColumnName": "payroll_cycle_id",
+        "targetPropertyId": "7131641243511357991"
+      },
+      {
+        "sourceColumnName": "pay_frequency",
+        "targetPropertyId": "7131641270482951109"
+      },
+      {
+        "sourceColumnName": "pay_date_key",
+        "targetPropertyId": "7131641292571123691"
+      },
+      {
+        "sourceColumnName": "pay_period_end_date_key",
+        "targetPropertyId": "7131641312506052266"
+      },
+      {
+        "sourceColumnName": "gross_pay",
+        "targetPropertyId": "7131641338473616573"
+      },
+      {
+        "sourceColumnName": "regular_pay",
+        "targetPropertyId": "7131641361198754879"
+      },
+      {
+        "sourceColumnName": "overtime_pay",
+        "targetPropertyId": "7131641389189092250"
+      },
+      {
+        "sourceColumnName": "bonus_pay",
+        "targetPropertyId": "7131641410810592584"
+      },
+      {
+        "sourceColumnName": "deductions_total",
+        "targetPropertyId": "7131641429110977478"
+      },
+      {
+        "sourceColumnName": "garnishments_total",
+        "targetPropertyId": "7131641454792264108"
+      },
+      {
+        "sourceColumnName": "tax_withholding_total",
+        "targetPropertyId": "7131641478021673034"
+      },
+      {
+        "sourceColumnName": "employer_tax_total",
+        "targetPropertyId": "7131641500185370653"
+      },
+      {
+        "sourceColumnName": "net_pay",
+        "targetPropertyId": "7131641525213480071"
+      },
+      {
+        "sourceColumnName": "journal_posted_flag",
+        "targetPropertyId": "7131641549703168275"
+      },
+      {
+        "sourceColumnName": "tax_filing_status",
+        "targetPropertyId": "7131641571516745439"
+      },
+      {
+        "sourceColumnName": "partition_col_MONTH_payroll_ts",
+        "targetPropertyId": "7131641595323072678"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "18c93f05-44a2-4a59-8a64-785ccdbd7725",
+      "itemId": "5bcbde01-0a86-4305-b016-79ebd34c2bc0",
+      "sourceTableName": "fact_payroll_result",
+      "sourceSchema": "silver"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Ontology",
+    "displayName": "TrinetOntology"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8cd3dee5-a56e-922b-4fa2-edda3b7e2f9d"
+  }
+}

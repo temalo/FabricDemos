@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "7131975332763925477",
+  "name": "fact_payroll_result_has_dim_client_company",
+  "namespaceType": "Imported",
+  "source": {
+    "entityTypeId": "75746504863336"
+  },
+  "target": {
+    "entityTypeId": "9848013886273"
+  }
+}

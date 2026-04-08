@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "7132036917637194966",
+  "name": "fact_compliance_case_has_dim_employee_master",
+  "namespaceType": "Imported",
+  "source": {
+    "entityTypeId": "23940449665137"
+  },
+  "target": {
+    "entityTypeId": "56401176976291"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "7131937355011112629",
+  "name": "fact_employment_lifecycle_has_dim_employee_master",
+  "namespaceType": "Imported",
+  "source": {
+    "entityTypeId": "262739004518069"
+  },
+  "target": {
+    "entityTypeId": "56401176976291"
+  }
+}

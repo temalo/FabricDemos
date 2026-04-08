@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "c8716340-7a3b-4eb8-b3fc-8c6ce8ec8a29",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "app_event_key",
+        "targetPropertyId": "7131637746826852244"
+      },
+      {
+        "sourceColumnName": "client_key",
+        "targetPropertyId": "7131637767179935862"
+      },
+      {
+        "sourceColumnName": "employee_key",
+        "targetPropertyId": "7131637788912376733"
+      },
+      {
+        "sourceColumnName": "event_date_key",
+        "targetPropertyId": "7131637814609620224"
+      },
+      {
+        "sourceColumnName": "event_name",
+        "targetPropertyId": "7131637837751510186"
+      },
+      {
+        "sourceColumnName": "application_area",
+        "targetPropertyId": "7131637862886845614"
+      },
+      {
+        "sourceColumnName": "channel",
+        "targetPropertyId": "7131637881325899793"
+      },
+      {
+        "sourceColumnName": "api_endpoint",
+        "targetPropertyId": "7131637905870152936"
+      },
+      {
+        "sourceColumnName": "response_time_ms",
+        "targetPropertyId": "7131637931935712432"
+      },
+      {
+        "sourceColumnName": "success_flag",
+        "targetPropertyId": "7131637953368683003"
+      },
+      {
+        "sourceColumnName": "auth_method",
+        "targetPropertyId": "7131637971044353996"
+      },
+      {
+        "sourceColumnName": "session_duration_seconds",
+        "targetPropertyId": "7131637992532635218"
+      },
+      {
+        "sourceColumnName": "audit_action",
+        "targetPropertyId": "7131638013664663822"
+      },
+      {
+        "sourceColumnName": "partition_col_MONTH_event_ts",
+        "targetPropertyId": "7131638038248588274"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "18c93f05-44a2-4a59-8a64-785ccdbd7725",
+      "itemId": "5bcbde01-0a86-4305-b016-79ebd34c2bc0",
+      "sourceTableName": "fact_application_event",
+      "sourceSchema": "silver"
+    }
+  }
+}

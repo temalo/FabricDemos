@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "7131876359416833228",
+  "name": "fact_application_event_has_dim_client_company",
+  "namespaceType": "Imported",
+  "source": {
+    "entityTypeId": "247331908334103"
+  },
+  "target": {
+    "entityTypeId": "9848013886273"
+  }
+}

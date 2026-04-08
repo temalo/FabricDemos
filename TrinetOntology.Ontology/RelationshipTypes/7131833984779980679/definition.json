@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "7131833984779980679",
+  "name": "fact_benefit_enrollment_has_dim_client_company",
+  "namespaceType": "Imported",
+  "source": {
+    "entityTypeId": "202643049727893"
+  },
+  "target": {
+    "entityTypeId": "9848013886273"
+  }
+}

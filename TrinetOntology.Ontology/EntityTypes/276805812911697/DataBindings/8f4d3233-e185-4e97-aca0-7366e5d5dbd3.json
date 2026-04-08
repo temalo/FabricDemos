@@ -1,0 +1,68 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "8f4d3233-e185-4e97-aca0-7366e5d5dbd3",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "interaction_key",
+        "targetPropertyId": "7131638682208589144"
+      },
+      {
+        "sourceColumnName": "client_key",
+        "targetPropertyId": "7131638702185698045"
+      },
+      {
+        "sourceColumnName": "case_id",
+        "targetPropertyId": "7131638730443446976"
+      },
+      {
+        "sourceColumnName": "service_category",
+        "targetPropertyId": "7131638752161265057"
+      },
+      {
+        "sourceColumnName": "interaction_channel",
+        "targetPropertyId": "7131638773177349654"
+      },
+      {
+        "sourceColumnName": "opened_date_key",
+        "targetPropertyId": "7131638795204128614"
+      },
+      {
+        "sourceColumnName": "closed_date_key",
+        "targetPropertyId": "7131638816175873898"
+      },
+      {
+        "sourceColumnName": "assigned_rep_id",
+        "targetPropertyId": "7131638834298100092"
+      },
+      {
+        "sourceColumnName": "resolution_sla_hours",
+        "targetPropertyId": "7131638857443907706"
+      },
+      {
+        "sourceColumnName": "breached_sla_flag",
+        "targetPropertyId": "7131638876845494645"
+      },
+      {
+        "sourceColumnName": "csat_score",
+        "targetPropertyId": "7131638901982822992"
+      },
+      {
+        "sourceColumnName": "interaction_count",
+        "targetPropertyId": "7131638925317737923"
+      },
+      {
+        "sourceColumnName": "partition_col_MONTH_interaction_ts",
+        "targetPropertyId": "7131638946966896837"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "18c93f05-44a2-4a59-8a64-785ccdbd7725",
+      "itemId": "5bcbde01-0a86-4305-b016-79ebd34c2bc0",
+      "sourceTableName": "fact_service_interaction",
+      "sourceSchema": "silver"
+    }
+  }
+}

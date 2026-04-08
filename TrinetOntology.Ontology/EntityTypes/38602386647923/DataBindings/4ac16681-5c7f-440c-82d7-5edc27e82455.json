@@ -1,0 +1,68 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "4ac16681-5c7f-440c-82d7-5edc27e82455",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "date_key",
+        "targetPropertyId": "7131640453209622073"
+      },
+      {
+        "sourceColumnName": "full_date",
+        "targetPropertyId": "7131640478832554430"
+      },
+      {
+        "sourceColumnName": "year",
+        "targetPropertyId": "7131640504112515120"
+      },
+      {
+        "sourceColumnName": "quarter",
+        "targetPropertyId": "7131640522633230540"
+      },
+      {
+        "sourceColumnName": "month",
+        "targetPropertyId": "7131640545674946697"
+      },
+      {
+        "sourceColumnName": "month_name",
+        "targetPropertyId": "7131640565609628239"
+      },
+      {
+        "sourceColumnName": "week_of_year",
+        "targetPropertyId": "7131640587526500099"
+      },
+      {
+        "sourceColumnName": "day_of_week",
+        "targetPropertyId": "7131640610430555982"
+      },
+      {
+        "sourceColumnName": "day_name",
+        "targetPropertyId": "7131640632148324595"
+      },
+      {
+        "sourceColumnName": "is_weekend",
+        "targetPropertyId": "7131640652352176416"
+      },
+      {
+        "sourceColumnName": "is_holiday",
+        "targetPropertyId": "7131640675379155416"
+      },
+      {
+        "sourceColumnName": "fiscal_year",
+        "targetPropertyId": "7131640696170905722"
+      },
+      {
+        "sourceColumnName": "fiscal_quarter",
+        "targetPropertyId": "7131640717082203809"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "18c93f05-44a2-4a59-8a64-785ccdbd7725",
+      "itemId": "5bcbde01-0a86-4305-b016-79ebd34c2bc0",
+      "sourceTableName": "dim_date",
+      "sourceSchema": "silver"
+    }
+  }
+}
